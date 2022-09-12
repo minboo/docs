@@ -6,8 +6,8 @@ module.exports = {
   '@vuepress/last-updated': {
     transformer: (timestamp) => {
       moment.locale("zh-cn")
-      // return moment(timestamp).format("LLL")
-      return moment(timestamp).fromNow()
+      return moment(timestamp).format("LLL")
+      // return moment(timestamp).fromNow()
     }
   },
   '@vuepress/pwa': {

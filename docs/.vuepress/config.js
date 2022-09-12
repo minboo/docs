@@ -17,7 +17,7 @@ module.exports = {
     editLinks: true,
     editLinkText: '编辑文档！',
     lastUpdated: '上次更新', // 最后更新时间
-    // sidebar: sidebarConf, // 使用自动生成侧边栏插件后可注释不引入相关js
+    sidebar: sidebarConf,
     nav: navConf,
     nextLinks: true, // 默认值是 true 。设置为 false 来禁用所有页面的 下一篇 链接
     prevLinks: true // 默认值是 true 。设置为 false 来禁用所有页面的 上一篇 链接

@@ -28,6 +28,28 @@ module.exports = [
     { text: 'Redis', link: '/backend/redis/' },
     { text: 'Docker', link: '/backend/docker/' },
   ]},
+  {
+    text: '中间件',
+    items: [
+      {
+        text: '服务器', items: [
+          { text: 'Nginx', link: '/Middleware/Nginx/' },
+        ]
+      },
+      {
+        text: '消息队列', items: [
+          { text: 'RabbitMQ', link: '/RabbitMQ/' },
+          { text: 'RocketMQ', link: '/RocketMQ/' },
+        ]
+      },
+      {
+        text: '搜索引擎', items: [
+          { text: 'ElasticSearch', link: '/ElasticSearch/' },
+          { text: 'Solr', link: '/slor/' },
+        ]
+      }
+    ]
+  },
   { text: '开发工具', items: [
     { text: 'Git', link: '/tools/git/' },
     { text: 'Github', link: '/tools/github/' },

@@ -1,4 +1,22 @@
 module.exports = {
+  "/Middleware/Nginx/": [
+    {
+      "text": "Nginx",
+      "title": "Nginx",
+      "collapsable": false,
+      "sidebarDepth": 1,
+      "children": [
+        "README.md",
+        "pre.md",
+        "introduce.md",
+        "install.md",
+        "principle.md",
+        "configuration.md",
+        "etcd.md",
+        "private-registry.md"
+      ]
+    }
+  ],
   "/backend/docker/": [
     {
       "text": "DOCKER",

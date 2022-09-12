@@ -1,7 +1,7 @@
 ---
 home: true
 heroImage: /logo.png
-heroText: 在路上aa
+heroText: 在路上
 tagline: 有了复数之后，开方运算就不再局限于大于 0 的数
 actionText: 进入笔记 →
 actionLink: /about/
