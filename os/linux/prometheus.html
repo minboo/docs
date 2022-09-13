@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Prometheus | 在路上</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/logo.png">
+    <mata name="author" content="在路上"></mata>
+    <mata name="Keyword" content="我的博客"></mata>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon-152x152.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <meta name="description" content="description描述">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/assets/css/0.styles.92fb795d.css" as="style"><link rel="preload" href="/assets/js/app.b042dfd4.js" as="script"><link rel="preload" href="/assets/js/2.8154945c.js" as="script"><link rel="preload" href="/assets/js/78.62390d6f.js" as="script"><link rel="preload" href="/assets/js/3.4234061e.js" as="script"><link rel="prefetch" href="/assets/js/10.b0ef5cc7.js"><link rel="prefetch" href="/assets/js/100.c94e731e.js"><link rel="prefetch" href="/assets/js/101.48c30368.js"><link rel="prefetch" href="/assets/js/102.46c7e4c5.js"><link rel="prefetch" href="/assets/js/103.c3a5deff.js"><link rel="prefetch" href="/assets/js/104.0a230598.js"><link rel="prefetch" href="/assets/js/105.5bb8ca11.js"><link rel="prefetch" href="/assets/js/106.452ae601.js"><link rel="prefetch" href="/assets/js/107.25f200d5.js"><link rel="prefetch" href="/assets/js/108.17d74b6e.js"><link rel="prefetch" href="/assets/js/109.13b1de0b.js"><link rel="prefetch" href="/assets/js/11.97d54b7d.js"><link rel="prefetch" href="/assets/js/110.ec225bdb.js"><link rel="prefetch" href="/assets/js/111.b852821d.js"><link rel="prefetch" href="/assets/js/112.5652e068.js"><link rel="prefetch" href="/assets/js/113.accd65c3.js"><link rel="prefetch" href="/assets/js/12.9aae7b96.js"><link rel="prefetch" href="/assets/js/13.848a8a4d.js"><link rel="prefetch" href="/assets/js/14.c4cbbbac.js"><link rel="prefetch" href="/assets/js/15.865d5993.js"><link rel="prefetch" href="/assets/js/16.0f637415.js"><link rel="prefetch" href="/assets/js/17.77902faf.js"><link rel="prefetch" href="/assets/js/18.06c5e1a8.js"><link rel="prefetch" href="/assets/js/19.058ef2e9.js"><link rel="prefetch" href="/assets/js/20.9d8d2a60.js"><link rel="prefetch" href="/assets/js/21.d53bc81e.js"><link rel="prefetch" href="/assets/js/22.013a1d1d.js"><link rel="prefetch" href="/assets/js/23.5478e71f.js"><link rel="prefetch" href="/assets/js/24.ad64936d.js"><link rel="prefetch" href="/assets/js/25.8156faf2.js"><link rel="prefetch" href="/assets/js/26.de1ad383.js"><link rel="prefetch" href="/assets/js/27.1a88c4fe.js"><link rel="prefetch" href="/assets/js/28.649ea49d.js"><link rel="prefetch" href="/assets/js/29.8bb6a22b.js"><link rel="prefetch" href="/assets/js/30.94188915.js"><link rel="prefetch" href="/assets/js/31.c7c96e55.js"><link rel="prefetch" href="/assets/js/32.b40c2f9d.js"><link rel="prefetch" href="/assets/js/33.8a2d8cd6.js"><link rel="prefetch" href="/assets/js/34.eea30f0c.js"><link rel="prefetch" href="/assets/js/35.472fbeac.js"><link rel="prefetch" href="/assets/js/36.51080cfc.js"><link rel="prefetch" href="/assets/js/37.b0f4846a.js"><link rel="prefetch" href="/assets/js/38.a1174889.js"><link rel="prefetch" href="/assets/js/39.2ef9d394.js"><link rel="prefetch" href="/assets/js/4.29fa54b8.js"><link rel="prefetch" href="/assets/js/40.a1a50e67.js"><link rel="prefetch" href="/assets/js/41.82a44a96.js"><link rel="prefetch" href="/assets/js/42.dfffe07b.js"><link rel="prefetch" href="/assets/js/43.44eea0b0.js"><link rel="prefetch" href="/assets/js/44.dc023168.js"><link rel="prefetch" href="/assets/js/45.c5dd3e94.js"><link rel="prefetch" href="/assets/js/46.79948b06.js"><link rel="prefetch" href="/assets/js/47.485ccf84.js"><link rel="prefetch" href="/assets/js/48.14084039.js"><link rel="prefetch" href="/assets/js/49.24165fa3.js"><link rel="prefetch" href="/assets/js/5.0e72a8e9.js"><link rel="prefetch" href="/assets/js/50.78813583.js"><link rel="prefetch" href="/assets/js/51.53aa9cf5.js"><link rel="prefetch" href="/assets/js/52.c22b1755.js"><link rel="prefetch" href="/assets/js/53.7ad7b4a8.js"><link rel="prefetch" href="/assets/js/54.0c093768.js"><link rel="prefetch" href="/assets/js/55.1fbbd65d.js"><link rel="prefetch" href="/assets/js/56.843ea8ee.js"><link rel="prefetch" href="/assets/js/57.123e346c.js"><link rel="prefetch" href="/assets/js/58.d34951c6.js"><link rel="prefetch" href="/assets/js/59.b85cf23f.js"><link rel="prefetch" href="/assets/js/6.d3ecc9b3.js"><link rel="prefetch" href="/assets/js/60.e9071331.js"><link rel="prefetch" href="/assets/js/61.6ac666dd.js"><link rel="prefetch" href="/assets/js/62.afab2eff.js"><link rel="prefetch" href="/assets/js/63.800abe90.js"><link rel="prefetch" href="/assets/js/64.5951988c.js"><link rel="prefetch" href="/assets/js/65.01ea9a97.js"><link rel="prefetch" href="/assets/js/66.bb85edd4.js"><link rel="prefetch" href="/assets/js/67.c0da47a9.js"><link rel="prefetch" href="/assets/js/68.ee327cdd.js"><link rel="prefetch" href="/assets/js/69.35735eff.js"><link rel="prefetch" href="/assets/js/7.3b12d94c.js"><link rel="prefetch" href="/assets/js/70.5cf976c2.js"><link rel="prefetch" href="/assets/js/71.0bfc13eb.js"><link rel="prefetch" href="/assets/js/72.6e7aeddb.js"><link rel="prefetch" href="/assets/js/73.361215c2.js"><link rel="prefetch" href="/assets/js/74.6dae3b39.js"><link rel="prefetch" href="/assets/js/75.56bbe243.js"><link rel="prefetch" href="/assets/js/76.88ce9f6b.js"><link rel="prefetch" href="/assets/js/77.52d3bde1.js"><link rel="prefetch" href="/assets/js/79.e8590d7e.js"><link rel="prefetch" href="/assets/js/8.b4a14e8c.js"><link rel="prefetch" href="/assets/js/80.0649d97d.js"><link rel="prefetch" href="/assets/js/81.f54b68cd.js"><link rel="prefetch" href="/assets/js/82.a4f85774.js"><link rel="prefetch" href="/assets/js/83.abd156a5.js"><link rel="prefetch" href="/assets/js/84.0ba27a18.js"><link rel="prefetch" href="/assets/js/85.b84ccd9c.js"><link rel="prefetch" href="/assets/js/86.c46352c6.js"><link rel="prefetch" href="/assets/js/87.3291a1b3.js"><link rel="prefetch" href="/assets/js/88.ef8e27eb.js"><link rel="prefetch" href="/assets/js/89.346fee6c.js"><link rel="prefetch" href="/assets/js/9.82925584.js"><link rel="prefetch" href="/assets/js/90.fa92de62.js"><link rel="prefetch" href="/assets/js/91.a0a26338.js"><link rel="prefetch" href="/assets/js/92.5675720d.js"><link rel="prefetch" href="/assets/js/93.0bd5bc0c.js"><link rel="prefetch" href="/assets/js/94.843c0392.js"><link rel="prefetch" href="/assets/js/95.ba825a76.js"><link rel="prefetch" href="/assets/js/96.c57767c7.js"><link rel="prefetch" href="/assets/js/97.2e9e1eb3.js"><link rel="prefetch" href="/assets/js/98.12339901.js"><link rel="prefetch" href="/assets/js/99.1f1b02fe.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.92fb795d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="在路上" class="logo"> <span class="site-name can-hide">在路上</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="框架" class="dropdown-title"><span class="title">框架</span> <span class="arrow down"></span></button> <button type="button" aria-label="框架" class="mobile-dropdown-title"><span class="title">框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Spring
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/about/" class="nav-link">
+  About
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Mybatis
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/about/" class="nav-link">
+  About
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="系统" class="dropdown-title"><span class="title">系统</span> <span class="arrow down"></span></button> <button type="button" aria-label="系统" class="mobile-dropdown-title"><span class="title">系统</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/os/linux/" class="nav-link router-link-active">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/os/ubuntu/" class="nav-link">
+  Ubuntu
+</a></li><li class="dropdown-item"><!----> <a href="/os/centos/" class="nav-link">
+  CentOS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><span class="title">后端</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端" class="mobile-dropdown-title"><span class="title">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/backend/mysql/" class="nav-link">
+  MySQL
+</a></li><li class="dropdown-item"><!----> <a href="/backend/redis/" class="nav-link">
+  Redis
+</a></li><li class="dropdown-item"><!----> <a href="/backend/docker/" class="nav-link">
+  Docker
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="中间件" class="dropdown-title"><span class="title">中间件</span> <span class="arrow down"></span></button> <button type="button" aria-label="中间件" class="mobile-dropdown-title"><span class="title">中间件</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          服务器
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/Middleware/Nginx/" class="nav-link">
+  Nginx
+</a></li></ul></li><li class="dropdown-item"><h4>
+          消息队列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/RabbitMQ/" class="nav-link">
+  RabbitMQ
+</a></li><li class="dropdown-subitem"><a href="/RocketMQ/" class="nav-link">
+  RocketMQ
+</a></li></ul></li><li class="dropdown-item"><h4>
+          搜索引擎
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/ElasticSearch/" class="nav-link">
+  ElasticSearch
+</a></li><li class="dropdown-subitem"><a href="/slor/" class="nav-link">
+  Solr
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发工具" class="dropdown-title"><span class="title">开发工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="开发工具" class="mobile-dropdown-title"><span class="title">开发工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tools/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/tools/github/" class="nav-link">
+  Github
+</a></li><li class="dropdown-item"><!----> <a href="/tools/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/tools/bookmark-scripts/" class="nav-link">
+  Bookmark scripts
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow down"></span></button> <button type="button" aria-label="更多" class="mobile-dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/more/navigation.html" class="nav-link">
+  导航 🎉
+</a></li><li class="dropdown-item"><!----> <a href="https://shanyuhai123.github.io/vuepress-plugin-auto-sidebar/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VuePress 侧边栏插件
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://vuepress.vuejs.org/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VuePress 官网
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="框架" class="dropdown-title"><span class="title">框架</span> <span class="arrow down"></span></button> <button type="button" aria-label="框架" class="mobile-dropdown-title"><span class="title">框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Spring
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/about/" class="nav-link">
+  About
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Mybatis
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/about/" class="nav-link">
+  About
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="系统" class="dropdown-title"><span class="title">系统</span> <span class="arrow down"></span></button> <button type="button" aria-label="系统" class="mobile-dropdown-title"><span class="title">系统</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/os/linux/" class="nav-link router-link-active">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/os/ubuntu/" class="nav-link">
+  Ubuntu
+</a></li><li class="dropdown-item"><!----> <a href="/os/centos/" class="nav-link">
+  CentOS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><span class="title">后端</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端" class="mobile-dropdown-title"><span class="title">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/backend/mysql/" class="nav-link">
+  MySQL
+</a></li><li class="dropdown-item"><!----> <a href="/backend/redis/" class="nav-link">
+  Redis
+</a></li><li class="dropdown-item"><!----> <a href="/backend/docker/" class="nav-link">
+  Docker
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="中间件" class="dropdown-title"><span class="title">中间件</span> <span class="arrow down"></span></button> <button type="button" aria-label="中间件" class="mobile-dropdown-title"><span class="title">中间件</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          服务器
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/Middleware/Nginx/" class="nav-link">
+  Nginx
+</a></li></ul></li><li class="dropdown-item"><h4>
+          消息队列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/RabbitMQ/" class="nav-link">
+  RabbitMQ
+</a></li><li class="dropdown-subitem"><a href="/RocketMQ/" class="nav-link">
+  RocketMQ
+</a></li></ul></li><li class="dropdown-item"><h4>
+          搜索引擎
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/ElasticSearch/" class="nav-link">
+  ElasticSearch
+</a></li><li class="dropdown-subitem"><a href="/slor/" class="nav-link">
+  Solr
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发工具" class="dropdown-title"><span class="title">开发工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="开发工具" class="mobile-dropdown-title"><span class="title">开发工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tools/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/tools/github/" class="nav-link">
+  Github
+</a></li><li class="dropdown-item"><!----> <a href="/tools/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/tools/bookmark-scripts/" class="nav-link">
+  Bookmark scripts
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow down"></span></button> <button type="button" aria-label="更多" class="mobile-dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/more/navigation.html" class="nav-link">
+  导航 🎉
+</a></li><li class="dropdown-item"><!----> <a href="https://shanyuhai123.github.io/vuepress-plugin-auto-sidebar/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VuePress 侧边栏插件
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://vuepress.vuejs.org/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VuePress 官网
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Linux</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/os/linux/" aria-current="page" class="sidebar-link">为什么不试试 Linux 呢</a></li><li><a href="/os/linux/everything-is-a-file.html" class="sidebar-link">一切皆文件</a></li><li><a href="/os/linux/shell.html" class="sidebar-link">Shell 脚本</a></li><li><a href="/os/linux/alias.html" class="sidebar-link">别名 alias</a></li><li><a href="/os/linux/ansible.html" class="sidebar-link">分发脚本 ansible</a></li><li><a href="/os/linux/archiving-and-compression.html" class="sidebar-link">归档和压缩</a></li><li><a href="/os/linux/command-options.html" class="sidebar-link">命令选项</a></li><li><a href="/os/linux/command-shortcut.html" class="sidebar-link">命令行快捷键</a></li><li><a href="/os/linux/common-commands.html" class="sidebar-link">Linux 常用命令</a></li><li><a href="/os/linux/crontab.html" class="sidebar-link">解放双手计划</a></li><li><a href="/os/linux/detect-your-server.html" class="sidebar-link">检测服务器通达</a></li><li><a href="/os/linux/directory-structure.html" class="sidebar-link">Linux 系统目录结构</a></li><li><a href="/os/linux/dnsmasq.html" class="sidebar-link">Dnsmasq</a></li><li><a href="/os/linux/fail2ban.html" class="sidebar-link">fail2ban</a></li><li><a href="/os/linux/firewalld.html" class="sidebar-link">防火墙 firewalld</a></li><li><a href="/os/linux/gaudy-and-pragmatical-command.html" class="sidebar-link">花里胡哨且实用的命令</a></li><li><a href="/os/linux/grep-sed-awk.html" class="sidebar-link">文本三剑客</a></li><li><a href="/os/linux/how-to-enable-the-hard-disk.html" class="sidebar-link">如何启用硬盘</a></li><li><a href="/os/linux/io-redirection.html" class="sidebar-link">输入、输出重定向</a></li><li><a href="/os/linux/job-control.html" class="sidebar-link">作业控制</a></li><li><a href="/os/linux/prometheus.html" aria-current="page" class="active sidebar-link">Prometheus</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/os/linux/prometheus.html#部署" class="sidebar-link">部署</a></li><li class="sidebar-sub-header"><a href="/os/linux/prometheus.html#配置文件" class="sidebar-link">配置文件</a></li><li class="sidebar-sub-header"><a href="/os/linux/prometheus.html#监控示例" class="sidebar-link">监控示例</a></li><li class="sidebar-sub-header"><a href="/os/linux/prometheus.html#服务发现" class="sidebar-link">服务发现</a></li><li class="sidebar-sub-header"><a href="/os/linux/prometheus.html#图形界面" class="sidebar-link">图形界面</a></li><li class="sidebar-sub-header"><a href="/os/linux/prometheus.html#警报" class="sidebar-link">警报</a></li></ul></li><li><a href="/os/linux/raid.html" class="sidebar-link">磁盘阵列</a></li><li><a href="/os/linux/rsync-and-scp.html" class="sidebar-link">远程同步文件</a></li><li><a href="/os/linux/ssh-makes-your-server-more-secure.html" class="sidebar-link">SSH 让你的服务器更安全</a></li><li><a href="/os/linux/systemd.html" class="sidebar-link">守护系统 systemd</a></li><li><a href="/os/linux/user.html" class="sidebar-link">用户管理</a></li><li><a href="/os/linux/view-text-context.html" class="sidebar-link">查看文本内容</a></li><li><a href="/os/linux/xargs.html" class="sidebar-link">传参 xargs</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="prometheus"><a href="#prometheus" class="header-anchor">#</a> Prometheus</h1> <h2 id="部署"><a href="#部署" class="header-anchor">#</a> 部署</h2> <p>前往<a href="https://prometheus.io/download/" target="_blank" rel="noopener noreferrer">官网<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>下载核心：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 解压</span>
+<span class="token function">tar</span> <span class="token parameter variable">-xvf</span> prometheus-2.24.1.linux-amd64.tar.gz <span class="token parameter variable">-C</span> /usr/local/
+
+<span class="token comment"># 链接</span>
+<span class="token builtin class-name">cd</span> /usr/local/
+<span class="token function">ln</span> <span class="token parameter variable">-sv</span> prometheus-2.24.1.linux-amd64 prometheus
+
+<span class="token comment"># 测试</span>
+<span class="token builtin class-name">cd</span> prometheus
+./prometheus <span class="token comment"># 可在对应 ip 的 9090 端口访问</span>
+
+<span class="token comment"># 将 prometheus 注册为服务</span>
+<span class="token function">sudo</span> <span class="token function">tee</span> /etc/systemd/system/prometheus.service <span class="token operator">&lt;&lt;</span><span class="token string">&quot;EOF&quot;
+[Unit]
+Description=Prometheus Server
+Documentation=https://prometheus.io/docs/introduction/overview/
+After=network-online.target
+
+[Service]
+Restart=on-failure
+ExecStart=/usr/local/prometheus/prometheus \
+  --config.file=/usr/local/prometheus/prometheus.yml \
+  --storage.tsdb.path=/usr/local/prometheus/data
+
+[Install]
+WantedBy=multi-user.target
+EOF</span>
+
+<span class="token comment"># 启用</span>
+<span class="token function">sudo</span> systemctl daemon-reload <span class="token operator">&amp;&amp;</span> <span class="token punctuation">\</span>
+<span class="token function">sudo</span> systemctl start prometheus <span class="token operator">&amp;&amp;</span> <span class="token punctuation">\</span>
+<span class="token function">sudo</span> systemctl status prometheus
+</code></pre></div><p>使用 <a href="https://hub.docker.com/u/prom" target="_blank" rel="noopener noreferrer">Docker<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 或 <a href="https://github.com/cloudalchemy/ansible-prometheus" target="_blank" rel="noopener noreferrer">Ansible<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 则简单许多：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">docker</span> run <span class="token parameter variable">--restart</span><span class="token operator">=</span>always <span class="token parameter variable">-d</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-p</span> <span class="token number">9090</span>:9090 <span class="token punctuation">\</span>
+  <span class="token parameter variable">-v</span> /path/to/config:/etc/prometheus <span class="token punctuation">\</span>
+  <span class="token parameter variable">--name</span> prometheus <span class="token punctuation">\</span>
+  prom/prometheus
+</code></pre></div><h2 id="配置文件"><a href="#配置文件" class="header-anchor">#</a> 配置文件</h2> <p>默认 <a href="https://prometheus.io/docs/prometheus/latest/configuration/configuration/" target="_blank" rel="noopener noreferrer">prometheus.yml<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 定义了 4 个 YAML 块：<code>global</code>、<code>alerting</code>、<code>rule_files</code> 和 <code>scrape_configs</code>。</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token comment"># my global config</span>
+<span class="token key atrule">global</span><span class="token punctuation">:</span>
+  <span class="token key atrule">scrape_interval</span><span class="token punctuation">:</span>     15s <span class="token comment"># Set the scrape interval to every 15 seconds. Default is every 1 minute.</span>
+  <span class="token key atrule">evaluation_interval</span><span class="token punctuation">:</span> 15s <span class="token comment"># Evaluate rules every 15 seconds. The default is every 1 minute.</span>
+  <span class="token comment"># scrape_timeout is set to the global default (10s).</span>
+
+<span class="token comment"># Alertmanager configuration</span>
+<span class="token key atrule">alerting</span><span class="token punctuation">:</span>
+  <span class="token key atrule">alertmanagers</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">static_configs</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">targets</span><span class="token punctuation">:</span>
+      <span class="token comment"># - alertmanager:9093</span>
+
+<span class="token comment"># Load rules once and periodically evaluate them according to the global 'evaluation_interval'.</span>
+<span class="token key atrule">rule_files</span><span class="token punctuation">:</span>
+  <span class="token comment"># - &quot;first_rules.yml&quot;</span>
+  <span class="token comment"># - &quot;second_rules.yml&quot;</span>
+
+<span class="token comment"># A scrape configuration containing exactly one endpoint to scrape:</span>
+<span class="token comment"># Here it's Prometheus itself.</span>
+<span class="token key atrule">scrape_configs</span><span class="token punctuation">:</span>
+  <span class="token comment"># The job name is added as a label `job=&lt;job_name&gt;` to any timeseries scraped from this config.</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">job_name</span><span class="token punctuation">:</span> <span class="token string">'prometheus'</span>
+
+    <span class="token comment"># metrics_path defaults to '/metrics'</span>
+    <span class="token comment"># scheme defaults to 'http'.</span>
+
+    <span class="token key atrule">static_configs</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">targets</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'localhost:9090'</span><span class="token punctuation">]</span>
+</code></pre></div><h3 id="标签"><a href="#标签" class="header-anchor">#</a> 标签</h3> <p>这是 Prometheus 的核心技术，通过重新标记，可以控制、管理并标准化指标。</p> <p>例如在 Prometheus Web UI 的 <code>/targets</code> 页面中的 <code>Labels</code>。</p> <p>有两个阶段可以重新标记：在抓取之前使用 <code>relabel_configs</code>，在抓取之后使用 <code>metric_relabel_configs</code>。</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token punctuation">-</span> <span class="token key atrule">job_name</span><span class="token punctuation">:</span> <span class="token string">'docker'</span>
+  <span class="token key atrule">static_configs</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">targets</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'10.0.0.131:8080'</span><span class="token punctuation">,</span> <span class="token string">'10.0.0.132:8080'</span><span class="token punctuation">,</span> <span class="token string">'10.0.0.133:8080'</span><span class="token punctuation">]</span>
+  <span class="token key atrule">metric_relabel_configs</span><span class="token punctuation">:</span>
+   <span class="token comment"># 通过重新标记来删除指标</span>
+   <span class="token punctuation">-</span> <span class="token key atrule">source_labels</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>__name__<span class="token punctuation">]</span>
+      <span class="token key atrule">separator</span><span class="token punctuation">:</span> <span class="token string">','</span>
+      <span class="token key atrule">regex</span><span class="token punctuation">:</span> <span class="token string">'(container_tasks_state|container_memory_failures_total)'</span>
+      <span class="token key atrule">action</span><span class="token punctuation">:</span> drop
+    <span class="token comment"># 替换标签值</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">source_labels</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>id<span class="token punctuation">]</span>
+      <span class="token key atrule">regex</span><span class="token punctuation">:</span> <span class="token string">'/docker/([a-z0-9]+)'</span>
+      <span class="token key atrule">replacement</span><span class="token punctuation">:</span> <span class="token string">'$1'</span>
+      <span class="token key atrule">target_label</span><span class="token punctuation">:</span> container_id
+</code></pre></div><h2 id="监控示例"><a href="#监控示例" class="header-anchor">#</a> 监控示例</h2> <h3 id="_1-node-exporter"><a href="#_1-node-exporter" class="header-anchor">#</a> 1. node exporter</h3> <p>以系统指标 <a href="https://prometheus.io/download/#node_exporter" target="_blank" rel="noopener noreferrer">node_exporter<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 为示例，可参照 <a href="https://gist.github.com/jarek-przygodzki/735e15337a3502fea40beba27e193b04" target="_blank" rel="noopener noreferrer">node_exporter-as-systemd-service<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 进行配置：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 创建用户</span>
+<span class="token function">sudo</span> <span class="token function">useradd</span> <span class="token parameter variable">-M</span> <span class="token parameter variable">-s</span> /bin/false node_exporter
+
+<span class="token comment"># 解压</span>
+<span class="token function">tar</span> <span class="token parameter variable">-zxvf</span> ~/node_exporter-1.1.1.linux-amd64.tar.gz <span class="token parameter variable">-C</span> /usr/local/bin/ --strip-components<span class="token operator">=</span><span class="token number">1</span> node_exporter-1.1.1.linux-amd64/node_exporter
+
+<span class="token comment"># 将 node_exporter 注册为服务</span>
+<span class="token function">sudo</span> <span class="token function">tee</span> /etc/systemd/system/node_exporter.service <span class="token operator">&lt;&lt;</span><span class="token string">&quot;EOF&quot;
+[Unit]
+Description=Node Exporter
+
+[Service]
+User=node_exporter
+Group=node_exporter
+EnvironmentFile=-/etc/sysconfig/node_exporter
+ExecStart=/usr/local/bin/node_exporter \
+  --collector.ntp \
+  --collector.mountstats \
+  --collector.systemd \
+  --collector.tcpstat \
+  $OPTIONS
+
+[Install]
+WantedBy=multi-user.target
+EOF</span>
+
+<span class="token comment"># 启用</span>
+<span class="token function">sudo</span> systemctl daemon-reload <span class="token operator">&amp;&amp;</span> <span class="token punctuation">\</span>
+<span class="token function">sudo</span> systemctl start node_exporter <span class="token operator">&amp;&amp;</span> <span class="token punctuation">\</span>
+<span class="token function">sudo</span> systemctl <span class="token builtin class-name">enable</span> node_exporter <span class="token operator">&amp;&amp;</span> <span class="token punctuation">\</span>
+<span class="token function">sudo</span> systemctl status node_exporter
+</code></pre></div><p>根据上面示例，增加多个主机，最后在监控服务的 <code>prometheus.yml</code> 文件追加：</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token punctuation">-</span> <span class="token key atrule">job_name</span><span class="token punctuation">:</span> <span class="token string">'node_exporter'</span>
+  <span class="token comment"># 静态配置</span>
+    <span class="token key atrule">static_configs</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">targets</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> 10.0.0.131<span class="token punctuation">:</span><span class="token number">9100</span>
+      <span class="token punctuation">-</span> 10.0.0.132<span class="token punctuation">:</span><span class="token number">9100</span>
+      <span class="token punctuation">-</span> 10.0.0.133<span class="token punctuation">:</span><span class="token number">9100</span>
+</code></pre></div><h3 id="_2-docker-容器"><a href="#_2-docker-容器" class="header-anchor">#</a> 2. Docker 容器</h3> <p>推荐使用 <a href="google/cadvisor">google/cadvisor</a> 来监控容器：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">docker</span> run <span class="token parameter variable">--name</span> cadvisor <span class="token parameter variable">-d</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-p</span> <span class="token number">8080</span>:8080 <span class="token punctuation">\</span>
+  <span class="token parameter variable">-v</span> /:/rootfs:ro <span class="token punctuation">\</span>
+  <span class="token parameter variable">-v</span> /var/run:/var/run:ro <span class="token punctuation">\</span>
+  <span class="token parameter variable">-v</span> /sys:/sys:ro <span class="token punctuation">\</span>
+  <span class="token parameter variable">-v</span> /var/lib/docker/:/var/lib/docker:ro <span class="token punctuation">\</span>
+  <span class="token parameter variable">-v</span> /dev/disk/:/dev/disk:ro <span class="token punctuation">\</span>
+  google/cadvisor
+</code></pre></div><h3 id="_3-日志"><a href="#_3-日志" class="header-anchor">#</a> 3. 日志</h3> <p>对于没有设置监控或不容易进行监控的遗留应用程序，重写、修补、重构程序以暴露内部状态的成本很高，而使用日志数据作为抓取时间序列数据的来源则更具有可行性。</p> <p>在 <a href="https://github.com/google/mtail/tree/master/examples" target="_blank" rel="noopener noreferrer">examples<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 中提供了日志解析模板。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">docker</span> run <span class="token parameter variable">-dP</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">--name</span> myapp-mtail <span class="token punctuation">\</span>
+  --volumes-from myapp <span class="token punctuation">\</span>
+  <span class="token parameter variable">-v</span> examples:/etc/mtail <span class="token punctuation">\</span>
+  mtail <span class="token parameter variable">--logs</span> /var/log/myapp <span class="token parameter variable">--progs</span> /etc/mtail
+</code></pre></div><h3 id="_4-黑盒监控"><a href="#_4-黑盒监控" class="header-anchor">#</a> 4. 黑盒监控</h3> <p>可以使用探针监控来查看应用程序的外部状态，<a href="https://github.com/prometheus/blackbox_exporter" target="_blank" rel="noopener noreferrer">Blackbox exporter<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>。</p> <p>先指定要嗅探的配置信息：</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">modules</span><span class="token punctuation">:</span>
+  <span class="token key atrule">http_2xx</span><span class="token punctuation">:</span>
+    <span class="token key atrule">prober</span><span class="token punctuation">:</span> http
+    <span class="token key atrule">timeout</span><span class="token punctuation">:</span> 5s
+    <span class="token key atrule">http</span><span class="token punctuation">:</span>
+      <span class="token key atrule">valid_status_codes</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+      <span class="token key atrule">method</span><span class="token punctuation">:</span> GET
+  <span class="token key atrule">icmp_check</span><span class="token punctuation">:</span>
+    <span class="token key atrule">prober</span><span class="token punctuation">:</span> icmp
+    <span class="token key atrule">timeout</span><span class="token punctuation">:</span> 5s
+    <span class="token key atrule">icmp</span><span class="token punctuation">:</span>
+      <span class="token key atrule">preferred_ip_protocol</span><span class="token punctuation">:</span> <span class="token string">&quot;ip4&quot;</span>
+  <span class="token key atrule">dns_examplecom_check</span><span class="token punctuation">:</span>
+    <span class="token key atrule">prober</span><span class="token punctuation">:</span> dns
+    <span class="token key atrule">dns</span><span class="token punctuation">:</span>
+      <span class="token key atrule">preferred_ip_protocol</span><span class="token punctuation">:</span> <span class="token string">&quot;ip4&quot;</span>
+      <span class="token key atrule">query_name</span><span class="token punctuation">:</span> <span class="token string">&quot;www.example.com&quot;</span>
+  <span class="token key atrule">dns_tcp_example</span><span class="token punctuation">:</span>
+    <span class="token key atrule">prober</span><span class="token punctuation">:</span> dns
+    <span class="token key atrule">dns</span><span class="token punctuation">:</span>
+      <span class="token key atrule">transport_protocol</span><span class="token punctuation">:</span> <span class="token string">&quot;tcp&quot;</span> <span class="token comment"># defaults to &quot;udp&quot;</span>
+      <span class="token key atrule">preferred_ip_protocol</span><span class="token punctuation">:</span> <span class="token string">&quot;ip4&quot;</span> <span class="token comment">#  defaults to &quot;ip6&quot;</span>
+      <span class="token key atrule">query_name</span><span class="token punctuation">:</span> <span class="token string">&quot;www.prometheus.io&quot;</span>
+</code></pre></div><p>再根据配置文件运行：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">docker</span> run <span class="token parameter variable">--rm</span> <span class="token parameter variable">-d</span> <span class="token punctuation">\</span>
+ <span class="token parameter variable">-p</span> <span class="token number">9115</span>:9115 <span class="token punctuation">\</span>
+ <span class="token parameter variable">-v</span> <span class="token variable"><span class="token variable">`</span><span class="token builtin class-name">pwd</span><span class="token variable">`</span></span>:/config <span class="token punctuation">\</span>
+ <span class="token parameter variable">--name</span> blackbox_exporter <span class="token punctuation">\</span>
+ prom/blackbox-exporter:master <span class="token punctuation">\</span>
+ <span class="token parameter variable">--config.file</span><span class="token operator">=</span>/config/prober.yml
+</code></pre></div><h2 id="服务发现"><a href="#服务发现" class="header-anchor">#</a> 服务发现</h2> <p>对于主机比较少时编辑配置还可以，但随着数量上升就该选择更优雅的形式了。</p> <h3 id="_1-基于文件"><a href="#_1-基于文件" class="header-anchor">#</a> 1. 基于文件</h3> <p>仅仅前进了一小步，但与配置管理工具结合起来倒是很好用。</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token comment"># prometheus/prometheus.yml</span>
+<span class="token key atrule">scrape_configs</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">job_name</span><span class="token punctuation">:</span> <span class="token string">'prometheus'</span>
+    <span class="token key atrule">file_sd_configs</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">files</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> targets/prometheus<span class="token punctuation">-</span><span class="token important">*.yaml</span>
+      <span class="token key atrule">refresh_interval</span><span class="token punctuation">:</span> 2m
+  <span class="token punctuation">-</span> <span class="token key atrule">job_name</span><span class="token punctuation">:</span> <span class="token string">'node_exporter'</span>
+    <span class="token key atrule">file_sd_configs</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">files</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> targets/nodes<span class="token punctuation">-</span><span class="token important">*.yaml</span>
+      <span class="token key atrule">refresh_interval</span><span class="token punctuation">:</span> 2m
+</code></pre></div><div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token comment"># prometheus/targets/prometheus-servers.yaml</span>
+<span class="token punctuation">-</span> <span class="token key atrule">targets</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> 10.0.0.131<span class="token punctuation">:</span><span class="token number">9090</span>
+  <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+    <span class="token key atrule">app</span><span class="token punctuation">:</span> prometheus
+    <span class="token key atrule">job</span><span class="token punctuation">:</span> prometheus
+</code></pre></div><div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token comment"># prometheus/targets/nodes-linux.yaml</span>
+<span class="token punctuation">-</span> <span class="token key atrule">targets</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> 10.0.0.131<span class="token punctuation">:</span><span class="token number">9100</span>
+  <span class="token punctuation">-</span> 10.0.0.132<span class="token punctuation">:</span><span class="token number">9100</span>
+  <span class="token punctuation">-</span> 10.0.0.133<span class="token punctuation">:</span><span class="token number">9100</span>
+  <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+    <span class="token key atrule">app</span><span class="token punctuation">:</span> node<span class="token punctuation">-</span>exporter
+    <span class="token key atrule">job</span><span class="token punctuation">:</span> node
+</code></pre></div><h3 id="_2-基于-api"><a href="#_2-基于-api" class="header-anchor">#</a> 2. 基于 API</h3> <p>暂不考虑该形式，待后期直接上 k8s。</p> <h3 id="_3-基于-dns"><a href="#_3-基于-dns" class="header-anchor">#</a> 3. 基于 DNS</h3> <p>可配合 <a href="https://github.com/jpillora/docker-dnsmasq" target="_blank" rel="noopener noreferrer">docker-dnsmasq<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 快速使用。</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token comment"># prometheus 设置</span>
+<span class="token punctuation">-</span> <span class="token key atrule">job_name</span><span class="token punctuation">:</span> <span class="token string">'dns-srv'</span>
+  <span class="token key atrule">metrics_path</span><span class="token punctuation">:</span> <span class="token string">&quot;/metrics&quot;</span>
+  <span class="token key atrule">dns_sd_configs</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">names</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'_prometheus._tcp.example.com'</span><span class="token punctuation">]</span>
+</code></pre></div><div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># dnsmasq 解析 srv</span>
+<span class="token comment"># A SRV record sending LDAP for the example.com domain to ldapserver.example.com port 289</span>
+<span class="token comment"># srv-host=_ldap._tcp.example.com,ldapserver.example.com,389</span>
+srv-host <span class="token operator">=</span>_prometheus._tcp.example.com,dns1.example.com,9100
+srv-host <span class="token operator">=</span>_prometheus._tcp.example.com,dns2.example.com,9100
+srv-host <span class="token operator">=</span>_prometheus._tcp.example.com,dns3.example.com,9100
+</code></pre></div><div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># dnsmasq 解析 ip</span>
+dns1.example.com <span class="token number">10.0</span>.0.131
+dns2.example.com <span class="token number">10.0</span>.0.132
+dns3.example.com <span class="token number">10.0</span>.0.133
+</code></pre></div><h2 id="图形界面"><a href="#图形界面" class="header-anchor">#</a> 图形界面</h2> <p>可使用 <a href="https://hub.docker.com/r/grafana/grafana" target="_blank" rel="noopener noreferrer">grafana<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 完成图形界面，还提供了方便的 <a href="https://grafana.com/grafana/dashboards?plcmt=footer" target="_blank" rel="noopener noreferrer">Dashboards<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 来导入他人的作品。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">docker</span> run <span class="token parameter variable">--restart</span><span class="token operator">=</span>always <span class="token parameter variable">-d</span> <span class="token punctuation">\</span>
+ <span class="token parameter variable">-p</span> <span class="token number">3000</span>:3000 <span class="token punctuation">\</span>
+ <span class="token parameter variable">--name</span> grafana <span class="token punctuation">\</span>
+ grafana/grafana
+</code></pre></div><p>稍后访问 <code>10.0.0.128:3000</code> 并使用 <code>admin/admin</code> 进行登录，在 <code>Configuration</code> 启用 <code>Prometheus</code>，然后就可以在 <code>Dashboards</code> 的 <code>Manage</code> 中查看了。</p> <h2 id="警报"><a href="#警报" class="header-anchor">#</a> 警报</h2> <p>良好的警报应该具备以下特征：</p> <ol><li>适当数量的警报，关注症状而不是原因</li> <li>应设置正确的警报优先级</li> <li>警报应包括适当的上下文，以便它们可以立即使用</li></ol> <p>我们会在 Prometheus 服务器上编写警报规则，这些规则将使用收集的指标并在指定的阈值或标准上触发警报，还可以为警报添加一些上下文。当指标达到阈值或标准时，会生成一个警报并将其推送到 Alertmanager。</p> <p>可以参考一些报警规则 <a href="https://awesome-prometheus-alerts.grep.to/" target="_blank" rel="noopener noreferrer">Awesome Prometheus alerts<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>。</p> <h3 id="alertmanager"><a href="#alertmanager" class="header-anchor">#</a> alertmanager</h3> <p>Alertmanager 会对警报进行去重、分组，然后路由到不同的接收器，如电子邮件、短信或 SaaS 服务等。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">docker</span> run <span class="token parameter variable">--restart</span><span class="token operator">=</span>always <span class="token parameter variable">-d</span> <span class="token punctuation">\</span>
+ <span class="token parameter variable">-p</span> <span class="token number">9093</span>:9093 <span class="token punctuation">\</span>
+ <span class="token parameter variable">-v</span> /path/alertmanager.yml:/etc/alertmanager/alertmanager.yml <span class="token punctuation">\</span>
+ <span class="token parameter variable">--name</span> alertmanager <span class="token punctuation">\</span>
+ prom/alertmanager
+</code></pre></div><h3 id="配置注意项"><a href="#配置注意项" class="header-anchor">#</a> 配置注意项</h3> <p>默认 <code>prometheus.yml</code> 中 <code>alertmanager:9093</code> 在 hosts 解析下才会生效，可手动指定 <code>ip:port</code> 解决。</p> <p><code>alertmanager.yml</code> 默认情况下所有警报都组合在一起，指定 <code>group_by: ['instance']</code> 可根据实例组合在一起。</p> <p>更多配置可见 <a href="https://prometheus.io/docs/alerting/latest/configuration/#route" target="_blank" rel="noopener noreferrer">route<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>。</p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/minboo/docs/edit/master/docs/os/linux/prometheus.md" target="_blank" rel="noopener noreferrer">编辑文档！</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2022年9月11日晚上11点48分</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/os/linux/job-control.html" class="prev">
+        作业控制
+      </a></span> <span class="next"><a href="/os/linux/raid.html">
+        磁盘阵列
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.b042dfd4.js" defer></script><script src="/assets/js/2.8154945c.js" defer></script><script src="/assets/js/78.62390d6f.js" defer></script><script src="/assets/js/3.4234061e.js" defer></script>
+  </body>
+</html>

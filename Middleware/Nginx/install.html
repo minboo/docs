@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Nginx安装 | 在路上</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/logo.png">
+    <mata name="author" content="在路上"></mata>
+    <mata name="Keyword" content="我的博客"></mata>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon-152x152.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <meta name="description" content="description描述">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/assets/css/0.styles.92fb795d.css" as="style"><link rel="preload" href="/assets/js/app.b042dfd4.js" as="script"><link rel="preload" href="/assets/js/2.8154945c.js" as="script"><link rel="preload" href="/assets/js/16.0f637415.js" as="script"><link rel="preload" href="/assets/js/3.4234061e.js" as="script"><link rel="prefetch" href="/assets/js/10.b0ef5cc7.js"><link rel="prefetch" href="/assets/js/100.c94e731e.js"><link rel="prefetch" href="/assets/js/101.48c30368.js"><link rel="prefetch" href="/assets/js/102.46c7e4c5.js"><link rel="prefetch" href="/assets/js/103.c3a5deff.js"><link rel="prefetch" href="/assets/js/104.0a230598.js"><link rel="prefetch" href="/assets/js/105.5bb8ca11.js"><link rel="prefetch" href="/assets/js/106.452ae601.js"><link rel="prefetch" href="/assets/js/107.25f200d5.js"><link rel="prefetch" href="/assets/js/108.17d74b6e.js"><link rel="prefetch" href="/assets/js/109.13b1de0b.js"><link rel="prefetch" href="/assets/js/11.97d54b7d.js"><link rel="prefetch" href="/assets/js/110.ec225bdb.js"><link rel="prefetch" href="/assets/js/111.b852821d.js"><link rel="prefetch" href="/assets/js/112.5652e068.js"><link rel="prefetch" href="/assets/js/113.accd65c3.js"><link rel="prefetch" href="/assets/js/12.9aae7b96.js"><link rel="prefetch" href="/assets/js/13.848a8a4d.js"><link rel="prefetch" href="/assets/js/14.c4cbbbac.js"><link rel="prefetch" href="/assets/js/15.865d5993.js"><link rel="prefetch" href="/assets/js/17.77902faf.js"><link rel="prefetch" href="/assets/js/18.06c5e1a8.js"><link rel="prefetch" href="/assets/js/19.058ef2e9.js"><link rel="prefetch" href="/assets/js/20.9d8d2a60.js"><link rel="prefetch" href="/assets/js/21.d53bc81e.js"><link rel="prefetch" href="/assets/js/22.013a1d1d.js"><link rel="prefetch" href="/assets/js/23.5478e71f.js"><link rel="prefetch" href="/assets/js/24.ad64936d.js"><link rel="prefetch" href="/assets/js/25.8156faf2.js"><link rel="prefetch" href="/assets/js/26.de1ad383.js"><link rel="prefetch" href="/assets/js/27.1a88c4fe.js"><link rel="prefetch" href="/assets/js/28.649ea49d.js"><link rel="prefetch" href="/assets/js/29.8bb6a22b.js"><link rel="prefetch" href="/assets/js/30.94188915.js"><link rel="prefetch" href="/assets/js/31.c7c96e55.js"><link rel="prefetch" href="/assets/js/32.b40c2f9d.js"><link rel="prefetch" href="/assets/js/33.8a2d8cd6.js"><link rel="prefetch" href="/assets/js/34.eea30f0c.js"><link rel="prefetch" href="/assets/js/35.472fbeac.js"><link rel="prefetch" href="/assets/js/36.51080cfc.js"><link rel="prefetch" href="/assets/js/37.b0f4846a.js"><link rel="prefetch" href="/assets/js/38.a1174889.js"><link rel="prefetch" href="/assets/js/39.2ef9d394.js"><link rel="prefetch" href="/assets/js/4.29fa54b8.js"><link rel="prefetch" href="/assets/js/40.a1a50e67.js"><link rel="prefetch" href="/assets/js/41.82a44a96.js"><link rel="prefetch" href="/assets/js/42.dfffe07b.js"><link rel="prefetch" href="/assets/js/43.44eea0b0.js"><link rel="prefetch" href="/assets/js/44.dc023168.js"><link rel="prefetch" href="/assets/js/45.c5dd3e94.js"><link rel="prefetch" href="/assets/js/46.79948b06.js"><link rel="prefetch" href="/assets/js/47.485ccf84.js"><link rel="prefetch" href="/assets/js/48.14084039.js"><link rel="prefetch" href="/assets/js/49.24165fa3.js"><link rel="prefetch" href="/assets/js/5.0e72a8e9.js"><link rel="prefetch" href="/assets/js/50.78813583.js"><link rel="prefetch" href="/assets/js/51.53aa9cf5.js"><link rel="prefetch" href="/assets/js/52.c22b1755.js"><link rel="prefetch" href="/assets/js/53.7ad7b4a8.js"><link rel="prefetch" href="/assets/js/54.0c093768.js"><link rel="prefetch" href="/assets/js/55.1fbbd65d.js"><link rel="prefetch" href="/assets/js/56.843ea8ee.js"><link rel="prefetch" href="/assets/js/57.123e346c.js"><link rel="prefetch" href="/assets/js/58.d34951c6.js"><link rel="prefetch" href="/assets/js/59.b85cf23f.js"><link rel="prefetch" href="/assets/js/6.d3ecc9b3.js"><link rel="prefetch" href="/assets/js/60.e9071331.js"><link rel="prefetch" href="/assets/js/61.6ac666dd.js"><link rel="prefetch" href="/assets/js/62.afab2eff.js"><link rel="prefetch" href="/assets/js/63.800abe90.js"><link rel="prefetch" href="/assets/js/64.5951988c.js"><link rel="prefetch" href="/assets/js/65.01ea9a97.js"><link rel="prefetch" href="/assets/js/66.bb85edd4.js"><link rel="prefetch" href="/assets/js/67.c0da47a9.js"><link rel="prefetch" href="/assets/js/68.ee327cdd.js"><link rel="prefetch" href="/assets/js/69.35735eff.js"><link rel="prefetch" href="/assets/js/7.3b12d94c.js"><link rel="prefetch" href="/assets/js/70.5cf976c2.js"><link rel="prefetch" href="/assets/js/71.0bfc13eb.js"><link rel="prefetch" href="/assets/js/72.6e7aeddb.js"><link rel="prefetch" href="/assets/js/73.361215c2.js"><link rel="prefetch" href="/assets/js/74.6dae3b39.js"><link rel="prefetch" href="/assets/js/75.56bbe243.js"><link rel="prefetch" href="/assets/js/76.88ce9f6b.js"><link rel="prefetch" href="/assets/js/77.52d3bde1.js"><link rel="prefetch" href="/assets/js/78.62390d6f.js"><link rel="prefetch" href="/assets/js/79.e8590d7e.js"><link rel="prefetch" href="/assets/js/8.b4a14e8c.js"><link rel="prefetch" href="/assets/js/80.0649d97d.js"><link rel="prefetch" href="/assets/js/81.f54b68cd.js"><link rel="prefetch" href="/assets/js/82.a4f85774.js"><link rel="prefetch" href="/assets/js/83.abd156a5.js"><link rel="prefetch" href="/assets/js/84.0ba27a18.js"><link rel="prefetch" href="/assets/js/85.b84ccd9c.js"><link rel="prefetch" href="/assets/js/86.c46352c6.js"><link rel="prefetch" href="/assets/js/87.3291a1b3.js"><link rel="prefetch" href="/assets/js/88.ef8e27eb.js"><link rel="prefetch" href="/assets/js/89.346fee6c.js"><link rel="prefetch" href="/assets/js/9.82925584.js"><link rel="prefetch" href="/assets/js/90.fa92de62.js"><link rel="prefetch" href="/assets/js/91.a0a26338.js"><link rel="prefetch" href="/assets/js/92.5675720d.js"><link rel="prefetch" href="/assets/js/93.0bd5bc0c.js"><link rel="prefetch" href="/assets/js/94.843c0392.js"><link rel="prefetch" href="/assets/js/95.ba825a76.js"><link rel="prefetch" href="/assets/js/96.c57767c7.js"><link rel="prefetch" href="/assets/js/97.2e9e1eb3.js"><link rel="prefetch" href="/assets/js/98.12339901.js"><link rel="prefetch" href="/assets/js/99.1f1b02fe.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.92fb795d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="在路上" class="logo"> <span class="site-name can-hide">在路上</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="框架" class="dropdown-title"><span class="title">框架</span> <span class="arrow down"></span></button> <button type="button" aria-label="框架" class="mobile-dropdown-title"><span class="title">框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Spring
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/about/" class="nav-link">
+  About
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Mybatis
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/about/" class="nav-link">
+  About
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="系统" class="dropdown-title"><span class="title">系统</span> <span class="arrow down"></span></button> <button type="button" aria-label="系统" class="mobile-dropdown-title"><span class="title">系统</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/os/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/os/ubuntu/" class="nav-link">
+  Ubuntu
+</a></li><li class="dropdown-item"><!----> <a href="/os/centos/" class="nav-link">
+  CentOS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><span class="title">后端</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端" class="mobile-dropdown-title"><span class="title">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/backend/mysql/" class="nav-link">
+  MySQL
+</a></li><li class="dropdown-item"><!----> <a href="/backend/redis/" class="nav-link">
+  Redis
+</a></li><li class="dropdown-item"><!----> <a href="/backend/docker/" class="nav-link">
+  Docker
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="中间件" class="dropdown-title"><span class="title">中间件</span> <span class="arrow down"></span></button> <button type="button" aria-label="中间件" class="mobile-dropdown-title"><span class="title">中间件</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          服务器
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/Middleware/Nginx/" class="nav-link router-link-active">
+  Nginx
+</a></li></ul></li><li class="dropdown-item"><h4>
+          消息队列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/RabbitMQ/" class="nav-link">
+  RabbitMQ
+</a></li><li class="dropdown-subitem"><a href="/RocketMQ/" class="nav-link">
+  RocketMQ
+</a></li></ul></li><li class="dropdown-item"><h4>
+          搜索引擎
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/ElasticSearch/" class="nav-link">
+  ElasticSearch
+</a></li><li class="dropdown-subitem"><a href="/slor/" class="nav-link">
+  Solr
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发工具" class="dropdown-title"><span class="title">开发工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="开发工具" class="mobile-dropdown-title"><span class="title">开发工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tools/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/tools/github/" class="nav-link">
+  Github
+</a></li><li class="dropdown-item"><!----> <a href="/tools/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/tools/bookmark-scripts/" class="nav-link">
+  Bookmark scripts
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow down"></span></button> <button type="button" aria-label="更多" class="mobile-dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/more/navigation.html" class="nav-link">
+  导航 🎉
+</a></li><li class="dropdown-item"><!----> <a href="https://shanyuhai123.github.io/vuepress-plugin-auto-sidebar/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VuePress 侧边栏插件
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://vuepress.vuejs.org/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VuePress 官网
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="框架" class="dropdown-title"><span class="title">框架</span> <span class="arrow down"></span></button> <button type="button" aria-label="框架" class="mobile-dropdown-title"><span class="title">框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Spring
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/about/" class="nav-link">
+  About
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Mybatis
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/about/" class="nav-link">
+  About
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="系统" class="dropdown-title"><span class="title">系统</span> <span class="arrow down"></span></button> <button type="button" aria-label="系统" class="mobile-dropdown-title"><span class="title">系统</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/os/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/os/ubuntu/" class="nav-link">
+  Ubuntu
+</a></li><li class="dropdown-item"><!----> <a href="/os/centos/" class="nav-link">
+  CentOS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><span class="title">后端</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端" class="mobile-dropdown-title"><span class="title">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/backend/mysql/" class="nav-link">
+  MySQL
+</a></li><li class="dropdown-item"><!----> <a href="/backend/redis/" class="nav-link">
+  Redis
+</a></li><li class="dropdown-item"><!----> <a href="/backend/docker/" class="nav-link">
+  Docker
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="中间件" class="dropdown-title"><span class="title">中间件</span> <span class="arrow down"></span></button> <button type="button" aria-label="中间件" class="mobile-dropdown-title"><span class="title">中间件</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          服务器
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/Middleware/Nginx/" class="nav-link router-link-active">
+  Nginx
+</a></li></ul></li><li class="dropdown-item"><h4>
+          消息队列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/RabbitMQ/" class="nav-link">
+  RabbitMQ
+</a></li><li class="dropdown-subitem"><a href="/RocketMQ/" class="nav-link">
+  RocketMQ
+</a></li></ul></li><li class="dropdown-item"><h4>
+          搜索引擎
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/ElasticSearch/" class="nav-link">
+  ElasticSearch
+</a></li><li class="dropdown-subitem"><a href="/slor/" class="nav-link">
+  Solr
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发工具" class="dropdown-title"><span class="title">开发工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="开发工具" class="mobile-dropdown-title"><span class="title">开发工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tools/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/tools/github/" class="nav-link">
+  Github
+</a></li><li class="dropdown-item"><!----> <a href="/tools/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/tools/bookmark-scripts/" class="nav-link">
+  Bookmark scripts
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow down"></span></button> <button type="button" aria-label="更多" class="mobile-dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/more/navigation.html" class="nav-link">
+  导航 🎉
+</a></li><li class="dropdown-item"><!----> <a href="https://shanyuhai123.github.io/vuepress-plugin-auto-sidebar/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VuePress 侧边栏插件
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://vuepress.vuejs.org/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VuePress 官网
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Nginx</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/Middleware/Nginx/" aria-current="page" class="sidebar-link">Nginx入门</a></li><li><a href="/Middleware/Nginx/pre.html" class="sidebar-link">前提准备</a></li><li><a href="/Middleware/Nginx/install.html" aria-current="page" class="active sidebar-link">Nginx安装</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Middleware/Nginx/install.html#一、源码手动安装" class="sidebar-link">一、源码手动安装</a></li><li class="sidebar-sub-header"><a href="/Middleware/Nginx/install.html#二、yum安装" class="sidebar-link">二、Yum安装</a></li><li class="sidebar-sub-header"><a href="/Middleware/Nginx/install.html#三、nginx-目录" class="sidebar-link">三、Nginx 目录</a></li></ul></li><li><a href="/Middleware/Nginx/principle.html" class="sidebar-link">基本运行原理</a></li><li><a href="/Middleware/Nginx/configuration.html" class="sidebar-link">Nginx配置</a></li><li><a href="/Middleware/Nginx/reverseProxy.html" class="sidebar-link">反向代理与负载均衡</a></li><li><a href="/Middleware/Nginx/Dynamic-StaticSeparation.html" class="sidebar-link">动静分离</a></li><li><a href="/Middleware/Nginx/URLRewirte.html" class="sidebar-link">URL重写（URLRewrite）</a></li><li><a href="/Middleware/Nginx/负载均衡+URLRewirte.html" class="sidebar-link">负载均衡+URLRewirte</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="nginx安装"><a href="#nginx安装" class="header-anchor">#</a> Nginx安装</h1> <h2 id="一、源码手动安装"><a href="#一、源码手动安装" class="header-anchor">#</a> 一、源码手动安装</h2> <ul><li><strong>下载Nginx包</strong></li></ul> <p><a href="http://nginx.org/en/download.html" target="_blank" rel="noopener noreferrer">官网下载地址<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><img src="https://minboo-blog-img.oss-cn-guangzhou.aliyuncs.com/img/image-20220910161044819.png" alt="image-20220910161044819"></p> <p>使用FTP工具将文件上传到虚拟机中</p> <ul><li>解压Nginx包，并安装</li></ul> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">tar</span> <span class="token parameter variable">-zxvf</span>  nginx-1.23.1.tar.gz <span class="token comment">#解压到当前目录</span>
+
+<span class="token builtin class-name">cd</span> nginx-1.23.1 <span class="token comment">#进入解压后的文件夹</span>
+
+<span class="token comment">#文件夹中的文件：</span>
+auto  CHANGES.ru  configure  html  <span class="token function">man</span>  src CHANGES  conf  contrib    LICENSE  README
+</code></pre></div><p>如果通过Nginx源码安装需要提前准备的内容：</p> <p><strong>GCC编译器</strong></p> <p>Nginx是使用C语言编写的程序，因此想要运行Nginx就需要安装一个编译工具。GCC就是一个开源的编译器集合，用于处理各种各样的语言，其中就包含了C语言。</p> <p><strong>PCRE</strong></p> <p>Nginx在编译过程中需要使用到PCRE库（perl Compatible Regular Expressoin 兼容正则表达式库)，因为在Nginx的Rewrite模块和http核心模块都会使用到PCRE正则表达式语法。</p> <p><strong>zlib</strong></p> <p>zlib库提供了开发人员的压缩算法，在Nginx的各个模块中需要使用gzip压缩，所以我们也需要提前安装其库及源代码zlib和zlib-devel</p> <p><strong>OpenSSL</strong></p> <p>OpenSSL是一个开放源代码的软件库包，应用程序可以使用这个包进行安全通信，并且避免被窃听。</p> <p>SSL：Secure Sockets Layer安全套接协议的缩写，可以在Internet上提供秘密性传输，其目标是保证两个应用间通信的保密性和可靠性。在Nginx中，如果服务器需要提供安全网页时就需要用到OpenSSL库，所以我们需要对OpenSSL的库文件及它的开发安装包进行一个安装。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment">#安装C编译器</span>
+yum <span class="token function">install</span> <span class="token parameter variable">-y</span> gcc
+<span class="token comment">#查看是否安装成功</span>
+gcc <span class="token parameter variable">--version</span>
+
+<span class="token comment">#安装pcre库</span>
+yum <span class="token function">install</span> <span class="token parameter variable">-y</span> pcre pcre-devel
+<span class="token comment">#查看是否安装成功</span>
+<span class="token function">rpm</span> <span class="token parameter variable">-qa</span> pcre pcre-devel
+
+<span class="token comment">#安装zlib</span>
+yum <span class="token function">install</span> <span class="token parameter variable">-y</span> zlib zlib-devel
+<span class="token function">rpm</span> <span class="token parameter variable">-qa</span> zlib zlib-devel
+
+<span class="token comment">#安装OpenSSL</span>
+yum <span class="token function">install</span> <span class="token parameter variable">-y</span> openssl openssl-devel
+
+<span class="token comment">#全部安装</span>
+yum <span class="token function">install</span> <span class="token parameter variable">-y</span> gcc pcre pcre-devel zlib zlib-devel openssl openssl-devel
+</code></pre></div><p>通过<code>./configure</code>来对编译参数进行设置，需要我们手动来指定。那么都有哪些参数可以进行设置，接下来我们进行一个详细的说明。</p> <p>PATH：是和路径相关的配置信息</p> <p>with：是启动模块，默认是关闭的</p> <p>without：是关闭模块，默认是开启的</p> <p>我们先来认识一些简单的路径配置已经通过这些配置来完成一个简单的编译：</p> <p><strong>--prefix=PATH</strong></p> <div class="language- extra-class"><pre class="language-text"><code>指向Nginx的安装目录，默认值为/usr/local/nginx   
+</code></pre></div><p><strong>--sbin-path=PATH</strong></p> <div class="language- extra-class"><pre class="language-text"><code>指向(执行)程序文件(nginx)的路径,默认值为&lt;prefix&gt;/sbin/nginx
+</code></pre></div><p><strong>--modules-path=PATH</strong></p> <div class="language- extra-class"><pre class="language-text"><code>指向Nginx动态模块安装目录，默认值为&lt;prefix&gt;/modules
+</code></pre></div><p><strong>--conf-path=PATH</strong></p> <div class="language- extra-class"><pre class="language-text"><code>指向配置文件(nginx.conf)的路径,默认值为&lt;prefix&gt;/conf/nginx.conf
+</code></pre></div><p><strong>--error-log-path=PATH</strong></p> <div class="language- extra-class"><pre class="language-text"><code>指向错误日志文件的路径,默认值为&lt;prefix&gt;/logs/error.log
+</code></pre></div><p><strong>--http-log-path=PATH</strong></p> <div class="language- extra-class"><pre class="language-text"><code>指向访问日志文件的路径,默认值为&lt;prefix&gt;/logs/access.log
+</code></pre></div><p><strong>--pid-path=PATH</strong></p> <div class="language- extra-class"><pre class="language-text"><code>指向Nginx启动后进行ID的文件路径，默认值为&lt;prefix&gt;/logs/nginx.pid
+</code></pre></div><p><strong>--lock-path=PATH</strong></p> <div class="language- extra-class"><pre class="language-text"><code>指向Nginx锁文件的存放路径,默认值为&lt;prefix&gt;/logs/nginx.lock
+</code></pre></div><h3 id="开始安装"><a href="#开始安装" class="header-anchor">#</a> <strong>开始安装</strong></h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment">#解压到当前目录</span>
+<span class="token function">tar</span> <span class="token parameter variable">-zxvf</span>  nginx-1.23.1.tar.gz 
+
+<span class="token comment">#进入解压后的文件夹</span>
+<span class="token builtin class-name">cd</span> nginx-1.23.1 
+
+<span class="token comment">#安装时指定一些参数</span>
+./configure <span class="token parameter variable">--prefix</span><span class="token operator">=</span>/usr/local/nginx <span class="token punctuation">\</span>
+--sbin-path<span class="token operator">=</span>/usr/local/nginx/sbin/nginx <span class="token punctuation">\</span>
+--modules-path<span class="token operator">=</span>/usr/local/nginx/modules <span class="token punctuation">\</span>
+--conf-path<span class="token operator">=</span>/usr/local/nginx/conf/nginx.conf <span class="token punctuation">\</span>
+--error-log-path<span class="token operator">=</span>/usr/local/nginx/logs/error.log <span class="token punctuation">\</span>
+--http-log-path<span class="token operator">=</span>/usr/local/nginx/logs/access.log <span class="token punctuation">\</span>
+--pid-path<span class="token operator">=</span>/usr/local/nginx/logs/nginx.pid <span class="token punctuation">\</span>
+--lock-path<span class="token operator">=</span>/usr/local/nginx/logs/nginx.lock
+
+<span class="token comment">#编译和安装</span>
+<span class="token function">make</span> <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token function">install</span>
+</code></pre></div><p><strong>查看安装位置</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">whereis</span> nginx
+</code></pre></div><h3 id="卸载"><a href="#卸载" class="header-anchor">#</a> 卸载</h3> <p><strong>步骤一：需要将nginx的进程关闭</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code>./nginx <span class="token parameter variable">-s</span> stop
+</code></pre></div><p><strong>步骤二：将安装的nginx进行删除</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">rm</span> <span class="token parameter variable">-rf</span> /usr/local/nginx
+</code></pre></div><p><strong>步骤三：将安装包之前编译的环境清除掉</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment">#进入前面解压出来的目录</span>
+<span class="token builtin class-name">cd</span> <span class="token builtin class-name">cd</span> ~/nginx-1.23.1
+<span class="token comment">#清除编译生成的文件</span>
+<span class="token function">make</span> clean
+</code></pre></div><p><strong>启动</strong></p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token builtin class-name">cd</span> /usr/local/nginx/sbin
+
+<span class="token function">ls</span> <span class="token comment"># 里面是一个nginx的可执行文件</span>
+
+./nginx <span class="token comment"># 启动这个可执行</span>
+</code></pre></div><p><strong>关于防火墙</strong></p> <p>关闭防火墙</p> <div class="language-shell extra-class"><pre class="language-shell"><code>systemctl stop firewalld.service
+</code></pre></div><p>禁止防火墙开机启动</p> <div class="language-shell extra-class"><pre class="language-shell"><code>systemctl disable firewalld.service 
+</code></pre></div><p>放行端口</p> <div class="language-shell extra-class"><pre class="language-shell"><code>firewall-cmd <span class="token parameter variable">--zone</span><span class="token operator">=</span>public --add-port<span class="token operator">=</span><span class="token number">80</span>/tcp <span class="token parameter variable">--permanent</span> 
+</code></pre></div><p>重启防火墙</p> <div class="language-shell extra-class"><pre class="language-shell"><code>firewall-cmd <span class="token parameter variable">--reload</span>
+systemctl restart firewalld
+</code></pre></div><p><strong>补充Nginx命令</strong></p> <div class="language-shell extra-class"><pre class="language-shell"><code>./nginx <span class="token parameter variable">-s</span> stop <span class="token comment">#快速停止</span>
+./nginx <span class="token parameter variable">-s</span> quit <span class="token comment">#完成已接受的请求后，停止</span>
+./nginx <span class="token parameter variable">-s</span> reload <span class="token comment">#重新加载配置</span>
+./nginx <span class="token parameter variable">-t</span> <span class="token comment">#检查nginx配置是否正确</span>
+</code></pre></div><p>查看nginx状态</p> <div class="language-text extra-class"><pre class="language-text"><code>ps -ef|grep nginx
+</code></pre></div><p>启动时：</p> <p><img src="https://hedaodao-1256075778.cos.ap-beijing.myqcloud.com/Nginx/image-20220501205303265.png" alt="image-20220501205303265"></p> <p>停止时：</p> <p><img src="https://hedaodao-1256075778.cos.ap-beijing.myqcloud.com/Nginx/image-20220501205333304.png" alt="image-20220501205333304"></p> <ul><li>注册系统服务</li></ul> <p>通过系统服务的方式启动nginx</p> <div class="language-text extra-class"><pre class="language-text"><code>vi /usr/lib/systemd/system/nginx.service
+</code></pre></div><div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>Unit<span class="token punctuation">]</span> 
+<span class="token assign-left variable">Description</span><span class="token operator">=</span>nginx
+<span class="token assign-left variable">After</span><span class="token operator">=</span>network.target remote-fs.target nss-lookup.target
+
+<span class="token punctuation">[</span>Service<span class="token punctuation">]</span>
+<span class="token assign-left variable">Type</span><span class="token operator">=</span>forking
+<span class="token assign-left variable">PIDFile</span><span class="token operator">=</span>/usr/local/nginx/logs/nginx.pid
+<span class="token assign-left variable">ExecStartPre</span><span class="token operator">=</span>/usr/local/nginx/sbin/nginx <span class="token parameter variable">-t</span> <span class="token parameter variable">-c</span> /usr/local/nginx/conf/nginx.conf
+<span class="token assign-left variable">ExecStart</span><span class="token operator">=</span>/usr/local/nginx/sbin/nginx <span class="token parameter variable">-c</span> /usr/local/nginx/conf/nginx.conf
+<span class="token assign-left variable">ExecReload</span><span class="token operator">=</span>/usr/local/nginx/sbin/nginx <span class="token parameter variable">-s</span> reload
+<span class="token assign-left variable">ExecStop</span><span class="token operator">=</span>/usr/local/nginx/sbin/nginx <span class="token parameter variable">-s</span> stop
+<span class="token assign-left variable">ExecQuit</span><span class="token operator">=</span>/usr/local/nginx/sbin/nginx <span class="token parameter variable">-s</span> quit 
+<span class="token assign-left variable">PrivateTmp</span><span class="token operator">=</span>true
+    
+<span class="token punctuation">[</span>Install<span class="token punctuation">]</span>   
+<span class="token assign-left variable">WantedBy</span><span class="token operator">=</span>multi-user.target  <span class="token comment"># 多用户</span>
+</code></pre></div><p>重新加载系统服务</p> <div class="language-shell extra-class"><pre class="language-shell"><code>systemctl daemon-reload
+</code></pre></div><p>启动服务</p> <div class="language-shell extra-class"><pre class="language-shell"><code>systemctl start nginx.service 
+</code></pre></div><p>开机启动</p> <div class="language-shell extra-class"><pre class="language-shell"><code>systemctl <span class="token builtin class-name">enable</span> nginx.service
+</code></pre></div><p>配置软链接，以便全局使用nginx命令：</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">ln</span> <span class="token parameter variable">-s</span> /usr/local/nginx/sbin/nginx /usr/sbin/nginx
+</code></pre></div><h2 id="二、yum安装"><a href="#二、yum安装" class="header-anchor">#</a> 二、Yum安装</h2> <p>使用源码进行安装，我们会发现安装的过程比较繁琐，需要提前准备GCC编译器、PCRE兼容正则表达式库、zlib压缩库、OpenSSL安全通信的软件库包，然后才能进行Nginx的安装。</p> <h3 id="检测源"><a href="#检测源" class="header-anchor">#</a> 检测源</h3> <p>首先需要检查当前源是否有 Nginx（CentOS示例），当没有的时候需要自己添加源。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>yum list <span class="token operator">|</span> <span class="token function">grep</span> nginx 
+</code></pre></div><h3 id="添加-yum-源并安装"><a href="#添加-yum-源并安装" class="header-anchor">#</a> 添加 yum 源并安装</h3> <p><strong>（1）安装yum-utils</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">sudo</span> yum  <span class="token function">install</span> <span class="token parameter variable">-y</span> yum-utils
+</code></pre></div><p><strong>（2）添加yum源文件</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">vim</span> /etc/yum.repos.d/nginx.repo
+</code></pre></div><div class="language-bash extra-class"><pre class="language-bash"><code><span class="token punctuation">[</span>nginx-stable<span class="token punctuation">]</span>
+<span class="token assign-left variable">name</span><span class="token operator">=</span>nginx stable repo
+<span class="token assign-left variable">baseurl</span><span class="token operator">=</span>http://nginx.org/packages/centos/<span class="token variable">$releasever</span>/<span class="token variable">$basearch</span>/
+<span class="token assign-left variable">gpgcheck</span><span class="token operator">=</span><span class="token number">1</span>
+<span class="token assign-left variable">enabled</span><span class="token operator">=</span><span class="token number">1</span>
+<span class="token assign-left variable">gpgkey</span><span class="token operator">=</span>https://nginx.org/keys/nginx_signing.key
+<span class="token assign-left variable">module_hotfixes</span><span class="token operator">=</span>true
+
+<span class="token punctuation">[</span>nginx-mainline<span class="token punctuation">]</span>
+<span class="token assign-left variable">name</span><span class="token operator">=</span>nginx mainline repo
+<span class="token assign-left variable">baseurl</span><span class="token operator">=</span>http://nginx.org/packages/mainline/centos/<span class="token variable">$releasever</span>/<span class="token variable">$basearch</span>/
+<span class="token assign-left variable">gpgcheck</span><span class="token operator">=</span><span class="token number">1</span>
+<span class="token assign-left variable">enabled</span><span class="token operator">=</span><span class="token number">0</span>
+<span class="token assign-left variable">gpgkey</span><span class="token operator">=</span>https://nginx.org/keys/nginx_signing.key
+<span class="token assign-left variable">module_hotfixes</span><span class="token operator">=</span>true
+</code></pre></div><p><strong>（3）查看是否安装成功</strong></p> <div class="language- extra-class"><pre class="language-text"><code>yum list | grep nginx
+</code></pre></div><p><img src="https://minboo-blog-img.oss-cn-guangzhou.aliyuncs.com/img/1581416861684.png" alt="1581416861684"></p> <h3 id="使用yum进行安装"><a href="#使用yum进行安装" class="header-anchor">#</a> 使用yum进行安装</h3> <div class="language-bash extra-class"><pre class="language-bash"><code>yun <span class="token function">install</span> <span class="token parameter variable">-y</span> nginx
+</code></pre></div><p>（5）查看nginx的安装位置</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">whereis</span> nginx
+</code></pre></div><p><img src="https://minboo-blog-img.oss-cn-guangzhou.aliyuncs.com/img/image-20220913232957567.png" alt="image-20220913232957567"></p> <p>虽然现在大部分时候都上 docker 了，但偶尔自己编译模块时手动安装还是比较方便的。</p> <h2 id="三、nginx-目录"><a href="#三、nginx-目录" class="header-anchor">#</a> 三、Nginx 目录</h2> <p>进入Nginx的主目录我们可以看到这些文件夹</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@localhost nginx<span class="token punctuation">]</span><span class="token comment"># ls</span>
+client_body_temp  conf  fastcgi_temp  html  logs  proxy_temp  sbin  scgi_temp  uwsgi_temp
+</code></pre></div><p>其中这几个文件夹在刚安装后是没有的，主要用来存放运行过程中的临时文件</p> <div class="language-shell extra-class"><pre class="language-shell"><code>client_body_temp fastcgi_temp proxy_temp scgi_temp
+</code></pre></div><p><strong>conf</strong> 用来存放配置文件相关</p> <p><strong>html</strong> 用来存放静态文件的默认目录 html、css等</p> <p><strong>sbin</strong> nginx的主程序</p> <p><strong>logs</strong> 文件夹用于存放日志信息</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># tree /usr/local/nginx</span>
+/usr/local/nginx
+├── client_body_temp                 <span class="token comment"># POST 大文件暂存目录</span>
+├── conf                             <span class="token comment"># Nginx所有配置文件的目录</span>
+│   ├── fastcgi.conf                 <span class="token comment"># fastcgi相关参数的配置文件</span>
+│   ├── fastcgi.conf.default         <span class="token comment"># fastcgi.conf的原始备份文件</span>
+│   ├── fastcgi_params               <span class="token comment"># fastcgi的参数文件</span>
+│   ├── fastcgi_params.default       
+│   ├── koi-utf
+│   ├── koi-win
+│   ├── mime.types                   <span class="token comment"># 媒体类型</span>
+│   ├── mime.types.default
+│   ├── nginx.conf                   <span class="token comment">#这是Nginx默认的主配置文件，日常使用和修改的文件</span>
+│   ├── nginx.conf.default
+│   ├── scgi_params                  <span class="token comment"># scgi相关参数文件</span>
+│   ├── scgi_params.default  
+│   ├── uwsgi_params                 <span class="token comment"># uwsgi相关参数文件</span>
+│   ├── uwsgi_params.default
+│   └── win-utf
+├── fastcgi_temp                     <span class="token comment"># fastcgi临时数据目录</span>
+├── html                             <span class="token comment"># Nginx默认站点目录</span>
+│   ├── 50x.html                     <span class="token comment"># 错误页面优雅替代显示文件，例如出现502错误时会调用此页面</span>
+│   └── index.html                   <span class="token comment"># 默认的首页文件</span>
+├── logs                             <span class="token comment"># Nginx日志目录</span>
+│   ├── access.log                   <span class="token comment"># 访问日志文件</span>
+│   ├── error.log                    <span class="token comment"># 错误日志文件</span>
+│   └── nginx.pid                    <span class="token comment"># pid文件，Nginx进程启动后，会把所有进程的ID号写到此文件</span>
+├── proxy_temp                       <span class="token comment"># 临时目录</span>
+├── sbin                             <span class="token comment"># Nginx 可执行文件目录</span>
+│   └── nginx                        <span class="token comment"># Nginx 二进制可执行程序</span>
+├── scgi_temp                        <span class="token comment"># 临时目录</span>
+└── uwsgi_temp                       <span class="token comment"># 临时目录</span>
+
+</code></pre></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/minboo/docs/edit/master/docs/Middleware/Nginx/install.md" target="_blank" rel="noopener noreferrer">编辑文档！</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2022年9月13日晚上11点43分</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/Middleware/Nginx/pre.html" class="prev">
+        前提准备
+      </a></span> <span class="next"><a href="/Middleware/Nginx/principle.html">
+        基本运行原理
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.b042dfd4.js" defer></script><script src="/assets/js/2.8154945c.js" defer></script><script src="/assets/js/16.0f637415.js" defer></script><script src="/assets/js/3.4234061e.js" defer></script>
+  </body>
+</html>

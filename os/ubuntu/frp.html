@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>内网穿透 FRP | 在路上</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/logo.png">
+    <mata name="author" content="在路上"></mata>
+    <mata name="Keyword" content="我的博客"></mata>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon-152x152.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <meta name="description" content="description描述">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/assets/css/0.styles.92fb795d.css" as="style"><link rel="preload" href="/assets/js/app.b042dfd4.js" as="script"><link rel="preload" href="/assets/js/2.8154945c.js" as="script"><link rel="preload" href="/assets/js/92.5675720d.js" as="script"><link rel="preload" href="/assets/js/3.4234061e.js" as="script"><link rel="prefetch" href="/assets/js/10.b0ef5cc7.js"><link rel="prefetch" href="/assets/js/100.c94e731e.js"><link rel="prefetch" href="/assets/js/101.48c30368.js"><link rel="prefetch" href="/assets/js/102.46c7e4c5.js"><link rel="prefetch" href="/assets/js/103.c3a5deff.js"><link rel="prefetch" href="/assets/js/104.0a230598.js"><link rel="prefetch" href="/assets/js/105.5bb8ca11.js"><link rel="prefetch" href="/assets/js/106.452ae601.js"><link rel="prefetch" href="/assets/js/107.25f200d5.js"><link rel="prefetch" href="/assets/js/108.17d74b6e.js"><link rel="prefetch" href="/assets/js/109.13b1de0b.js"><link rel="prefetch" href="/assets/js/11.97d54b7d.js"><link rel="prefetch" href="/assets/js/110.ec225bdb.js"><link rel="prefetch" href="/assets/js/111.b852821d.js"><link rel="prefetch" href="/assets/js/112.5652e068.js"><link rel="prefetch" href="/assets/js/113.accd65c3.js"><link rel="prefetch" href="/assets/js/12.9aae7b96.js"><link rel="prefetch" href="/assets/js/13.848a8a4d.js"><link rel="prefetch" href="/assets/js/14.c4cbbbac.js"><link rel="prefetch" href="/assets/js/15.865d5993.js"><link rel="prefetch" href="/assets/js/16.0f637415.js"><link rel="prefetch" href="/assets/js/17.77902faf.js"><link rel="prefetch" href="/assets/js/18.06c5e1a8.js"><link rel="prefetch" href="/assets/js/19.058ef2e9.js"><link rel="prefetch" href="/assets/js/20.9d8d2a60.js"><link rel="prefetch" href="/assets/js/21.d53bc81e.js"><link rel="prefetch" href="/assets/js/22.013a1d1d.js"><link rel="prefetch" href="/assets/js/23.5478e71f.js"><link rel="prefetch" href="/assets/js/24.ad64936d.js"><link rel="prefetch" href="/assets/js/25.8156faf2.js"><link rel="prefetch" href="/assets/js/26.de1ad383.js"><link rel="prefetch" href="/assets/js/27.1a88c4fe.js"><link rel="prefetch" href="/assets/js/28.649ea49d.js"><link rel="prefetch" href="/assets/js/29.8bb6a22b.js"><link rel="prefetch" href="/assets/js/30.94188915.js"><link rel="prefetch" href="/assets/js/31.c7c96e55.js"><link rel="prefetch" href="/assets/js/32.b40c2f9d.js"><link rel="prefetch" href="/assets/js/33.8a2d8cd6.js"><link rel="prefetch" href="/assets/js/34.eea30f0c.js"><link rel="prefetch" href="/assets/js/35.472fbeac.js"><link rel="prefetch" href="/assets/js/36.51080cfc.js"><link rel="prefetch" href="/assets/js/37.b0f4846a.js"><link rel="prefetch" href="/assets/js/38.a1174889.js"><link rel="prefetch" href="/assets/js/39.2ef9d394.js"><link rel="prefetch" href="/assets/js/4.29fa54b8.js"><link rel="prefetch" href="/assets/js/40.a1a50e67.js"><link rel="prefetch" href="/assets/js/41.82a44a96.js"><link rel="prefetch" href="/assets/js/42.dfffe07b.js"><link rel="prefetch" href="/assets/js/43.44eea0b0.js"><link rel="prefetch" href="/assets/js/44.dc023168.js"><link rel="prefetch" href="/assets/js/45.c5dd3e94.js"><link rel="prefetch" href="/assets/js/46.79948b06.js"><link rel="prefetch" href="/assets/js/47.485ccf84.js"><link rel="prefetch" href="/assets/js/48.14084039.js"><link rel="prefetch" href="/assets/js/49.24165fa3.js"><link rel="prefetch" href="/assets/js/5.0e72a8e9.js"><link rel="prefetch" href="/assets/js/50.78813583.js"><link rel="prefetch" href="/assets/js/51.53aa9cf5.js"><link rel="prefetch" href="/assets/js/52.c22b1755.js"><link rel="prefetch" href="/assets/js/53.7ad7b4a8.js"><link rel="prefetch" href="/assets/js/54.0c093768.js"><link rel="prefetch" href="/assets/js/55.1fbbd65d.js"><link rel="prefetch" href="/assets/js/56.843ea8ee.js"><link rel="prefetch" href="/assets/js/57.123e346c.js"><link rel="prefetch" href="/assets/js/58.d34951c6.js"><link rel="prefetch" href="/assets/js/59.b85cf23f.js"><link rel="prefetch" href="/assets/js/6.d3ecc9b3.js"><link rel="prefetch" href="/assets/js/60.e9071331.js"><link rel="prefetch" href="/assets/js/61.6ac666dd.js"><link rel="prefetch" href="/assets/js/62.afab2eff.js"><link rel="prefetch" href="/assets/js/63.800abe90.js"><link rel="prefetch" href="/assets/js/64.5951988c.js"><link rel="prefetch" href="/assets/js/65.01ea9a97.js"><link rel="prefetch" href="/assets/js/66.bb85edd4.js"><link rel="prefetch" href="/assets/js/67.c0da47a9.js"><link rel="prefetch" href="/assets/js/68.ee327cdd.js"><link rel="prefetch" href="/assets/js/69.35735eff.js"><link rel="prefetch" href="/assets/js/7.3b12d94c.js"><link rel="prefetch" href="/assets/js/70.5cf976c2.js"><link rel="prefetch" href="/assets/js/71.0bfc13eb.js"><link rel="prefetch" href="/assets/js/72.6e7aeddb.js"><link rel="prefetch" href="/assets/js/73.361215c2.js"><link rel="prefetch" href="/assets/js/74.6dae3b39.js"><link rel="prefetch" href="/assets/js/75.56bbe243.js"><link rel="prefetch" href="/assets/js/76.88ce9f6b.js"><link rel="prefetch" href="/assets/js/77.52d3bde1.js"><link rel="prefetch" href="/assets/js/78.62390d6f.js"><link rel="prefetch" href="/assets/js/79.e8590d7e.js"><link rel="prefetch" href="/assets/js/8.b4a14e8c.js"><link rel="prefetch" href="/assets/js/80.0649d97d.js"><link rel="prefetch" href="/assets/js/81.f54b68cd.js"><link rel="prefetch" href="/assets/js/82.a4f85774.js"><link rel="prefetch" href="/assets/js/83.abd156a5.js"><link rel="prefetch" href="/assets/js/84.0ba27a18.js"><link rel="prefetch" href="/assets/js/85.b84ccd9c.js"><link rel="prefetch" href="/assets/js/86.c46352c6.js"><link rel="prefetch" href="/assets/js/87.3291a1b3.js"><link rel="prefetch" href="/assets/js/88.ef8e27eb.js"><link rel="prefetch" href="/assets/js/89.346fee6c.js"><link rel="prefetch" href="/assets/js/9.82925584.js"><link rel="prefetch" href="/assets/js/90.fa92de62.js"><link rel="prefetch" href="/assets/js/91.a0a26338.js"><link rel="prefetch" href="/assets/js/93.0bd5bc0c.js"><link rel="prefetch" href="/assets/js/94.843c0392.js"><link rel="prefetch" href="/assets/js/95.ba825a76.js"><link rel="prefetch" href="/assets/js/96.c57767c7.js"><link rel="prefetch" href="/assets/js/97.2e9e1eb3.js"><link rel="prefetch" href="/assets/js/98.12339901.js"><link rel="prefetch" href="/assets/js/99.1f1b02fe.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.92fb795d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="在路上" class="logo"> <span class="site-name can-hide">在路上</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="框架" class="dropdown-title"><span class="title">框架</span> <span class="arrow down"></span></button> <button type="button" aria-label="框架" class="mobile-dropdown-title"><span class="title">框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Spring
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/about/" class="nav-link">
+  About
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Mybatis
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/about/" class="nav-link">
+  About
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="系统" class="dropdown-title"><span class="title">系统</span> <span class="arrow down"></span></button> <button type="button" aria-label="系统" class="mobile-dropdown-title"><span class="title">系统</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/os/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/os/ubuntu/" class="nav-link router-link-active">
+  Ubuntu
+</a></li><li class="dropdown-item"><!----> <a href="/os/centos/" class="nav-link">
+  CentOS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><span class="title">后端</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端" class="mobile-dropdown-title"><span class="title">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/backend/mysql/" class="nav-link">
+  MySQL
+</a></li><li class="dropdown-item"><!----> <a href="/backend/redis/" class="nav-link">
+  Redis
+</a></li><li class="dropdown-item"><!----> <a href="/backend/docker/" class="nav-link">
+  Docker
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="中间件" class="dropdown-title"><span class="title">中间件</span> <span class="arrow down"></span></button> <button type="button" aria-label="中间件" class="mobile-dropdown-title"><span class="title">中间件</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          服务器
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/Middleware/Nginx/" class="nav-link">
+  Nginx
+</a></li></ul></li><li class="dropdown-item"><h4>
+          消息队列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/RabbitMQ/" class="nav-link">
+  RabbitMQ
+</a></li><li class="dropdown-subitem"><a href="/RocketMQ/" class="nav-link">
+  RocketMQ
+</a></li></ul></li><li class="dropdown-item"><h4>
+          搜索引擎
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/ElasticSearch/" class="nav-link">
+  ElasticSearch
+</a></li><li class="dropdown-subitem"><a href="/slor/" class="nav-link">
+  Solr
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发工具" class="dropdown-title"><span class="title">开发工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="开发工具" class="mobile-dropdown-title"><span class="title">开发工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tools/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/tools/github/" class="nav-link">
+  Github
+</a></li><li class="dropdown-item"><!----> <a href="/tools/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/tools/bookmark-scripts/" class="nav-link">
+  Bookmark scripts
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow down"></span></button> <button type="button" aria-label="更多" class="mobile-dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/more/navigation.html" class="nav-link">
+  导航 🎉
+</a></li><li class="dropdown-item"><!----> <a href="https://shanyuhai123.github.io/vuepress-plugin-auto-sidebar/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VuePress 侧边栏插件
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://vuepress.vuejs.org/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VuePress 官网
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="框架" class="dropdown-title"><span class="title">框架</span> <span class="arrow down"></span></button> <button type="button" aria-label="框架" class="mobile-dropdown-title"><span class="title">框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Spring
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/about/" class="nav-link">
+  About
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Mybatis
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/about/" class="nav-link">
+  About
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="系统" class="dropdown-title"><span class="title">系统</span> <span class="arrow down"></span></button> <button type="button" aria-label="系统" class="mobile-dropdown-title"><span class="title">系统</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/os/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/os/ubuntu/" class="nav-link router-link-active">
+  Ubuntu
+</a></li><li class="dropdown-item"><!----> <a href="/os/centos/" class="nav-link">
+  CentOS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><span class="title">后端</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端" class="mobile-dropdown-title"><span class="title">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/backend/mysql/" class="nav-link">
+  MySQL
+</a></li><li class="dropdown-item"><!----> <a href="/backend/redis/" class="nav-link">
+  Redis
+</a></li><li class="dropdown-item"><!----> <a href="/backend/docker/" class="nav-link">
+  Docker
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="中间件" class="dropdown-title"><span class="title">中间件</span> <span class="arrow down"></span></button> <button type="button" aria-label="中间件" class="mobile-dropdown-title"><span class="title">中间件</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          服务器
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/Middleware/Nginx/" class="nav-link">
+  Nginx
+</a></li></ul></li><li class="dropdown-item"><h4>
+          消息队列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/RabbitMQ/" class="nav-link">
+  RabbitMQ
+</a></li><li class="dropdown-subitem"><a href="/RocketMQ/" class="nav-link">
+  RocketMQ
+</a></li></ul></li><li class="dropdown-item"><h4>
+          搜索引擎
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/ElasticSearch/" class="nav-link">
+  ElasticSearch
+</a></li><li class="dropdown-subitem"><a href="/slor/" class="nav-link">
+  Solr
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发工具" class="dropdown-title"><span class="title">开发工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="开发工具" class="mobile-dropdown-title"><span class="title">开发工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tools/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/tools/github/" class="nav-link">
+  Github
+</a></li><li class="dropdown-item"><!----> <a href="/tools/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/tools/bookmark-scripts/" class="nav-link">
+  Bookmark scripts
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow down"></span></button> <button type="button" aria-label="更多" class="mobile-dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/more/navigation.html" class="nav-link">
+  导航 🎉
+</a></li><li class="dropdown-item"><!----> <a href="https://shanyuhai123.github.io/vuepress-plugin-auto-sidebar/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VuePress 侧边栏插件
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://vuepress.vuejs.org/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VuePress 官网
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Ubuntu</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/os/ubuntu/" aria-current="page" class="sidebar-link">Ubuntu</a></li><li><a href="/os/ubuntu/change-swap-size.html" class="sidebar-link">修改 swap 分区大小</a></li><li><a href="/os/ubuntu/config-netplan.html" class="sidebar-link">配置网络 netplan</a></li><li><a href="/os/ubuntu/fix-date.html" class="sidebar-link">修复时间显示</a></li><li><a href="/os/ubuntu/frp.html" aria-current="page" class="active sidebar-link">内网穿透 FRP</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/os/ubuntu/frp.html#准备" class="sidebar-link">准备</a></li><li class="sidebar-sub-header"><a href="/os/ubuntu/frp.html#配置" class="sidebar-link">配置</a></li><li class="sidebar-sub-header"><a href="/os/ubuntu/frp.html#使用" class="sidebar-link">使用</a></li><li class="sidebar-sub-header"><a href="/os/ubuntu/frp.html#systemd" class="sidebar-link">systemd</a></li></ul></li><li><a href="/os/ubuntu/frp-and-nginx-share-80-port.html" class="sidebar-link">FRP 和 Nginx 共用 80 端口</a></li><li><a href="/os/ubuntu/install-the-latest-version-of-nginx.html" class="sidebar-link">Ubuntu 下安装最新版本的 Nginx</a></li><li><a href="/os/ubuntu/ubuntu-computer-config.html" class="sidebar-link">Ubuntu 计算机配置</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="内网穿透-frp"><a href="#内网穿透-frp" class="header-anchor">#</a> 内网穿透 FRP</h1> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>FRP（Fast Reverse Proxy）is a fast reverse proxy to help you expose a local server behind a NAT or firewall to the Internet. As of now, it supports <strong>TCP</strong> and <strong>UDP</strong>, as well as <strong>HTTP</strong> and <strong>HTTPS</strong> protocols, where requests can be forwarded to internal services by domain name.</p> <p>来自 <a href="https://github.com/fatedier/frp" target="_blank" rel="noopener noreferrer">FRP<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></div> <p>此处仅以配置 SSH 服务为示例。</p> <h2 id="准备"><a href="#准备" class="header-anchor">#</a> 准备</h2> <h3 id="_1-安全设置"><a href="#_1-安全设置" class="header-anchor">#</a> 1. 安全设置</h3> <p>这是一件有风险的事情，所以开始前最好确认你的公网、内网服务器都已经做好防护工作，可参考<a href="/os/linux/ssh-makes-your-server-more-secure.html">SSH 让你的服务器更安全</a>。</p> <h3 id="_2-资源下载"><a href="#_2-资源下载" class="header-anchor">#</a> 2. 资源下载</h3> <p>需要在 github 上下载最新的 <a href="https://github.com/fatedier/frp/releases" target="_blank" rel="noopener noreferrer">frp release<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 到公网、内网服务器上，注意选择对应的版本。</p> <h3 id="_3-端口开放"><a href="#_3-端口开放" class="header-anchor">#</a> 3. 端口开放</h3> <p>如果是阿里云，需要在云实例中开放下方将要使用的端口。</p> <ul><li><code>bind_port/server_port</code></li> <li><code>remote_port</code></li></ul> <h2 id="配置"><a href="#配置" class="header-anchor">#</a> 配置</h2> <h3 id="_1-公网服务器"><a href="#_1-公网服务器" class="header-anchor">#</a> 1. 公网服务器</h3> <p>公网服务器修改 <code>frps.ini</code> 文件。</p> <div class="language-ini extra-class"><pre class="language-ini"><code><span class="token comment"># frps.ini</span>
+<span class="token section"><span class="token punctuation">[</span><span class="token section-name selector">common</span><span class="token punctuation">]</span></span>
+<span class="token key attr-name">bind_port</span> <span class="token punctuation">=</span> <span class="token value attr-value">7000</span>
+</code></pre></div><p>配置解释：</p> <ul><li><code>bind_port</code> 为 <code>frp</code> 服务器端接收客户端流量的端口</li></ul> <p>启动服务端 <code>frp</code> 程序。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">nohup</span> ./frps <span class="token parameter variable">-c</span> frps.ini <span class="token operator">&amp;</span>
+</code></pre></div><h3 id="_2-内网服务器"><a href="#_2-内网服务器" class="header-anchor">#</a> 2. 内网服务器</h3> <p>内网服务器修改 <code>frpc.ini</code> 文件。</p> <div class="language-ini extra-class"><pre class="language-ini"><code><span class="token comment"># frpc.ini</span>
+<span class="token section"><span class="token punctuation">[</span><span class="token section-name selector">common</span><span class="token punctuation">]</span></span>
+<span class="token key attr-name">server_addr</span> <span class="token punctuation">=</span> <span class="token value attr-value">x.x.x.x</span>
+<span class="token key attr-name">server_port</span> <span class="token punctuation">=</span> <span class="token value attr-value">7000</span>
+
+<span class="token section"><span class="token punctuation">[</span><span class="token section-name selector">ssh</span><span class="token punctuation">]</span></span>
+<span class="token key attr-name">type</span> <span class="token punctuation">=</span> <span class="token value attr-value">tcp</span>
+<span class="token key attr-name">local_ip</span> <span class="token punctuation">=</span> <span class="token value attr-value">127.0.0.1</span>
+<span class="token key attr-name">local_port</span> <span class="token punctuation">=</span> <span class="token value attr-value">22</span>
+<span class="token key attr-name">remote_port</span> <span class="token punctuation">=</span> <span class="token value attr-value">6000</span>
+</code></pre></div><p>配置解释：</p> <ul><li><code>server_addr</code> 为 <code>frp</code> 服务端 <code>ip</code> 地址，也可以是域名</li> <li><code>server_port</code> 为 <code>frp</code> 服务端的 <code>bind_port</code></li> <li><code>local_ip</code> 为 <code>frp</code> 客户端的 <code>ip</code> 或 <code>127.0.0.1</code></li> <li><code>local_port</code> 为 <code>frp</code> 客户端的 ssh 端口，其默认为 22，在安全设置时可能修改为其他</li> <li><code>remote_port</code> 为 <code>frp</code> 客户端挂载到 <code>frp</code> 服务端的端口。在此示例中访问服务端 <code>6000</code> 端口相当于访问客户端 <code>22</code> 端口</li></ul> <p>启动客户端 <code>frp</code> 程序。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">nohup</span> ./frpc <span class="token parameter variable">-c</span> frpc.ini <span class="token operator">&amp;</span>
+</code></pre></div><h3 id="_3-停止服务"><a href="#_3-停止服务" class="header-anchor">#</a> 3. 停止服务</h3> <p>以上述形式启动的服务，需要先找到进程号再停止。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">ps</span> <span class="token parameter variable">-aux</span> <span class="token operator">|</span> <span class="token function">grep</span> frp <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-v</span> <span class="token function">grep</span>
+<span class="token comment"># 72029</span>
+<span class="token function">kill</span> <span class="token parameter variable">-9</span> <span class="token number">72029</span>
+
+<span class="token comment"># 验证</span>
+<span class="token function">ps</span> <span class="token parameter variable">-aux</span> <span class="token operator">|</span> <span class="token function">grep</span> frp <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-v</span> <span class="token function">grep</span>
+</code></pre></div><h2 id="使用"><a href="#使用" class="header-anchor">#</a> 使用</h2> <h3 id="_1-公网跳板-不推荐"><a href="#_1-公网跳板-不推荐" class="header-anchor">#</a> 1. 公网跳板（不推荐）</h3> <p>在之前安全设置中已经使用了密钥登录，为了简化操作可以配置 <a href="/os/linux/login-with-rsa-key.html#快速访问服务器">ssh config</a>。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 进入公网</span>
+<span class="token function">ssh</span> aliyun
+
+<span class="token comment"># 再从公网进入内网</span>
+<span class="token function">ssh</span> private
+</code></pre></div><h3 id="_2-直接访问"><a href="#_2-直接访问" class="header-anchor">#</a> 2. 直接访问</h3> <p>若公网服务端被黑了，就会导致黑客可以直接进入你的内网。当然如果希望公网只是一个跳板，方便其余机器进入也可以选择上一种方式。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 直接访问内网</span>
+<span class="token comment"># 配置该 config 时可以认识到 `local_port` 与 `remote_port` 之间的关系</span>
+<span class="token function">ssh</span> aliyun2private
+</code></pre></div><h2 id="systemd"><a href="#systemd" class="header-anchor">#</a> systemd</h2> <p>在下载对应的 <code>frp</code> 文件时，解压后注意到存在 <code>systemd</code> 文件夹，查看例如服务端配置。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># cat systemd/frps.service</span>
+
+<span class="token punctuation">[</span>Unit<span class="token punctuation">]</span>
+<span class="token assign-left variable">Description</span><span class="token operator">=</span>Frp Server Service
+<span class="token assign-left variable">After</span><span class="token operator">=</span>network.target
+
+<span class="token punctuation">[</span>Service<span class="token punctuation">]</span>
+<span class="token assign-left variable">Type</span><span class="token operator">=</span>simple
+<span class="token assign-left variable">User</span><span class="token operator">=</span>nobody
+<span class="token assign-left variable">Restart</span><span class="token operator">=</span>on-failure
+<span class="token assign-left variable">RestartSec</span><span class="token operator">=</span>5s
+<span class="token assign-left variable">ExecStart</span><span class="token operator">=</span>/usr/bin/frps <span class="token parameter variable">-c</span> /etc/frp/frps.ini
+
+<span class="token punctuation">[</span>Install<span class="token punctuation">]</span>
+<span class="token assign-left variable">WantedBy</span><span class="token operator">=</span>multi-user.target
+
+<span class="token comment"># cat systemd/frpc.service</span>
+
+<span class="token punctuation">[</span>Unit<span class="token punctuation">]</span>
+<span class="token assign-left variable">Description</span><span class="token operator">=</span>Frp Client Service
+<span class="token assign-left variable">After</span><span class="token operator">=</span>network.target
+
+<span class="token punctuation">[</span>Service<span class="token punctuation">]</span>
+<span class="token assign-left variable">Type</span><span class="token operator">=</span>simple
+<span class="token assign-left variable">User</span><span class="token operator">=</span>nobody
+<span class="token assign-left variable">Restart</span><span class="token operator">=</span>on-failure
+<span class="token assign-left variable">RestartSec</span><span class="token operator">=</span>5s
+<span class="token assign-left variable">ExecStart</span><span class="token operator">=</span>/usr/bin/frpc <span class="token parameter variable">-c</span> /etc/frp/frpc.ini
+<span class="token assign-left variable">ExecReload</span><span class="token operator">=</span>/usr/bin/frpc reload <span class="token parameter variable">-c</span> /etc/frp/frpc.ini
+
+<span class="token punctuation">[</span>Install<span class="token punctuation">]</span>
+<span class="token assign-left variable">WantedBy</span><span class="token operator">=</span>multi-user.target
+</code></pre></div><p>仅说明 <code>frps.service</code> 配置文件：</p> <ul><li><code>frps</code> 启动程序放入 <code>/usr/bin</code> 目录中</li> <li><code>frps.ini</code> 配置文件放入 <code>/etc/frp</code> 目录中</li> <li><code>frps.service</code> 服务程序放入 <code>/lib/systemd/system</code> 目录中</li></ul> <p>最后：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 更新服务文件，记得加上 sudo</span>
+<span class="token function">sudo</span> systemctl daemon-reload
+
+<span class="token comment"># 开启</span>
+<span class="token function">sudo</span> systemctl start frps
+</code></pre></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/minboo/docs/edit/master/docs/os/ubuntu/frp.md" target="_blank" rel="noopener noreferrer">编辑文档！</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2022年9月11日晚上11点48分</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/os/ubuntu/fix-date.html" class="prev">
+        修复时间显示
+      </a></span> <span class="next"><a href="/os/ubuntu/frp-and-nginx-share-80-port.html">
+        FRP 和 Nginx 共用 80 端口
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.b042dfd4.js" defer></script><script src="/assets/js/2.8154945c.js" defer></script><script src="/assets/js/92.5675720d.js" defer></script><script src="/assets/js/3.4234061e.js" defer></script>
+  </body>
+</html>

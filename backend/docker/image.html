@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>了解 Docker 镜像 | 在路上</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/logo.png">
+    <mata name="author" content="在路上"></mata>
+    <mata name="Keyword" content="我的博客"></mata>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon-152x152.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <meta name="description" content="了解 Docker 镜像">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/assets/css/0.styles.92fb795d.css" as="style"><link rel="preload" href="/assets/js/app.b042dfd4.js" as="script"><link rel="preload" href="/assets/js/2.8154945c.js" as="script"><link rel="preload" href="/assets/js/28.649ea49d.js" as="script"><link rel="preload" href="/assets/js/3.4234061e.js" as="script"><link rel="prefetch" href="/assets/js/10.b0ef5cc7.js"><link rel="prefetch" href="/assets/js/100.c94e731e.js"><link rel="prefetch" href="/assets/js/101.48c30368.js"><link rel="prefetch" href="/assets/js/102.46c7e4c5.js"><link rel="prefetch" href="/assets/js/103.c3a5deff.js"><link rel="prefetch" href="/assets/js/104.0a230598.js"><link rel="prefetch" href="/assets/js/105.5bb8ca11.js"><link rel="prefetch" href="/assets/js/106.452ae601.js"><link rel="prefetch" href="/assets/js/107.25f200d5.js"><link rel="prefetch" href="/assets/js/108.17d74b6e.js"><link rel="prefetch" href="/assets/js/109.13b1de0b.js"><link rel="prefetch" href="/assets/js/11.97d54b7d.js"><link rel="prefetch" href="/assets/js/110.ec225bdb.js"><link rel="prefetch" href="/assets/js/111.b852821d.js"><link rel="prefetch" href="/assets/js/112.5652e068.js"><link rel="prefetch" href="/assets/js/113.accd65c3.js"><link rel="prefetch" href="/assets/js/12.9aae7b96.js"><link rel="prefetch" href="/assets/js/13.848a8a4d.js"><link rel="prefetch" href="/assets/js/14.c4cbbbac.js"><link rel="prefetch" href="/assets/js/15.865d5993.js"><link rel="prefetch" href="/assets/js/16.0f637415.js"><link rel="prefetch" href="/assets/js/17.77902faf.js"><link rel="prefetch" href="/assets/js/18.06c5e1a8.js"><link rel="prefetch" href="/assets/js/19.058ef2e9.js"><link rel="prefetch" href="/assets/js/20.9d8d2a60.js"><link rel="prefetch" href="/assets/js/21.d53bc81e.js"><link rel="prefetch" href="/assets/js/22.013a1d1d.js"><link rel="prefetch" href="/assets/js/23.5478e71f.js"><link rel="prefetch" href="/assets/js/24.ad64936d.js"><link rel="prefetch" href="/assets/js/25.8156faf2.js"><link rel="prefetch" href="/assets/js/26.de1ad383.js"><link rel="prefetch" href="/assets/js/27.1a88c4fe.js"><link rel="prefetch" href="/assets/js/29.8bb6a22b.js"><link rel="prefetch" href="/assets/js/30.94188915.js"><link rel="prefetch" href="/assets/js/31.c7c96e55.js"><link rel="prefetch" href="/assets/js/32.b40c2f9d.js"><link rel="prefetch" href="/assets/js/33.8a2d8cd6.js"><link rel="prefetch" href="/assets/js/34.eea30f0c.js"><link rel="prefetch" href="/assets/js/35.472fbeac.js"><link rel="prefetch" href="/assets/js/36.51080cfc.js"><link rel="prefetch" href="/assets/js/37.b0f4846a.js"><link rel="prefetch" href="/assets/js/38.a1174889.js"><link rel="prefetch" href="/assets/js/39.2ef9d394.js"><link rel="prefetch" href="/assets/js/4.29fa54b8.js"><link rel="prefetch" href="/assets/js/40.a1a50e67.js"><link rel="prefetch" href="/assets/js/41.82a44a96.js"><link rel="prefetch" href="/assets/js/42.dfffe07b.js"><link rel="prefetch" href="/assets/js/43.44eea0b0.js"><link rel="prefetch" href="/assets/js/44.dc023168.js"><link rel="prefetch" href="/assets/js/45.c5dd3e94.js"><link rel="prefetch" href="/assets/js/46.79948b06.js"><link rel="prefetch" href="/assets/js/47.485ccf84.js"><link rel="prefetch" href="/assets/js/48.14084039.js"><link rel="prefetch" href="/assets/js/49.24165fa3.js"><link rel="prefetch" href="/assets/js/5.0e72a8e9.js"><link rel="prefetch" href="/assets/js/50.78813583.js"><link rel="prefetch" href="/assets/js/51.53aa9cf5.js"><link rel="prefetch" href="/assets/js/52.c22b1755.js"><link rel="prefetch" href="/assets/js/53.7ad7b4a8.js"><link rel="prefetch" href="/assets/js/54.0c093768.js"><link rel="prefetch" href="/assets/js/55.1fbbd65d.js"><link rel="prefetch" href="/assets/js/56.843ea8ee.js"><link rel="prefetch" href="/assets/js/57.123e346c.js"><link rel="prefetch" href="/assets/js/58.d34951c6.js"><link rel="prefetch" href="/assets/js/59.b85cf23f.js"><link rel="prefetch" href="/assets/js/6.d3ecc9b3.js"><link rel="prefetch" href="/assets/js/60.e9071331.js"><link rel="prefetch" href="/assets/js/61.6ac666dd.js"><link rel="prefetch" href="/assets/js/62.afab2eff.js"><link rel="prefetch" href="/assets/js/63.800abe90.js"><link rel="prefetch" href="/assets/js/64.5951988c.js"><link rel="prefetch" href="/assets/js/65.01ea9a97.js"><link rel="prefetch" href="/assets/js/66.bb85edd4.js"><link rel="prefetch" href="/assets/js/67.c0da47a9.js"><link rel="prefetch" href="/assets/js/68.ee327cdd.js"><link rel="prefetch" href="/assets/js/69.35735eff.js"><link rel="prefetch" href="/assets/js/7.3b12d94c.js"><link rel="prefetch" href="/assets/js/70.5cf976c2.js"><link rel="prefetch" href="/assets/js/71.0bfc13eb.js"><link rel="prefetch" href="/assets/js/72.6e7aeddb.js"><link rel="prefetch" href="/assets/js/73.361215c2.js"><link rel="prefetch" href="/assets/js/74.6dae3b39.js"><link rel="prefetch" href="/assets/js/75.56bbe243.js"><link rel="prefetch" href="/assets/js/76.88ce9f6b.js"><link rel="prefetch" href="/assets/js/77.52d3bde1.js"><link rel="prefetch" href="/assets/js/78.62390d6f.js"><link rel="prefetch" href="/assets/js/79.e8590d7e.js"><link rel="prefetch" href="/assets/js/8.b4a14e8c.js"><link rel="prefetch" href="/assets/js/80.0649d97d.js"><link rel="prefetch" href="/assets/js/81.f54b68cd.js"><link rel="prefetch" href="/assets/js/82.a4f85774.js"><link rel="prefetch" href="/assets/js/83.abd156a5.js"><link rel="prefetch" href="/assets/js/84.0ba27a18.js"><link rel="prefetch" href="/assets/js/85.b84ccd9c.js"><link rel="prefetch" href="/assets/js/86.c46352c6.js"><link rel="prefetch" href="/assets/js/87.3291a1b3.js"><link rel="prefetch" href="/assets/js/88.ef8e27eb.js"><link rel="prefetch" href="/assets/js/89.346fee6c.js"><link rel="prefetch" href="/assets/js/9.82925584.js"><link rel="prefetch" href="/assets/js/90.fa92de62.js"><link rel="prefetch" href="/assets/js/91.a0a26338.js"><link rel="prefetch" href="/assets/js/92.5675720d.js"><link rel="prefetch" href="/assets/js/93.0bd5bc0c.js"><link rel="prefetch" href="/assets/js/94.843c0392.js"><link rel="prefetch" href="/assets/js/95.ba825a76.js"><link rel="prefetch" href="/assets/js/96.c57767c7.js"><link rel="prefetch" href="/assets/js/97.2e9e1eb3.js"><link rel="prefetch" href="/assets/js/98.12339901.js"><link rel="prefetch" href="/assets/js/99.1f1b02fe.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.92fb795d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="在路上" class="logo"> <span class="site-name can-hide">在路上</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="框架" class="dropdown-title"><span class="title">框架</span> <span class="arrow down"></span></button> <button type="button" aria-label="框架" class="mobile-dropdown-title"><span class="title">框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Spring
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/about/" class="nav-link">
+  About
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Mybatis
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/about/" class="nav-link">
+  About
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="系统" class="dropdown-title"><span class="title">系统</span> <span class="arrow down"></span></button> <button type="button" aria-label="系统" class="mobile-dropdown-title"><span class="title">系统</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/os/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/os/ubuntu/" class="nav-link">
+  Ubuntu
+</a></li><li class="dropdown-item"><!----> <a href="/os/centos/" class="nav-link">
+  CentOS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><span class="title">后端</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端" class="mobile-dropdown-title"><span class="title">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/backend/mysql/" class="nav-link">
+  MySQL
+</a></li><li class="dropdown-item"><!----> <a href="/backend/redis/" class="nav-link">
+  Redis
+</a></li><li class="dropdown-item"><!----> <a href="/backend/docker/" class="nav-link router-link-active">
+  Docker
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="中间件" class="dropdown-title"><span class="title">中间件</span> <span class="arrow down"></span></button> <button type="button" aria-label="中间件" class="mobile-dropdown-title"><span class="title">中间件</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          服务器
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/Middleware/Nginx/" class="nav-link">
+  Nginx
+</a></li></ul></li><li class="dropdown-item"><h4>
+          消息队列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/RabbitMQ/" class="nav-link">
+  RabbitMQ
+</a></li><li class="dropdown-subitem"><a href="/RocketMQ/" class="nav-link">
+  RocketMQ
+</a></li></ul></li><li class="dropdown-item"><h4>
+          搜索引擎
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/ElasticSearch/" class="nav-link">
+  ElasticSearch
+</a></li><li class="dropdown-subitem"><a href="/slor/" class="nav-link">
+  Solr
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发工具" class="dropdown-title"><span class="title">开发工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="开发工具" class="mobile-dropdown-title"><span class="title">开发工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tools/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/tools/github/" class="nav-link">
+  Github
+</a></li><li class="dropdown-item"><!----> <a href="/tools/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/tools/bookmark-scripts/" class="nav-link">
+  Bookmark scripts
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow down"></span></button> <button type="button" aria-label="更多" class="mobile-dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/more/navigation.html" class="nav-link">
+  导航 🎉
+</a></li><li class="dropdown-item"><!----> <a href="https://shanyuhai123.github.io/vuepress-plugin-auto-sidebar/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VuePress 侧边栏插件
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://vuepress.vuejs.org/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VuePress 官网
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="框架" class="dropdown-title"><span class="title">框架</span> <span class="arrow down"></span></button> <button type="button" aria-label="框架" class="mobile-dropdown-title"><span class="title">框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Spring
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/about/" class="nav-link">
+  About
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Mybatis
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/about/" class="nav-link">
+  About
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="系统" class="dropdown-title"><span class="title">系统</span> <span class="arrow down"></span></button> <button type="button" aria-label="系统" class="mobile-dropdown-title"><span class="title">系统</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/os/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/os/ubuntu/" class="nav-link">
+  Ubuntu
+</a></li><li class="dropdown-item"><!----> <a href="/os/centos/" class="nav-link">
+  CentOS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><span class="title">后端</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端" class="mobile-dropdown-title"><span class="title">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/backend/mysql/" class="nav-link">
+  MySQL
+</a></li><li class="dropdown-item"><!----> <a href="/backend/redis/" class="nav-link">
+  Redis
+</a></li><li class="dropdown-item"><!----> <a href="/backend/docker/" class="nav-link router-link-active">
+  Docker
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="中间件" class="dropdown-title"><span class="title">中间件</span> <span class="arrow down"></span></button> <button type="button" aria-label="中间件" class="mobile-dropdown-title"><span class="title">中间件</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          服务器
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/Middleware/Nginx/" class="nav-link">
+  Nginx
+</a></li></ul></li><li class="dropdown-item"><h4>
+          消息队列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/RabbitMQ/" class="nav-link">
+  RabbitMQ
+</a></li><li class="dropdown-subitem"><a href="/RocketMQ/" class="nav-link">
+  RocketMQ
+</a></li></ul></li><li class="dropdown-item"><h4>
+          搜索引擎
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/ElasticSearch/" class="nav-link">
+  ElasticSearch
+</a></li><li class="dropdown-subitem"><a href="/slor/" class="nav-link">
+  Solr
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发工具" class="dropdown-title"><span class="title">开发工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="开发工具" class="mobile-dropdown-title"><span class="title">开发工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tools/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/tools/github/" class="nav-link">
+  Github
+</a></li><li class="dropdown-item"><!----> <a href="/tools/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/tools/bookmark-scripts/" class="nav-link">
+  Bookmark scripts
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow down"></span></button> <button type="button" aria-label="更多" class="mobile-dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/more/navigation.html" class="nav-link">
+  导航 🎉
+</a></li><li class="dropdown-item"><!----> <a href="https://shanyuhai123.github.io/vuepress-plugin-auto-sidebar/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VuePress 侧边栏插件
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://vuepress.vuejs.org/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VuePress 官网
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Docker</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/backend/docker/" aria-current="page" class="sidebar-link">人生苦短，我用 Docker</a></li><li><a href="/backend/docker/dockerfile.html" class="sidebar-link">Dockerfile 详解</a></li><li><a href="/backend/docker/image.html" aria-current="page" class="active sidebar-link">了解 Docker 镜像</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/backend/docker/image.html#获取镜像" class="sidebar-link">获取镜像</a></li><li class="sidebar-sub-header"><a href="/backend/docker/image.html#镜像信息" class="sidebar-link">镜像信息</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/backend/docker/image.html#_1-所有镜像概览" class="sidebar-link">1. 所有镜像概览</a></li><li class="sidebar-sub-header"><a href="/backend/docker/image.html#_2-指定镜像详细" class="sidebar-link">2. 指定镜像详细</a></li><li class="sidebar-sub-header"><a href="/backend/docker/image.html#_3-镜像历史" class="sidebar-link">3. 镜像历史</a></li></ul></li><li class="sidebar-sub-header"><a href="/backend/docker/image.html#创建镜像" class="sidebar-link">创建镜像</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/backend/docker/image.html#_1-已有容器" class="sidebar-link">1. 已有容器</a></li><li class="sidebar-sub-header"><a href="/backend/docker/image.html#_2-本地模板" class="sidebar-link">2. 本地模板</a></li><li class="sidebar-sub-header"><a href="/backend/docker/image.html#_3-dockerfile" class="sidebar-link">3. Dockerfile</a></li></ul></li><li class="sidebar-sub-header"><a href="/backend/docker/image.html#修改镜像" class="sidebar-link">修改镜像</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/backend/docker/image.html#_1-添加镜像标签" class="sidebar-link">1. 添加镜像标签</a></li><li class="sidebar-sub-header"><a href="/backend/docker/image.html#_2-删除镜像" class="sidebar-link">2. 删除镜像</a></li><li class="sidebar-sub-header"><a href="/backend/docker/image.html#_3-清理镜像" class="sidebar-link">3. 清理镜像</a></li></ul></li><li class="sidebar-sub-header"><a href="/backend/docker/image.html#分享镜像" class="sidebar-link">分享镜像</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/backend/docker/image.html#_1-save" class="sidebar-link">1. save</a></li><li class="sidebar-sub-header"><a href="/backend/docker/image.html#_2-load" class="sidebar-link">2. load</a></li><li class="sidebar-sub-header"><a href="/backend/docker/image.html#_3-hub" class="sidebar-link">3. Hub</a></li></ul></li><li class="sidebar-sub-header"><a href="/backend/docker/image.html#docker-slim-优化镜像" class="sidebar-link">Docker slim 优化镜像</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/backend/docker/image.html#node-镜像优化大小" class="sidebar-link">Node 镜像优化大小</a></li></ul></li></ul></li><li><a href="/backend/docker/container.html" class="sidebar-link">了解 Docker 容器</a></li><li><a href="/backend/docker/volumes.html" class="sidebar-link">了解 Docker 数据卷</a></li><li><a href="/backend/docker/docker-compose.html" class="sidebar-link">Docker Compose 管理多个服务</a></li><li><a href="/backend/docker/etcd.html" class="sidebar-link">使用 Docker 搭建 ETCD</a></li><li><a href="/backend/docker/private-registry.html" class="sidebar-link">使用 Harbor 构建私有镜像仓库</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="了解-docker-镜像"><a href="#了解-docker-镜像" class="header-anchor">#</a> 了解 Docker 镜像</h1> <h2 id="获取镜像"><a href="#获取镜像" class="header-anchor">#</a> 获取镜像</h2> <div class="custom-block tip"><p class="custom-block-title">格式</p> <p><code>docker pull [OPTIONS] NAME[:TAG|@DIGEST]</code>。</p> <p>NAME 是镜像仓库名称（用来区分镜像），TAG 是镜像的标签（往往用来表示版本信息）。若不指定 TAG 则默认选择 <code>latest</code>，即最新版本。</p></div> <p>在获取镜像前可以查询是否存在对应的镜像。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># docker search [OPTIONS] TERM</span>
+<span class="token function">docker</span> search ubuntu
+</code></pre></div><h2 id="镜像信息"><a href="#镜像信息" class="header-anchor">#</a> 镜像信息</h2> <h3 id="_1-所有镜像概览"><a href="#_1-所有镜像概览" class="header-anchor">#</a> 1. 所有镜像概览</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">docker</span> images
+
+REPOSITORY            TAG                 IMAGE ID            CREATED             SIZE
+nginx                 v2                  c7e8f4f26fef        About an hour ago   132MB
+nginx                 latest              0901fa9da894        <span class="token number">9</span> days ago          132MB
+
+<span class="token comment"># `REPOSITORY` 来自于哪个仓库，比如ubuntu表示ubuntu系列的基础镜像</span>
+<span class="token comment"># `TAG` 镜像的标签信息，比如18.04、latest表示不同的版本信息。标签只是标记，并不能标识镜像内容</span>
+<span class="token comment"># `IMAGE ID` 镜像的ID（唯一标识镜像），如果两个镜像的ID相同，说明它们实际上指向了同一个镜像，只是具有不同标签名称而已</span>
+<span class="token comment"># `CREATED` 创建时间，说明镜像最后的更新时间</span>
+<span class="token comment"># `SIZE` 镜像大小，优秀的镜像往往体积都较小</span>
+</code></pre></div><h3 id="_2-指定镜像详细"><a href="#_2-指定镜像详细" class="header-anchor">#</a> 2. 指定镜像详细</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># docker inspect [OPTIONS] NAME|ID [NAME|ID...]</span>
+<span class="token function">docker</span> inspect ubuntu:latest
+</code></pre></div><h3 id="_3-镜像历史"><a href="#_3-镜像历史" class="header-anchor">#</a> 3. 镜像历史</h3> <p>镜像文件是由多个层组成，可查看每个层的创建信息。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># docker history [OPTIONS] IMAGE</span>
+<span class="token function">docker</span> <span class="token function">history</span> ubuntu:latest
+</code></pre></div><h2 id="创建镜像"><a href="#创建镜像" class="header-anchor">#</a> 创建镜像</h2> <p>创建镜像的方法主要有三种：基于已有镜像的内容创建（commit）、基于本地模板导入（import）、基于 Dockerfile 创建（build）。</p> <h3 id="_1-已有容器"><a href="#_1-已有容器" class="header-anchor">#</a> 1. 已有容器</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]</span>
+<span class="token comment"># 对一个镜像进行修改后</span>
+<span class="token function">docker</span> commit <span class="token parameter variable">-m</span> <span class="token string">&quot;修改了默认首页&quot;</span> webserver nginx:new
+
+<span class="token comment"># 验证</span>
+<span class="token function">docker</span> images
+</code></pre></div><h3 id="_2-本地模板"><a href="#_2-本地模板" class="header-anchor">#</a> 2. 本地模板</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># docker import [OPTIONS] file|URL|- [REPOSITORY[:TAG]]</span>
+<span class="token function">docker</span> <span class="token function">import</span> http://example.com/exampleimage.tgz
+<span class="token function">docker</span> <span class="token function">import</span> /path/to/exampleimage.tgz
+<span class="token comment"># 还可以利用 `STDIN`</span>
+<span class="token function">cat</span> exampleimage.tgz <span class="token operator">|</span> <span class="token function">docker</span> <span class="token function">import</span> - exampleimagelocal:new
+
+<span class="token comment"># 验证</span>
+<span class="token function">docker</span> images
+</code></pre></div><h3 id="_3-dockerfile"><a href="#_3-dockerfile" class="header-anchor">#</a> 3. Dockerfile</h3> <p><code>Dockerfile</code> 是一个文本文件，利用给定的指令描述基于某个父镜像创建新镜像的过程。</p> <div class="language-dockerfile extra-class"><pre class="language-dockerfile"><code><span class="token instruction"><span class="token keyword">FROM</span> ubuntu:18.04</span>
+<span class="token instruction"><span class="token keyword">COPY</span> . /app</span>
+<span class="token instruction"><span class="token keyword">RUN</span> make /app</span>
+<span class="token instruction"><span class="token keyword">CMD</span> python /app/app.py</span>
+</code></pre></div><div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># docker build [OPTIONS] PATH | URL | -</span>
+<span class="token function">docker</span> build https://github.com/creack/docker-firefox
+<span class="token function">docker</span> build <span class="token parameter variable">-t</span> nginx:ttt
+</code></pre></div><h2 id="修改镜像"><a href="#修改镜像" class="header-anchor">#</a> 修改镜像</h2> <h3 id="_1-添加镜像标签"><a href="#_1-添加镜像标签" class="header-anchor">#</a> 1. 添加镜像标签</h3> <p>仅添加镜像标签，实际 <code>IMAGE ID</code> 指向同一个。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">docker</span> tag ubuntu:latest myubuntu:latest
+</code></pre></div><h3 id="_2-删除镜像"><a href="#_2-删除镜像" class="header-anchor">#</a> 2. 删除镜像</h3> <p>需注意 <code>docker rmi</code> 才是删除镜像，而 <code>docker rm</code> 是删除容器。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># docker rmi [OPTIONS] IMAGE [IMAGE...]</span>
+<span class="token function">docker</span> rmi ubuntu:latest
+<span class="token comment"># Error response from daemon: conflict: unable to remove repository reference &quot;ubuntu:latest&quot; (must force) - container b0f36e5ede8d is using its referenced image adafef2e596e</span>
+
+<span class="token comment"># 正在使用中，需要先解除容器</span>
+<span class="token function">docker</span> <span class="token function">rm</span> b0f36e5ede8d
+<span class="token comment"># 解除后再删除镜像，删除镜像还可以使用 `IMAGE ID`</span>
+<span class="token function">docker</span> rmi adafef2e596e
+</code></pre></div><p>批量删除镜像：</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment"># 以删除 harbor 镜像示例</span>
+<span class="token function">docker</span> rmi <span class="token variable"><span class="token variable">$(</span><span class="token function">docker</span> images <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">'goharbor'</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print $3}'</span><span class="token variable">)</span></span>
+</code></pre></div><h3 id="_3-清理镜像"><a href="#_3-清理镜像" class="header-anchor">#</a> 3. 清理镜像</h3> <p>系统中可能会遗留一些临时的镜像文件。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">docker</span> image prune <span class="token punctuation">[</span>OPTIONS<span class="token punctuation">]</span>
+</code></pre></div><h2 id="分享镜像"><a href="#分享镜像" class="header-anchor">#</a> 分享镜像</h2> <h3 id="_1-save"><a href="#_1-save" class="header-anchor">#</a> 1. save</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">docker</span> images <span class="token comment"># 列出镜像</span>
+
+<span class="token comment"># docker save [OPTIONS] IMAGE [IMAGE...]</span>
+<span class="token function">docker</span> save <span class="token parameter variable">-o</span> ubuntu_18.04.tar ubuntu:18.04
+</code></pre></div><h3 id="_2-load"><a href="#_2-load" class="header-anchor">#</a> 2. load</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># docker load [OPTIONS]</span>
+<span class="token function">docker</span> load <span class="token parameter variable">-i</span> ubuntu_18.04.tar
+</code></pre></div><h3 id="_3-hub"><a href="#_3-hub" class="header-anchor">#</a> 3. Hub</h3> <p>还可以直接分享到 Docker Hub 公共仓库，这需要在官网注册帐号。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 模拟 nginx 打个新 tag</span>
+<span class="token function">docker</span> tag nginx:latest username/nginx:latest
+<span class="token comment"># push</span>
+<span class="token function">docker</span> push username/nginx:latest
+</code></pre></div><h2 id="docker-slim-优化镜像"><a href="#docker-slim-优化镜像" class="header-anchor">#</a> Docker slim 优化镜像</h2> <p>首先需要获取 <a href="https://github.com/docker-slim/docker-slim/releases" target="_blank" rel="noopener noreferrer">Docker Slim<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>。</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment"># 下载</span>
+<span class="token function">curl</span> <span class="token parameter variable">-L</span> <span class="token parameter variable">-o</span> ds.tar.gz https://downloads.dockerslim.com/releases/1.37.0/dist_linux.tar.gz
+
+<span class="token comment"># 解压</span>
+<span class="token function">tar</span> <span class="token parameter variable">-xvf</span> ds.tar.gz
+
+<span class="token comment"># 移动到 bin</span>
+<span class="token function">mv</span> dist_linux/docker-slim /usr/local/bin/
+<span class="token function">mv</span> dist_linux/docker-slim-sensor /usr/local/bin/
+
+<span class="token comment"># 校验</span>
+docker-slim <span class="token parameter variable">--version</span>
+<span class="token comment"># docker-slim version linux|Transformer|1.37.0|70cc8acfcb733161ce7e685b81ad6c172643c222|2021-09-23_09:23:43AM</span>
+
+<span class="token comment"># 或者直接使用脚本</span>
+<span class="token function">curl</span> <span class="token parameter variable">-sL</span> https://raw.githubusercontent.com/docker-slim/docker-slim/master/scripts/install-dockerslim.sh <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token parameter variable">-E</span> <span class="token function">bash</span> -
+</code></pre></div><h3 id="node-镜像优化大小"><a href="#node-镜像优化大小" class="header-anchor">#</a> Node 镜像优化大小</h3> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment"># 查看原大小</span>
+<span class="token function">docker</span> images <span class="token operator">|</span> <span class="token function">grep</span> <span class="token function">node</span>
+<span class="token comment"># node_app                     1.0.0               3fe14ce78d6d        1 months ago        593MB</span>
+
+<span class="token comment"># docker slim</span>
+docker-slim build <span class="token parameter variable">--target</span> node_app:1.0.0 <span class="token parameter variable">--tag</span> node_app:1.0.0-slim --http-probe<span class="token operator">=</span>false
+
+<span class="token comment"># 再次查看，发现显著缩小</span>
+<span class="token function">docker</span> images <span class="token operator">|</span> <span class="token function">grep</span> <span class="token function">node</span>
+<span class="token comment"># node_app                     1.0.0-slim          061aa2d584d0        19 seconds ago      84.4MB</span>
+<span class="token comment"># node_app                     1.0.0               3fe14ce78d6d        6 months ago        593MB</span>
+</code></pre></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/minboo/docs/edit/master/docs/backend/docker/image.md" target="_blank" rel="noopener noreferrer">编辑文档！</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2022年9月11日晚上11点48分</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/backend/docker/dockerfile.html" class="prev">
+        Dockerfile 详解
+      </a></span> <span class="next"><a href="/backend/docker/container.html">
+        了解 Docker 容器
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.b042dfd4.js" defer></script><script src="/assets/js/2.8154945c.js" defer></script><script src="/assets/js/28.649ea49d.js" defer></script><script src="/assets/js/3.4234061e.js" defer></script>
+  </body>
+</html>

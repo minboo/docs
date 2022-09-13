@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>如何搭建私有 GitLab | 在路上</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/logo.png">
+    <mata name="author" content="在路上"></mata>
+    <mata name="Keyword" content="我的博客"></mata>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon-152x152.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <meta name="description" content="description描述">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/assets/css/0.styles.92fb795d.css" as="style"><link rel="preload" href="/assets/js/app.b042dfd4.js" as="script"><link rel="preload" href="/assets/js/2.8154945c.js" as="script"><link rel="preload" href="/assets/js/101.48c30368.js" as="script"><link rel="preload" href="/assets/js/3.4234061e.js" as="script"><link rel="prefetch" href="/assets/js/10.b0ef5cc7.js"><link rel="prefetch" href="/assets/js/100.c94e731e.js"><link rel="prefetch" href="/assets/js/102.46c7e4c5.js"><link rel="prefetch" href="/assets/js/103.c3a5deff.js"><link rel="prefetch" href="/assets/js/104.0a230598.js"><link rel="prefetch" href="/assets/js/105.5bb8ca11.js"><link rel="prefetch" href="/assets/js/106.452ae601.js"><link rel="prefetch" href="/assets/js/107.25f200d5.js"><link rel="prefetch" href="/assets/js/108.17d74b6e.js"><link rel="prefetch" href="/assets/js/109.13b1de0b.js"><link rel="prefetch" href="/assets/js/11.97d54b7d.js"><link rel="prefetch" href="/assets/js/110.ec225bdb.js"><link rel="prefetch" href="/assets/js/111.b852821d.js"><link rel="prefetch" href="/assets/js/112.5652e068.js"><link rel="prefetch" href="/assets/js/113.accd65c3.js"><link rel="prefetch" href="/assets/js/12.9aae7b96.js"><link rel="prefetch" href="/assets/js/13.848a8a4d.js"><link rel="prefetch" href="/assets/js/14.c4cbbbac.js"><link rel="prefetch" href="/assets/js/15.865d5993.js"><link rel="prefetch" href="/assets/js/16.0f637415.js"><link rel="prefetch" href="/assets/js/17.77902faf.js"><link rel="prefetch" href="/assets/js/18.06c5e1a8.js"><link rel="prefetch" href="/assets/js/19.058ef2e9.js"><link rel="prefetch" href="/assets/js/20.9d8d2a60.js"><link rel="prefetch" href="/assets/js/21.d53bc81e.js"><link rel="prefetch" href="/assets/js/22.013a1d1d.js"><link rel="prefetch" href="/assets/js/23.5478e71f.js"><link rel="prefetch" href="/assets/js/24.ad64936d.js"><link rel="prefetch" href="/assets/js/25.8156faf2.js"><link rel="prefetch" href="/assets/js/26.de1ad383.js"><link rel="prefetch" href="/assets/js/27.1a88c4fe.js"><link rel="prefetch" href="/assets/js/28.649ea49d.js"><link rel="prefetch" href="/assets/js/29.8bb6a22b.js"><link rel="prefetch" href="/assets/js/30.94188915.js"><link rel="prefetch" href="/assets/js/31.c7c96e55.js"><link rel="prefetch" href="/assets/js/32.b40c2f9d.js"><link rel="prefetch" href="/assets/js/33.8a2d8cd6.js"><link rel="prefetch" href="/assets/js/34.eea30f0c.js"><link rel="prefetch" href="/assets/js/35.472fbeac.js"><link rel="prefetch" href="/assets/js/36.51080cfc.js"><link rel="prefetch" href="/assets/js/37.b0f4846a.js"><link rel="prefetch" href="/assets/js/38.a1174889.js"><link rel="prefetch" href="/assets/js/39.2ef9d394.js"><link rel="prefetch" href="/assets/js/4.29fa54b8.js"><link rel="prefetch" href="/assets/js/40.a1a50e67.js"><link rel="prefetch" href="/assets/js/41.82a44a96.js"><link rel="prefetch" href="/assets/js/42.dfffe07b.js"><link rel="prefetch" href="/assets/js/43.44eea0b0.js"><link rel="prefetch" href="/assets/js/44.dc023168.js"><link rel="prefetch" href="/assets/js/45.c5dd3e94.js"><link rel="prefetch" href="/assets/js/46.79948b06.js"><link rel="prefetch" href="/assets/js/47.485ccf84.js"><link rel="prefetch" href="/assets/js/48.14084039.js"><link rel="prefetch" href="/assets/js/49.24165fa3.js"><link rel="prefetch" href="/assets/js/5.0e72a8e9.js"><link rel="prefetch" href="/assets/js/50.78813583.js"><link rel="prefetch" href="/assets/js/51.53aa9cf5.js"><link rel="prefetch" href="/assets/js/52.c22b1755.js"><link rel="prefetch" href="/assets/js/53.7ad7b4a8.js"><link rel="prefetch" href="/assets/js/54.0c093768.js"><link rel="prefetch" href="/assets/js/55.1fbbd65d.js"><link rel="prefetch" href="/assets/js/56.843ea8ee.js"><link rel="prefetch" href="/assets/js/57.123e346c.js"><link rel="prefetch" href="/assets/js/58.d34951c6.js"><link rel="prefetch" href="/assets/js/59.b85cf23f.js"><link rel="prefetch" href="/assets/js/6.d3ecc9b3.js"><link rel="prefetch" href="/assets/js/60.e9071331.js"><link rel="prefetch" href="/assets/js/61.6ac666dd.js"><link rel="prefetch" href="/assets/js/62.afab2eff.js"><link rel="prefetch" href="/assets/js/63.800abe90.js"><link rel="prefetch" href="/assets/js/64.5951988c.js"><link rel="prefetch" href="/assets/js/65.01ea9a97.js"><link rel="prefetch" href="/assets/js/66.bb85edd4.js"><link rel="prefetch" href="/assets/js/67.c0da47a9.js"><link rel="prefetch" href="/assets/js/68.ee327cdd.js"><link rel="prefetch" href="/assets/js/69.35735eff.js"><link rel="prefetch" href="/assets/js/7.3b12d94c.js"><link rel="prefetch" href="/assets/js/70.5cf976c2.js"><link rel="prefetch" href="/assets/js/71.0bfc13eb.js"><link rel="prefetch" href="/assets/js/72.6e7aeddb.js"><link rel="prefetch" href="/assets/js/73.361215c2.js"><link rel="prefetch" href="/assets/js/74.6dae3b39.js"><link rel="prefetch" href="/assets/js/75.56bbe243.js"><link rel="prefetch" href="/assets/js/76.88ce9f6b.js"><link rel="prefetch" href="/assets/js/77.52d3bde1.js"><link rel="prefetch" href="/assets/js/78.62390d6f.js"><link rel="prefetch" href="/assets/js/79.e8590d7e.js"><link rel="prefetch" href="/assets/js/8.b4a14e8c.js"><link rel="prefetch" href="/assets/js/80.0649d97d.js"><link rel="prefetch" href="/assets/js/81.f54b68cd.js"><link rel="prefetch" href="/assets/js/82.a4f85774.js"><link rel="prefetch" href="/assets/js/83.abd156a5.js"><link rel="prefetch" href="/assets/js/84.0ba27a18.js"><link rel="prefetch" href="/assets/js/85.b84ccd9c.js"><link rel="prefetch" href="/assets/js/86.c46352c6.js"><link rel="prefetch" href="/assets/js/87.3291a1b3.js"><link rel="prefetch" href="/assets/js/88.ef8e27eb.js"><link rel="prefetch" href="/assets/js/89.346fee6c.js"><link rel="prefetch" href="/assets/js/9.82925584.js"><link rel="prefetch" href="/assets/js/90.fa92de62.js"><link rel="prefetch" href="/assets/js/91.a0a26338.js"><link rel="prefetch" href="/assets/js/92.5675720d.js"><link rel="prefetch" href="/assets/js/93.0bd5bc0c.js"><link rel="prefetch" href="/assets/js/94.843c0392.js"><link rel="prefetch" href="/assets/js/95.ba825a76.js"><link rel="prefetch" href="/assets/js/96.c57767c7.js"><link rel="prefetch" href="/assets/js/97.2e9e1eb3.js"><link rel="prefetch" href="/assets/js/98.12339901.js"><link rel="prefetch" href="/assets/js/99.1f1b02fe.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.92fb795d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="在路上" class="logo"> <span class="site-name can-hide">在路上</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="框架" class="dropdown-title"><span class="title">框架</span> <span class="arrow down"></span></button> <button type="button" aria-label="框架" class="mobile-dropdown-title"><span class="title">框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Spring
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/about/" class="nav-link">
+  About
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Mybatis
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/about/" class="nav-link">
+  About
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="系统" class="dropdown-title"><span class="title">系统</span> <span class="arrow down"></span></button> <button type="button" aria-label="系统" class="mobile-dropdown-title"><span class="title">系统</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/os/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/os/ubuntu/" class="nav-link">
+  Ubuntu
+</a></li><li class="dropdown-item"><!----> <a href="/os/centos/" class="nav-link">
+  CentOS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><span class="title">后端</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端" class="mobile-dropdown-title"><span class="title">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/backend/mysql/" class="nav-link">
+  MySQL
+</a></li><li class="dropdown-item"><!----> <a href="/backend/redis/" class="nav-link">
+  Redis
+</a></li><li class="dropdown-item"><!----> <a href="/backend/docker/" class="nav-link">
+  Docker
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="中间件" class="dropdown-title"><span class="title">中间件</span> <span class="arrow down"></span></button> <button type="button" aria-label="中间件" class="mobile-dropdown-title"><span class="title">中间件</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          服务器
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/Middleware/Nginx/" class="nav-link">
+  Nginx
+</a></li></ul></li><li class="dropdown-item"><h4>
+          消息队列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/RabbitMQ/" class="nav-link">
+  RabbitMQ
+</a></li><li class="dropdown-subitem"><a href="/RocketMQ/" class="nav-link">
+  RocketMQ
+</a></li></ul></li><li class="dropdown-item"><h4>
+          搜索引擎
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/ElasticSearch/" class="nav-link">
+  ElasticSearch
+</a></li><li class="dropdown-subitem"><a href="/slor/" class="nav-link">
+  Solr
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发工具" class="dropdown-title"><span class="title">开发工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="开发工具" class="mobile-dropdown-title"><span class="title">开发工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tools/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/tools/github/" class="nav-link router-link-active">
+  Github
+</a></li><li class="dropdown-item"><!----> <a href="/tools/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/tools/bookmark-scripts/" class="nav-link">
+  Bookmark scripts
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow down"></span></button> <button type="button" aria-label="更多" class="mobile-dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/more/navigation.html" class="nav-link">
+  导航 🎉
+</a></li><li class="dropdown-item"><!----> <a href="https://shanyuhai123.github.io/vuepress-plugin-auto-sidebar/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VuePress 侧边栏插件
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://vuepress.vuejs.org/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VuePress 官网
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="框架" class="dropdown-title"><span class="title">框架</span> <span class="arrow down"></span></button> <button type="button" aria-label="框架" class="mobile-dropdown-title"><span class="title">框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Spring
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/about/" class="nav-link">
+  About
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Mybatis
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/about/" class="nav-link">
+  About
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="系统" class="dropdown-title"><span class="title">系统</span> <span class="arrow down"></span></button> <button type="button" aria-label="系统" class="mobile-dropdown-title"><span class="title">系统</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/os/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/os/ubuntu/" class="nav-link">
+  Ubuntu
+</a></li><li class="dropdown-item"><!----> <a href="/os/centos/" class="nav-link">
+  CentOS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><span class="title">后端</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端" class="mobile-dropdown-title"><span class="title">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/backend/mysql/" class="nav-link">
+  MySQL
+</a></li><li class="dropdown-item"><!----> <a href="/backend/redis/" class="nav-link">
+  Redis
+</a></li><li class="dropdown-item"><!----> <a href="/backend/docker/" class="nav-link">
+  Docker
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="中间件" class="dropdown-title"><span class="title">中间件</span> <span class="arrow down"></span></button> <button type="button" aria-label="中间件" class="mobile-dropdown-title"><span class="title">中间件</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          服务器
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/Middleware/Nginx/" class="nav-link">
+  Nginx
+</a></li></ul></li><li class="dropdown-item"><h4>
+          消息队列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/RabbitMQ/" class="nav-link">
+  RabbitMQ
+</a></li><li class="dropdown-subitem"><a href="/RocketMQ/" class="nav-link">
+  RocketMQ
+</a></li></ul></li><li class="dropdown-item"><h4>
+          搜索引擎
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/ElasticSearch/" class="nav-link">
+  ElasticSearch
+</a></li><li class="dropdown-subitem"><a href="/slor/" class="nav-link">
+  Solr
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发工具" class="dropdown-title"><span class="title">开发工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="开发工具" class="mobile-dropdown-title"><span class="title">开发工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tools/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/tools/github/" class="nav-link router-link-active">
+  Github
+</a></li><li class="dropdown-item"><!----> <a href="/tools/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/tools/bookmark-scripts/" class="nav-link">
+  Bookmark scripts
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow down"></span></button> <button type="button" aria-label="更多" class="mobile-dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/more/navigation.html" class="nav-link">
+  导航 🎉
+</a></li><li class="dropdown-item"><!----> <a href="https://shanyuhai123.github.io/vuepress-plugin-auto-sidebar/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VuePress 侧边栏插件
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://vuepress.vuejs.org/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VuePress 官网
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Github</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/tools/github/" aria-current="page" class="sidebar-link">全球最大同性交友平台 Github</a></li><li><a href="/tools/github/dns-resolve-github-pages.html" class="sidebar-link">DNS 解析 Github Pages</a></li><li><a href="/tools/github/download-huge-project-from-github.html" class="sidebar-link">从 Github 下载大项目</a></li><li><a href="/tools/github/how-to-deploy-private-gitlab.html" aria-current="page" class="active sidebar-link">如何搭建私有 GitLab</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/tools/github/how-to-deploy-private-gitlab.html#安装-gitlab" class="sidebar-link">安装 GitLab</a></li><li class="sidebar-sub-header"><a href="/tools/github/how-to-deploy-private-gitlab.html#邮件服务" class="sidebar-link">邮件服务</a></li><li class="sidebar-sub-header"><a href="/tools/github/how-to-deploy-private-gitlab.html#hostname" class="sidebar-link">hostname</a></li><li class="sidebar-sub-header"><a href="/tools/github/how-to-deploy-private-gitlab.html#备份与恢复" class="sidebar-link">备份与恢复</a></li><li class="sidebar-sub-header"><a href="/tools/github/how-to-deploy-private-gitlab.html#快速而简单的升级" class="sidebar-link">快速而简单的升级</a></li><li class="sidebar-sub-header"><a href="/tools/github/how-to-deploy-private-gitlab.html#添加-runner" class="sidebar-link">添加 Runner</a></li></ul></li><li><a href="/tools/github/switch-multiple-github-accounts.html" class="sidebar-link">切换多个 github 账号</a></li><li><a href="/tools/github/sync-a-fork.html" class="sidebar-link">同步一个 fork</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="如何搭建私有-gitlab"><a href="#如何搭建私有-gitlab" class="header-anchor">#</a> 如何搭建私有 GitLab</h1> <h2 id="安装-gitlab"><a href="#安装-gitlab" class="header-anchor">#</a> 安装 GitLab</h2> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 创建数据目录</span>
+<span class="token function">sudo</span> <span class="token function">mkdir</span> <span class="token parameter variable">-p</span> /srv/gitlab/config /srv/gitlab/logs /srv/gitlab/data
+
+<span class="token comment"># 验证</span>
+tree /srv
+
+<span class="token comment"># 安装 gitlab</span>
+<span class="token function">sudo</span> <span class="token function">docker</span> run <span class="token parameter variable">--detach</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">--restart</span> always <span class="token punctuation">\</span>
+  <span class="token parameter variable">--hostname</span> gitlab.example.com <span class="token punctuation">\</span>
+  <span class="token comment"># 注意修改 22 为 30022 后，利用 git 协议下载需指定其端口才可以下载，例如 git clone ssh://git@xxx.gitlab.com:port/.../xxx.git</span>
+  <span class="token comment"># 可配置 ssh config 指定端口，减少操作</span>
+  <span class="token comment"># 而 http 协议可正常下载（其实是因为 nginx 转了一层，否则也是得修改的）</span>
+  <span class="token parameter variable">--publish</span> <span class="token number">30443</span>:443 <span class="token parameter variable">--publish</span> <span class="token number">30080</span>:80 <span class="token parameter variable">--publish</span> <span class="token number">30022</span>:22 <span class="token punctuation">\</span>
+  <span class="token parameter variable">--volume</span> /srv/gitlab/config:/etc/gitlab <span class="token punctuation">\</span>
+  <span class="token parameter variable">--volume</span> /srv/gitlab/logs:/var/log/gitlab <span class="token punctuation">\</span>
+  <span class="token parameter variable">--volume</span> /srv/gitlab/data:/var/opt/gitlab <span class="token punctuation">\</span>
+  <span class="token parameter variable">--name</span> gitlab <span class="token punctuation">\</span>
+  gitlab/gitlab-ce
+
+<span class="token comment"># 验证</span>
+<span class="token function">docker</span> <span class="token function">ps</span>
+<span class="token function">netstat</span> <span class="token parameter variable">-tunlp</span>
+</code></pre></div><p>最后打开浏览器来验证。</p> <h2 id="邮件服务"><a href="#邮件服务" class="header-anchor">#</a> 邮件服务</h2> <p>多家对比后选择了<a href="https://exmail.qq.com/" target="_blank" rel="noopener noreferrer">腾讯企业邮箱<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>，依次进入 <code>邮箱 =&gt; 邮箱设置 =&gt; 收发信设置 =&gt; 开启IMAP/SMTP服务</code>，再回到 <code>邮箱设置 =&gt; 邮箱绑定 =&gt; 安全登录</code> 获取授权码即可（至于配置域名，邮件配置可另行谷歌）。</p> <h3 id="_1-修改配置"><a href="#_1-修改配置" class="header-anchor">#</a> 1. 修改配置</h3> <p>找到 <code>Email Settings</code> 在后面追加对应的 <code>SMTP</code> 配置。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">sudo</span> <span class="token function">vim</span> /srv/gitlab/config/gitlab.rb
+
+<span class="token comment"># 开启 SMTP 功能</span>
+gitlab_rails<span class="token punctuation">[</span><span class="token string">'smtp_enable'</span><span class="token punctuation">]</span><span class="token operator">=</span>true
+gitlab_rails<span class="token punctuation">[</span><span class="token string">'smtp_address'</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">&quot;smtp.exmail.qq.com&quot;</span>
+gitlab_rails<span class="token punctuation">[</span><span class="token string">'smtp_port'</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">465</span>
+gitlab_rails<span class="token punctuation">[</span><span class="token string">'smtp_user_name'</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">&quot;name@domain.com&quot;</span> <span class="token comment"># 邮件发送人</span>
+gitlab_rails<span class="token punctuation">[</span><span class="token string">'gitlab_email_from'</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">&quot;name@domain.com&quot;</span> <span class="token comment"># 与 smtp_user_name 一致</span>
+gitlab_rails<span class="token punctuation">[</span><span class="token string">'smtp_password'</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">&quot;password&quot;</span> <span class="token comment"># 获取的授权码</span>
+gitlab_rails<span class="token punctuation">[</span><span class="token string">'smtp_domain'</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">&quot;exmail.qq.com&quot;</span>
+gitlab_rails<span class="token punctuation">[</span><span class="token string">'smtp_authentication'</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">&quot;login&quot;</span>
+gitlab_rails<span class="token punctuation">[</span><span class="token string">'smtp_enable_starttls_auto'</span><span class="token punctuation">]</span><span class="token operator">=</span>true
+gitlab_rails<span class="token punctuation">[</span><span class="token string">'smtp_tls'</span><span class="token punctuation">]</span><span class="token operator">=</span>true
+</code></pre></div><h3 id="_2-验证服务"><a href="#_2-验证服务" class="header-anchor">#</a> 2. 验证服务</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 以命令形式重新加载配置，也可进入容器后手动执行</span>
+<span class="token function">docker</span> <span class="token builtin class-name">exec</span> gitlab gitlab-ctl reconfigure
+
+<span class="token comment"># 进入 gitlab 容器</span>
+<span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> gitlab <span class="token function">bash</span>
+
+<span class="token comment"># 开启 gitlab-rails</span>
+gitlab-rails console
+
+<span class="token comment"># 测试邮件发送，可换为自己的邮箱</span>
+Notify.test_email<span class="token punctuation">(</span><span class="token string">'someone@example.com'</span>, <span class="token string">'Message Subject'</span>, <span class="token string">'Message Body'</span><span class="token punctuation">)</span>.deliver_now
+</code></pre></div><p>等待邮件发送到自己的邮箱后即可。</p> <h2 id="hostname"><a href="#hostname" class="header-anchor">#</a> hostname</h2> <p><code>hostname</code> 会影响仓库下载、用户注册邀请等问题。</p> <p>在安装 <code>gitlab</code> 时为其设置 <code>hostname</code> 为 <code>gitlab.example.com</code>，此处还需要修改为你对应的域名或 <code>ip</code> 地址。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">sudo</span> <span class="token function">vim</span> /srv/gitlab/config/gitlab.rb
+
+<span class="token comment"># 配置 external_url</span>
+external_url <span class="token string">'http://gitlab.example.com'</span>
+</code></pre></div><h2 id="备份与恢复"><a href="#备份与恢复" class="header-anchor">#</a> 备份与恢复</h2> <blockquote><p>一个有意思的尝试是直接更新镜像也会自动迁移配置，商业数据请小心该尝试</p></blockquote> <p>由于开始就将数据卷挂载到 <code>/srv/gitlab</code> 下，所以备份的数据也会在该目录的 <code>/srv/gitlab/data/backups</code> 中。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># GitLab 12.2 之后的版本备份指令</span>
+<span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-t</span> <span class="token operator">&lt;</span>container name<span class="token operator">&gt;</span> gitlab-backup create
+</code></pre></div><p>更好的形式是定期备份：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">crontab</span> <span class="token parameter variable">-e</span>
+
+<span class="token comment"># 每天凌晨4点备份</span>
+<span class="token number">0</span> <span class="token number">4</span> * * * <span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-t</span> gitlab gitlab-backup create <span class="token operator">&amp;&gt;</span> /dev/null
+<span class="token comment"># 每天凌晨4点备份删除 7 天前备份</span>
+<span class="token number">0</span> <span class="token number">4</span> * * * <span class="token function">find</span> /srv/gitlab/data/backups/ <span class="token parameter variable">-mtime</span> +7 <span class="token parameter variable">-name</span> <span class="token string">&quot;*gitlab_backup.tar&quot;</span> <span class="token parameter variable">-delete</span> <span class="token operator">&amp;&gt;</span> /dev/null
+</code></pre></div><p>根据备份恢复数据：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 停止服务</span>
+gitlab-ctl stop unicorn <span class="token comment"># 应用服务器</span>
+gitlab-ctl stop sidekiq <span class="token comment"># 后台异步任务队列</span>
+gitlab-ctl status <span class="token comment"># 验证</span>
+
+<span class="token comment"># 指定数据</span>
+gitlab-rake gitlab:backup:restore <span class="token assign-left variable">BACKUP</span><span class="token operator">=</span>1607523472_2020_12_09_13.2.1
+</code></pre></div><h2 id="快速而简单的升级"><a href="#快速而简单的升级" class="header-anchor">#</a> 快速而简单的升级</h2> <p>使用 Docker Compose 进行维护，找到新的<a href="https://hub.docker.com/r/gitlab/gitlab-ce/tags" target="_blank" rel="noopener noreferrer">镜像<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>替换上，注意大版本的升级变动。</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token function">docker-compose</span> down
+<span class="token function">docker-compose</span> up
+
+<span class="token comment"># 等待完成</span>
+<span class="token function">docker-compose</span> logs <span class="token parameter variable">-f</span>
+</code></pre></div><h2 id="添加-runner"><a href="#添加-runner" class="header-anchor">#</a> 添加 Runner</h2> <p>先注册 GitLab Runner：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 注册（删除 register 及以后可交互式注册）</span>
+<span class="token function">docker</span> run <span class="token parameter variable">--rm</span> <span class="token parameter variable">-it</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-v</span> /srv/gitlab-runner/config:/etc/gitlab-runner <span class="token punctuation">\</span>
+  gitlab/gitlab-runner:latest register <span class="token punctuation">\</span>
+    --non-interactive <span class="token punctuation">\</span>
+    <span class="token parameter variable">--url</span> <span class="token string">&quot;https://gitlab.com/&quot;</span> <span class="token punctuation">\</span>
+    --registration-token <span class="token string">&quot;PROJECT_REGISTRATION_TOKEN&quot;</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">--executor</span> <span class="token string">&quot;docker&quot;</span> <span class="token punctuation">\</span>
+    --docker-image <span class="token string">&quot;docker:19.03.12&quot;</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">--description</span> <span class="token string">&quot;docker-runner&quot;</span> <span class="token punctuation">\</span>
+    <span class="token comment"># --docker-privileged 判断是否需要</span>
+    --docker-privileged <span class="token punctuation">\</span>
+    --tag-list <span class="token string">&quot;docker&quot;</span> <span class="token punctuation">\</span>
+    --run-untagged<span class="token operator">=</span><span class="token string">&quot;true&quot;</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">--locked</span><span class="token operator">=</span><span class="token string">&quot;false&quot;</span> <span class="token punctuation">\</span>
+    --access-level<span class="token operator">=</span><span class="token string">&quot;not_protected&quot;</span>
+</code></pre></div><p>再前往 <code>/srv/gitlab-runner/config/config.toml</code> 修改 <code>volumes</code>：</p> <div class="language-toml extra-class"><pre class="language-toml"><code><span class="token comment"># 修改前：</span>
+<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token table class-name">runners</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+  <span class="token comment"># ...</span>
+  <span class="token punctuation">[</span><span class="token table class-name">runners.docker</span><span class="token punctuation">]</span>
+    <span class="token key property">volumes</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token string">&quot;/cache&quot;</span><span class="token punctuation">]</span>
+
+<span class="token comment"># 修改后：</span>
+<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token table class-name">runners</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+  <span class="token comment"># ...</span>
+  <span class="token punctuation">[</span><span class="token table class-name">runners.docker</span><span class="token punctuation">]</span>
+    <span class="token key property">volumes</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token string">&quot;/cache&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;/var/run/docker.sock:/var/run/docker.sock&quot;</span><span class="token punctuation">]</span>
+</code></pre></div><p>最后启动 Runner：</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">--restart</span> always <span class="token punctuation">\</span>
+  <span class="token parameter variable">-v</span> /srv/gitlab-runner/config:/etc/gitlab-runner <span class="token punctuation">\</span>
+  <span class="token parameter variable">-v</span> /var/run/docker.sock:/var/run/docker.sock <span class="token punctuation">\</span>
+  <span class="token parameter variable">--name</span> gitlab-runner <span class="token punctuation">\</span>
+  gitlab/gitlab-runner:latest
+</code></pre></div><h3 id="privileged"><a href="#privileged" class="header-anchor">#</a> privileged</h3> <p>当存在 <code>error during connect no such host</code> 报错时修改 runner config 的 <code>privileged</code> 属性为 <code>true</code>。</p> <h3 id="自签证书"><a href="#自签证书" class="header-anchor">#</a> 自签证书</h3> <p>根据 <a href="https://docs.gitlab.com/runner/configuration/tls-self-signed.html" target="_blank" rel="noopener noreferrer">tls-self-signed<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 去信任 ca：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 宿主机</span>
+<span class="token function">docker</span> <span class="token function">cp</span> /etc/gitlab-runner/certs/ca.crt gitlab-runner-node:/usr/local/share/ca-certificates/ca.crt
+
+<span class="token comment"># 容器内</span>
+<span class="token function">apt-get</span> <span class="token function">install</span> <span class="token parameter variable">-y</span> ca-certificates
+update-ca-certificates <span class="token parameter variable">--fresh</span>
+
+<span class="token function">curl</span> https://example.com <span class="token comment"># 访问成功</span>
+</code></pre></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/minboo/docs/edit/master/docs/tools/github/how-to-deploy-private-gitlab.md" target="_blank" rel="noopener noreferrer">编辑文档！</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2022年9月11日晚上11点48分</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/tools/github/download-huge-project-from-github.html" class="prev">
+        从 Github 下载大项目
+      </a></span> <span class="next"><a href="/tools/github/switch-multiple-github-accounts.html">
+        切换多个 github 账号
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.b042dfd4.js" defer></script><script src="/assets/js/2.8154945c.js" defer></script><script src="/assets/js/101.48c30368.js" defer></script><script src="/assets/js/3.4234061e.js" defer></script>
+  </body>
+</html>

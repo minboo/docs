@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>快速开启 Nginx | 在路上</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/logo.png">
+    <mata name="author" content="在路上"></mata>
+    <mata name="Keyword" content="我的博客"></mata>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon-152x152.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <meta name="description" content="快速开启 Nginx">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/assets/css/0.styles.92fb795d.css" as="style"><link rel="preload" href="/assets/js/app.b042dfd4.js" as="script"><link rel="preload" href="/assets/js/2.8154945c.js" as="script"><link rel="preload" href="/assets/js/39.2ef9d394.js" as="script"><link rel="preload" href="/assets/js/3.4234061e.js" as="script"><link rel="prefetch" href="/assets/js/10.b0ef5cc7.js"><link rel="prefetch" href="/assets/js/100.c94e731e.js"><link rel="prefetch" href="/assets/js/101.48c30368.js"><link rel="prefetch" href="/assets/js/102.46c7e4c5.js"><link rel="prefetch" href="/assets/js/103.c3a5deff.js"><link rel="prefetch" href="/assets/js/104.0a230598.js"><link rel="prefetch" href="/assets/js/105.5bb8ca11.js"><link rel="prefetch" href="/assets/js/106.452ae601.js"><link rel="prefetch" href="/assets/js/107.25f200d5.js"><link rel="prefetch" href="/assets/js/108.17d74b6e.js"><link rel="prefetch" href="/assets/js/109.13b1de0b.js"><link rel="prefetch" href="/assets/js/11.97d54b7d.js"><link rel="prefetch" href="/assets/js/110.ec225bdb.js"><link rel="prefetch" href="/assets/js/111.b852821d.js"><link rel="prefetch" href="/assets/js/112.5652e068.js"><link rel="prefetch" href="/assets/js/113.accd65c3.js"><link rel="prefetch" href="/assets/js/12.9aae7b96.js"><link rel="prefetch" href="/assets/js/13.848a8a4d.js"><link rel="prefetch" href="/assets/js/14.c4cbbbac.js"><link rel="prefetch" href="/assets/js/15.865d5993.js"><link rel="prefetch" href="/assets/js/16.0f637415.js"><link rel="prefetch" href="/assets/js/17.77902faf.js"><link rel="prefetch" href="/assets/js/18.06c5e1a8.js"><link rel="prefetch" href="/assets/js/19.058ef2e9.js"><link rel="prefetch" href="/assets/js/20.9d8d2a60.js"><link rel="prefetch" href="/assets/js/21.d53bc81e.js"><link rel="prefetch" href="/assets/js/22.013a1d1d.js"><link rel="prefetch" href="/assets/js/23.5478e71f.js"><link rel="prefetch" href="/assets/js/24.ad64936d.js"><link rel="prefetch" href="/assets/js/25.8156faf2.js"><link rel="prefetch" href="/assets/js/26.de1ad383.js"><link rel="prefetch" href="/assets/js/27.1a88c4fe.js"><link rel="prefetch" href="/assets/js/28.649ea49d.js"><link rel="prefetch" href="/assets/js/29.8bb6a22b.js"><link rel="prefetch" href="/assets/js/30.94188915.js"><link rel="prefetch" href="/assets/js/31.c7c96e55.js"><link rel="prefetch" href="/assets/js/32.b40c2f9d.js"><link rel="prefetch" href="/assets/js/33.8a2d8cd6.js"><link rel="prefetch" href="/assets/js/34.eea30f0c.js"><link rel="prefetch" href="/assets/js/35.472fbeac.js"><link rel="prefetch" href="/assets/js/36.51080cfc.js"><link rel="prefetch" href="/assets/js/37.b0f4846a.js"><link rel="prefetch" href="/assets/js/38.a1174889.js"><link rel="prefetch" href="/assets/js/4.29fa54b8.js"><link rel="prefetch" href="/assets/js/40.a1a50e67.js"><link rel="prefetch" href="/assets/js/41.82a44a96.js"><link rel="prefetch" href="/assets/js/42.dfffe07b.js"><link rel="prefetch" href="/assets/js/43.44eea0b0.js"><link rel="prefetch" href="/assets/js/44.dc023168.js"><link rel="prefetch" href="/assets/js/45.c5dd3e94.js"><link rel="prefetch" href="/assets/js/46.79948b06.js"><link rel="prefetch" href="/assets/js/47.485ccf84.js"><link rel="prefetch" href="/assets/js/48.14084039.js"><link rel="prefetch" href="/assets/js/49.24165fa3.js"><link rel="prefetch" href="/assets/js/5.0e72a8e9.js"><link rel="prefetch" href="/assets/js/50.78813583.js"><link rel="prefetch" href="/assets/js/51.53aa9cf5.js"><link rel="prefetch" href="/assets/js/52.c22b1755.js"><link rel="prefetch" href="/assets/js/53.7ad7b4a8.js"><link rel="prefetch" href="/assets/js/54.0c093768.js"><link rel="prefetch" href="/assets/js/55.1fbbd65d.js"><link rel="prefetch" href="/assets/js/56.843ea8ee.js"><link rel="prefetch" href="/assets/js/57.123e346c.js"><link rel="prefetch" href="/assets/js/58.d34951c6.js"><link rel="prefetch" href="/assets/js/59.b85cf23f.js"><link rel="prefetch" href="/assets/js/6.d3ecc9b3.js"><link rel="prefetch" href="/assets/js/60.e9071331.js"><link rel="prefetch" href="/assets/js/61.6ac666dd.js"><link rel="prefetch" href="/assets/js/62.afab2eff.js"><link rel="prefetch" href="/assets/js/63.800abe90.js"><link rel="prefetch" href="/assets/js/64.5951988c.js"><link rel="prefetch" href="/assets/js/65.01ea9a97.js"><link rel="prefetch" href="/assets/js/66.bb85edd4.js"><link rel="prefetch" href="/assets/js/67.c0da47a9.js"><link rel="prefetch" href="/assets/js/68.ee327cdd.js"><link rel="prefetch" href="/assets/js/69.35735eff.js"><link rel="prefetch" href="/assets/js/7.3b12d94c.js"><link rel="prefetch" href="/assets/js/70.5cf976c2.js"><link rel="prefetch" href="/assets/js/71.0bfc13eb.js"><link rel="prefetch" href="/assets/js/72.6e7aeddb.js"><link rel="prefetch" href="/assets/js/73.361215c2.js"><link rel="prefetch" href="/assets/js/74.6dae3b39.js"><link rel="prefetch" href="/assets/js/75.56bbe243.js"><link rel="prefetch" href="/assets/js/76.88ce9f6b.js"><link rel="prefetch" href="/assets/js/77.52d3bde1.js"><link rel="prefetch" href="/assets/js/78.62390d6f.js"><link rel="prefetch" href="/assets/js/79.e8590d7e.js"><link rel="prefetch" href="/assets/js/8.b4a14e8c.js"><link rel="prefetch" href="/assets/js/80.0649d97d.js"><link rel="prefetch" href="/assets/js/81.f54b68cd.js"><link rel="prefetch" href="/assets/js/82.a4f85774.js"><link rel="prefetch" href="/assets/js/83.abd156a5.js"><link rel="prefetch" href="/assets/js/84.0ba27a18.js"><link rel="prefetch" href="/assets/js/85.b84ccd9c.js"><link rel="prefetch" href="/assets/js/86.c46352c6.js"><link rel="prefetch" href="/assets/js/87.3291a1b3.js"><link rel="prefetch" href="/assets/js/88.ef8e27eb.js"><link rel="prefetch" href="/assets/js/89.346fee6c.js"><link rel="prefetch" href="/assets/js/9.82925584.js"><link rel="prefetch" href="/assets/js/90.fa92de62.js"><link rel="prefetch" href="/assets/js/91.a0a26338.js"><link rel="prefetch" href="/assets/js/92.5675720d.js"><link rel="prefetch" href="/assets/js/93.0bd5bc0c.js"><link rel="prefetch" href="/assets/js/94.843c0392.js"><link rel="prefetch" href="/assets/js/95.ba825a76.js"><link rel="prefetch" href="/assets/js/96.c57767c7.js"><link rel="prefetch" href="/assets/js/97.2e9e1eb3.js"><link rel="prefetch" href="/assets/js/98.12339901.js"><link rel="prefetch" href="/assets/js/99.1f1b02fe.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.92fb795d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="在路上" class="logo"> <span class="site-name can-hide">在路上</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="框架" class="dropdown-title"><span class="title">框架</span> <span class="arrow down"></span></button> <button type="button" aria-label="框架" class="mobile-dropdown-title"><span class="title">框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Spring
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/about/" class="nav-link">
+  About
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Mybatis
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/about/" class="nav-link">
+  About
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="系统" class="dropdown-title"><span class="title">系统</span> <span class="arrow down"></span></button> <button type="button" aria-label="系统" class="mobile-dropdown-title"><span class="title">系统</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/os/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/os/ubuntu/" class="nav-link">
+  Ubuntu
+</a></li><li class="dropdown-item"><!----> <a href="/os/centos/" class="nav-link">
+  CentOS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><span class="title">后端</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端" class="mobile-dropdown-title"><span class="title">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend/nginx/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/backend/mysql/" class="nav-link">
+  MySQL
+</a></li><li class="dropdown-item"><!----> <a href="/backend/redis/" class="nav-link">
+  Redis
+</a></li><li class="dropdown-item"><!----> <a href="/backend/docker/" class="nav-link">
+  Docker
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="中间件" class="dropdown-title"><span class="title">中间件</span> <span class="arrow down"></span></button> <button type="button" aria-label="中间件" class="mobile-dropdown-title"><span class="title">中间件</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          服务器
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/Middleware/Nginx/" class="nav-link">
+  Nginx
+</a></li></ul></li><li class="dropdown-item"><h4>
+          消息队列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/RabbitMQ/" class="nav-link">
+  RabbitMQ
+</a></li><li class="dropdown-subitem"><a href="/RocketMQ/" class="nav-link">
+  RocketMQ
+</a></li></ul></li><li class="dropdown-item"><h4>
+          搜索引擎
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/ElasticSearch/" class="nav-link">
+  ElasticSearch
+</a></li><li class="dropdown-subitem"><a href="/slor/" class="nav-link">
+  Solr
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发工具" class="dropdown-title"><span class="title">开发工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="开发工具" class="mobile-dropdown-title"><span class="title">开发工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tools/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/tools/github/" class="nav-link">
+  Github
+</a></li><li class="dropdown-item"><!----> <a href="/tools/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/tools/bookmark-scripts/" class="nav-link">
+  Bookmark scripts
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow down"></span></button> <button type="button" aria-label="更多" class="mobile-dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/more/navigation.html" class="nav-link">
+  导航 🎉
+</a></li><li class="dropdown-item"><!----> <a href="https://shanyuhai123.github.io/vuepress-plugin-auto-sidebar/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VuePress 侧边栏插件
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://vuepress.vuejs.org/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VuePress 官网
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="框架" class="dropdown-title"><span class="title">框架</span> <span class="arrow down"></span></button> <button type="button" aria-label="框架" class="mobile-dropdown-title"><span class="title">框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Spring
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/about/" class="nav-link">
+  About
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Mybatis
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/about/" class="nav-link">
+  About
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="系统" class="dropdown-title"><span class="title">系统</span> <span class="arrow down"></span></button> <button type="button" aria-label="系统" class="mobile-dropdown-title"><span class="title">系统</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/os/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/os/ubuntu/" class="nav-link">
+  Ubuntu
+</a></li><li class="dropdown-item"><!----> <a href="/os/centos/" class="nav-link">
+  CentOS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><span class="title">后端</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端" class="mobile-dropdown-title"><span class="title">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend/nginx/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/backend/mysql/" class="nav-link">
+  MySQL
+</a></li><li class="dropdown-item"><!----> <a href="/backend/redis/" class="nav-link">
+  Redis
+</a></li><li class="dropdown-item"><!----> <a href="/backend/docker/" class="nav-link">
+  Docker
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="中间件" class="dropdown-title"><span class="title">中间件</span> <span class="arrow down"></span></button> <button type="button" aria-label="中间件" class="mobile-dropdown-title"><span class="title">中间件</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          服务器
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/Middleware/Nginx/" class="nav-link">
+  Nginx
+</a></li></ul></li><li class="dropdown-item"><h4>
+          消息队列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/RabbitMQ/" class="nav-link">
+  RabbitMQ
+</a></li><li class="dropdown-subitem"><a href="/RocketMQ/" class="nav-link">
+  RocketMQ
+</a></li></ul></li><li class="dropdown-item"><h4>
+          搜索引擎
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/ElasticSearch/" class="nav-link">
+  ElasticSearch
+</a></li><li class="dropdown-subitem"><a href="/slor/" class="nav-link">
+  Solr
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发工具" class="dropdown-title"><span class="title">开发工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="开发工具" class="mobile-dropdown-title"><span class="title">开发工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tools/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/tools/github/" class="nav-link">
+  Github
+</a></li><li class="dropdown-item"><!----> <a href="/tools/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/tools/bookmark-scripts/" class="nav-link">
+  Bookmark scripts
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow down"></span></button> <button type="button" aria-label="更多" class="mobile-dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/more/navigation.html" class="nav-link">
+  导航 🎉
+</a></li><li class="dropdown-item"><!----> <a href="https://shanyuhai123.github.io/vuepress-plugin-auto-sidebar/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VuePress 侧边栏插件
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://vuepress.vuejs.org/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VuePress 官网
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Nginx</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/backend/nginx/" aria-current="page" class="active sidebar-link">快速开启 Nginx</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/backend/nginx/#一些重要的事" class="sidebar-link">一些重要的事</a></li><li class="sidebar-sub-header"><a href="/backend/nginx/#安装-nginx" class="sidebar-link">安装 Nginx</a></li><li class="sidebar-sub-header"><a href="/backend/nginx/#必须知道的基本操作" class="sidebar-link">必须知道的基本操作</a></li><li class="sidebar-sub-header"><a href="/backend/nginx/#内置变量" class="sidebar-link">内置变量</a></li><li class="sidebar-sub-header"><a href="/backend/nginx/#参考资料" class="sidebar-link">参考资料</a></li></ul></li><li><a href="/backend/nginx/configurin-systemd-service-for-nginx.html" class="sidebar-link">为 Nginx 配置 systemd 服务</a></li><li><a href="/backend/nginx/handle-error.html" class="sidebar-link">处理 Nginx ERR</a></li><li><a href="/backend/nginx/install-goaccess.html" class="sidebar-link">使用 goaccess 可视化查看日志</a></li><li><a href="/backend/nginx/limit-module.html" class="sidebar-link">Nginx 的限制模块</a></li><li><a href="/backend/nginx/location-rules.html" class="sidebar-link">Nginx 的 location 规则</a></li><li><a href="/backend/nginx/master-slave-nginx.html" class="sidebar-link">主从 Nginx</a></li><li><a href="/backend/nginx/nginx-upstream.html" class="sidebar-link">Nginx 反向代理与负载均衡</a></li><li><a href="/backend/nginx/proxy-pass-rules.html" class="sidebar-link">Nginx 的 proxy_pass 规则</a></li><li><a href="/backend/nginx/referer-module.html" class="sidebar-link">Nginx 防盗链</a></li><li><a href="/backend/nginx/rewrite-rules.html" class="sidebar-link">Nginx 的 rewrite 规则</a></li><li><a href="/backend/nginx/the-difference-between-root-and-alias.html" class="sidebar-link">root 与 alias 区别</a></li><li><a href="/backend/nginx/upgrade-http-to-https.html" class="sidebar-link">Nginx 至 HTTPS</a></li><li><a href="/backend/nginx/websocket-proxy.html" class="sidebar-link">websocket 反向代理</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="快速开启-nginx"><a href="#快速开启-nginx" class="header-anchor">#</a> 快速开启 Nginx</h1> <h2 id="一些重要的事"><a href="#一些重要的事" class="header-anchor">#</a> 一些重要的事</h2> <h3 id="防止泄漏"><a href="#防止泄漏" class="header-anchor">#</a> 防止泄漏</h3> <p>记得设置 <code>default_server</code>，否则在删除对应的 <code>conf</code> 后可能导致不该出现的 <code>server</code> 暴露出来。</p> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">server</span></span> <span class="token punctuation">{</span>
+  <span class="token directive"><span class="token keyword">listen</span>    <span class="token number">80</span> default_server</span><span class="token punctuation">;</span> <span class="token comment"># 在 listen 后追加，而非 server_name</span>
+  <span class="token directive"><span class="token keyword">server_name</span>  xxx.example.com example.com</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="禁止-ip-访问"><a href="#禁止-ip-访问" class="header-anchor">#</a> 禁止 IP 访问</h3> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">server</span></span> <span class="token punctuation">{</span>
+  <span class="token directive"><span class="token keyword">listen</span>   <span class="token number">80</span> default_server</span><span class="token punctuation">;</span>
+  <span class="token directive"><span class="token keyword">listen</span>   [::]:80 default_server</span><span class="token punctuation">;</span>
+  <span class="token directive"><span class="token keyword">server_name</span>  _</span><span class="token punctuation">;</span>
+  <span class="token directive"><span class="token keyword">return</span> <span class="token number">444</span></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="安装-nginx"><a href="#安装-nginx" class="header-anchor">#</a> 安装 Nginx</h2> <p>虽然现在大部分时候都上 docker 了，但偶尔自己编译模块时手动安装还是比较方便的。</p> <h3 id="_1-检测源"><a href="#_1-检测源" class="header-anchor">#</a> 1. 检测源</h3> <p>首先需要检查当前源是否有 Nginx（CentOS示例），当没有的时候需要自己添加源。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>yum list <span class="token operator">|</span> <span class="token function">grep</span> nginx
+<span class="token comment"># nginx.x86_64                             1:1.12.2-2.el7                  epel   </span>
+<span class="token comment"># nginx-all-modules.noarch                 1:1.12.2-2.el7                  epel   </span>
+<span class="token comment"># nginx-filesystem.noarch                  1:1.12.2-2.el7    </span>
+</code></pre></div><h3 id="_2-更新-yum-源并安装"><a href="#_2-更新-yum-源并安装" class="header-anchor">#</a> 2. 更新 yum 源并安装</h3> <p><a href="http://nginx.org/en/download.html" target="_blank" rel="noopener noreferrer">官网<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 中 Nginx 稳定版本已经是 <code>1.20.1</code> ，而检测结果依然是 <code>1.12.2</code>，<a href="http://nginx.org/en/linux_packages.html" target="_blank" rel="noopener noreferrer">修改<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> yum 源来获取最新版。</p> <p>更新 Nginx 的源在 <a href="/os/centos/install-the-latest-version-of-nginx.html">CentOS</a>、<a href="/os/ubuntu/install-the-latest-version-of-nginx.html">Ubuntu</a> 中稍有不同，需要区别安装。</p> <h3 id="_3-编译安装"><a href="#_3-编译安装" class="header-anchor">#</a> 3. 编译安装</h3> <p>当需要添加一些第三方模块时就可以使用该形式，以下为 <code>CentOS 7.6</code>。</p> <h4 id="下载"><a href="#下载" class="header-anchor">#</a> 下载</h4> <p>进入<a href="http://nginx.org/en/download.html" target="_blank" rel="noopener noreferrer">官网<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>获取对应的版本下载链接。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">wget</span> http://nginx.org/download/nginx-1.20.1.tar.gz
+
+<span class="token function">tar</span> <span class="token parameter variable">-zxvf</span> nginx-1.20.1.tar.gz <span class="token comment"># 解压</span>
+ll nginx-1.20.1 <span class="token comment"># 验证</span>
+<span class="token function">cp</span> <span class="token parameter variable">-r</span> nginx-1.20.1/contrib/vim/* ~/.vim <span class="token comment"># 拷贝 vim 配置</span>
+<span class="token function">vim</span> nginx-1.20.1/conf/nginx.conf <span class="token comment"># 验证</span>
+</code></pre></div><h4 id="配置"><a href="#配置" class="header-anchor">#</a> 配置</h4> <div class="language-bash extra-class"><pre class="language-bash"><code>./configure <span class="token parameter variable">--help</span> <span class="token operator">|</span> <span class="token function">less</span> <span class="token comment"># 查看帮助</span>
+./configure <span class="token parameter variable">--prefix</span><span class="token operator">=</span>/home/shanyuhai/nginx <span class="token comment"># 指定目录</span>
+
+<span class="token comment"># 可能会缺乏依赖（解决方案）</span>
+yum <span class="token function">install</span> <span class="token parameter variable">-y</span> httpd-devel pcre perl pcre-devel zlib zlib-devel GeoIP GeoIP-devel <span class="token comment"># 重新执行，当然也可以先使用 yum 安装自动获取一遍依赖（暂不清楚是否会导致负面影响）</span>
+
+<span class="token comment"># 结果如下</span>
+<span class="token comment"># creating objs/Makefile # 新增目录</span>
+
+<span class="token comment"># nginx path prefix: &quot;/home/shanyuhai/nginx&quot;</span>
+<span class="token comment"># nginx binary file: &quot;/home/shanyuhai/nginx/sbin/nginx&quot;</span>
+<span class="token comment"># nginx modules path: &quot;/home/shanyuhai/nginx/modules&quot;</span>
+<span class="token comment"># nginx configuration prefix: &quot;/home/shanyuhai/nginx/conf&quot;</span>
+<span class="token comment"># nginx configuration file: &quot;/home/shanyuhai/nginx/conf/nginx.conf&quot;</span>
+<span class="token comment"># nginx pid file: &quot;/home/shanyuhai/nginx/logs/nginx.pid&quot;</span>
+<span class="token comment"># nginx error log file: &quot;/home/shanyuhai/nginx/logs/error.log&quot;</span>
+<span class="token comment"># nginx http access log file: &quot;/home/shanyuhai/nginx/logs/access.log&quot;</span>
+<span class="token comment"># nginx http client request body temporary files: &quot;client_body_temp&quot;</span>
+<span class="token comment"># nginx http proxy temporary files: &quot;proxy_temp&quot;</span>
+<span class="token comment"># nginx http fastcgi temporary files: &quot;fastcgi_temp&quot;</span>
+<span class="token comment"># nginx http uwsgi temporary files: &quot;uwsgi_temp&quot;</span>
+<span class="token comment"># nginx http scgi temporary files: &quot;scgi_temp&quot;</span>
+
+ll objs <span class="token comment"># 查看稍后 make 的内容</span>
+<span class="token function">make</span> <span class="token comment"># 编译</span>
+ll objs <span class="token comment"># 验证</span>
+<span class="token function">make</span> <span class="token function">install</span> <span class="token comment"># 安装</span>
+
+/home/shanyuhai/nginx/sbin/nginx <span class="token parameter variable">-V</span> <span class="token comment"># 验证</span>
+</code></pre></div><h2 id="必须知道的基本操作"><a href="#必须知道的基本操作" class="header-anchor">#</a> 必须知道的基本操作</h2> <h3 id="启用安全组"><a href="#启用安全组" class="header-anchor">#</a> 启用安全组</h3> <p>在一顿操作之后，明明本地可以访问，为啥外网访问不了？可能是你忘记开放云服务器的安全组了。</p> <p>操作流程：</p> <p><code>登录</code> &gt; <code>控制台</code> &gt; <code>云服务器ECS（左侧）</code> &gt; <code>安全组</code> &gt; <code>配置规则</code> &gt; <code>添加安全组规则</code> &gt; <code>填充内容</code> &gt; <code>确定</code></p> <h3 id="进程与端口"><a href="#进程与端口" class="header-anchor">#</a> 进程与端口</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 进程</span>
+<span class="token comment"># ps 是 Process Status 的简写，可以通过 ps 来查看对应的进程</span>
+<span class="token function">ps</span> <span class="token parameter variable">-ef</span> <span class="token operator">|</span> <span class="token function">grep</span> nginx
+<span class="token comment"># 端口</span>
+<span class="token comment"># netstat 是 net status 的简写， 可以查看有哪些端口正在被占用</span>
+<span class="token function">netstat</span> <span class="token parameter variable">-lntup</span>
+</code></pre></div><h3 id="启动"><a href="#启动" class="header-anchor">#</a> 启动</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 直接启动</span>
+nginx
+<span class="token comment"># systemctl 启动</span>
+systemctl start nginx.service
+<span class="token comment"># 开机自启</span>
+systemctl <span class="token builtin class-name">enable</span> nginx.service
+</code></pre></div><h3 id="停止"><a href="#停止" class="header-anchor">#</a> 停止</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># normal quit</span>
+nginx <span class="token parameter variable">-s</span> quit
+<span class="token comment"># force stop</span>
+nginx <span class="token parameter variable">-s</span> stop
+<span class="token comment"># systemctl</span>
+systemctl stop nginx.service
+
+<span class="token comment"># kill pid</span>
+<span class="token function">killall</span> nginx
+<span class="token comment">## 或</span>
+<span class="token function">kill</span> <span class="token parameter variable">-9</span> pid
+</code></pre></div><h3 id="重启"><a href="#重启" class="header-anchor">#</a> 重启</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># normal</span>
+nginx <span class="token parameter variable">-s</span> reload
+<span class="token comment"># systemctl</span>
+systemctl restart nginx.service
+</code></pre></div><h2 id="内置变量"><a href="#内置变量" class="header-anchor">#</a> 内置变量</h2> <p>Nginx 提供了丰富的<a href="https://nginx.org/en/docs/varindex.html" target="_blank" rel="noopener noreferrer">内置变量<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>，如果引入了其他模块还会有对应模块的变量。</p> <table><thead><tr><th style="text-align:center;">variable</th> <th style="text-align:center;">module</th> <th>description</th></tr></thead> <tbody><tr><td style="text-align:center;"><code>$args</code></td> <td style="text-align:center;"></td> <td>请求参数</td></tr> <tr><td style="text-align:center;"><code>$uri</code></td> <td style="text-align:center;"></td> <td>当前请求的 <code>uri</code>，不带参数</td></tr> <tr><td style="text-align:center;"><code>$request_uri</code></td> <td style="text-align:center;"></td> <td>请求的 <code>uri</code>，带完整参数</td></tr> <tr><td style="text-align:center;"><code>$host</code></td> <td style="text-align:center;"></td> <td>请求报文的 <code>host</code> 首部</td></tr> <tr><td style="text-align:center;"><code>$hostname</code></td> <td style="text-align:center;"><code>ngx_http_core_module</code></td> <td>Nginx 服务运行在主机的主机名</td></tr> <tr><td style="text-align:center;"><code>$remote_addr</code></td> <td style="text-align:center;"><code>ngx_stream_core_module</code></td> <td>客户端 IP</td></tr> <tr><td style="text-align:center;"><code>$remote_port</code></td> <td style="text-align:center;"><code>ngx_stream_core_module</code></td> <td>客户端端口</td></tr> <tr><td style="text-align:center;"><code>$request_filename</code></td> <td style="text-align:center;"></td> <td>用户请求中的 <code>uri</code> 经过本地 <code>root</code> 或 <code>alias</code> 映射后的本地文件路径。可将其加入 <code>log</code> 中研究 <code>root</code> 和 <code>alias</code></td></tr> <tr><td style="text-align:center;"><code>$server_addr</code></td> <td style="text-align:center;"><code>ngx_stream_core_module</code></td> <td>服务器 IP</td></tr> <tr><td style="text-align:center;"><code>$server_port</code></td> <td style="text-align:center;"><code>ngx_stream_core_module</code></td> <td>服务求端口</td></tr> <tr><td style="text-align:center;"><code>$server_protocol</code></td> <td style="text-align:center;"></td> <td>服务器的 HTTP 协议版本，例 <code>HTTP/1.0</code>、<code>HTTP/1.1</code></td></tr> <tr><td style="text-align:center;"><code>$scheme</code></td> <td style="text-align:center;"></td> <td>请求中的协议，例 <code>http</code>、<code>https</code></td></tr></tbody></table> <p>指定 <code>module</code> 时基本上都有 <code>ngx_http_core_module</code>。</p> <h2 id="参考资料"><a href="#参考资料" class="header-anchor">#</a> 参考资料</h2> <ol><li><a href="http://nginx.org/en/docs/" target="_blank" rel="noopener noreferrer">Nginx<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li>《精通Nginx》：Dimitri Aivaliotis 著</li></ol></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/minboo/docs/edit/master/docs/backend/nginx/README.md" target="_blank" rel="noopener noreferrer">编辑文档！</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2022年9月11日晚上11点48分</span></div></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/backend/nginx/configurin-systemd-service-for-nginx.html">
+        为 Nginx 配置 systemd 服务
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.b042dfd4.js" defer></script><script src="/assets/js/2.8154945c.js" defer></script><script src="/assets/js/39.2ef9d394.js" defer></script><script src="/assets/js/3.4234061e.js" defer></script>
+  </body>
+</html>
