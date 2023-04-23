@@ -230,5 +230,16 @@ module.exports = {
         "navigation.md"
       ]
     }
-  ]
+  ],
+  // "/OCR/train/": [
+  //   {
+  //     "text": "训练",
+  //     "title": "训练模型",
+  //     "collapsable": false,
+  //     "sidebarDepth": 1,
+  //     "children": [
+  //       "train.md"
+  //     ]
+  //   }
+  // ]
 };

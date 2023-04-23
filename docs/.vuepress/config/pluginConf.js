@@ -4,10 +4,13 @@ const moment = require('moment');
 module.exports = {
   // 显示最近更新的插件
   '@vuepress/last-updated': {
-    transformer: (timestamp) => {
-      moment.locale("zh-cn")
-      return moment(timestamp).format("LLL")
-      // return moment(timestamp).fromNow()
+    // transformer: (timestamp) => {
+    //   moment.locale("zh-cn")
+    //   return moment(timestamp).format("LLL")
+    //   // return moment(timestamp).fromNow()
+    // }
+    themeConfig: {
+      lastUpdated: 'Last Updated', // string | boolean
     }
   },
   '@vuepress/pwa': {

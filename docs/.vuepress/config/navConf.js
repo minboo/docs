@@ -50,6 +50,28 @@ module.exports = [
       }
     ]
   },
+  {
+    text: 'OCR',
+    items: [
+      {
+        text: '训练', items: [
+          { text: '模型训练', link: '/OCR/train/' },
+        ]
+      },
+      {
+        text: '部署', items: [
+          { text: 'HubServing方式部署', link: '/OCR/deploy/hubserving/' },
+          { text: 'PaddleServing方式部署', link: '/OCR/deploy/paddleserving/' },
+        ]
+      },
+      {
+        text: '环境安装', items: [
+          { text: '安装Cuda和Cudnn', link: '/ElasticSearch/' },
+          { text: 'Solr', link: '/slor/' },
+        ]
+      }
+    ]
+  },
   { text: '开发工具', items: [
     { text: 'Git', link: '/tools/git/' },
     { text: 'Github', link: '/tools/github/' },
