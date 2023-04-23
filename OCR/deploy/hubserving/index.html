@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>在docker上部署PaddleOCR服务 | 在路上</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/logo.png">
+    <mata name="author" content="在路上"></mata>
+    <mata name="Keyword" content="我的博客"></mata>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon-152x152.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <meta name="description" content="description描述">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/assets/css/0.styles.5bae31cc.css" as="style"><link rel="preload" href="/assets/js/app.9f94fa3e.js" as="script"><link rel="preload" href="/assets/js/2.8154945c.js" as="script"><link rel="preload" href="/assets/js/18.d5c9d2d1.js" as="script"><link rel="preload" href="/assets/js/3.4234061e.js" as="script"><link rel="prefetch" href="/assets/js/10.b0ef5cc7.js"><link rel="prefetch" href="/assets/js/100.c94e731e.js"><link rel="prefetch" href="/assets/js/101.48c30368.js"><link rel="prefetch" href="/assets/js/102.46c7e4c5.js"><link rel="prefetch" href="/assets/js/103.c3a5deff.js"><link rel="prefetch" href="/assets/js/104.0a230598.js"><link rel="prefetch" href="/assets/js/105.5bb8ca11.js"><link rel="prefetch" href="/assets/js/106.452ae601.js"><link rel="prefetch" href="/assets/js/107.25f200d5.js"><link rel="prefetch" href="/assets/js/108.17d74b6e.js"><link rel="prefetch" href="/assets/js/109.1609e827.js"><link rel="prefetch" href="/assets/js/11.97d54b7d.js"><link rel="prefetch" href="/assets/js/110.8ce06d9e.js"><link rel="prefetch" href="/assets/js/111.b852821d.js"><link rel="prefetch" href="/assets/js/112.5652e068.js"><link rel="prefetch" href="/assets/js/113.accd65c3.js"><link rel="prefetch" href="/assets/js/12.f4be0313.js"><link rel="prefetch" href="/assets/js/13.b65e9a3d.js"><link rel="prefetch" href="/assets/js/14.c144247d.js"><link rel="prefetch" href="/assets/js/15.22d5a186.js"><link rel="prefetch" href="/assets/js/16.c39f8058.js"><link rel="prefetch" href="/assets/js/17.ac8b7a7e.js"><link rel="prefetch" href="/assets/js/19.f7cb55d0.js"><link rel="prefetch" href="/assets/js/20.1cc30f6c.js"><link rel="prefetch" href="/assets/js/21.52403b8d.js"><link rel="prefetch" href="/assets/js/22.00378f70.js"><link rel="prefetch" href="/assets/js/23.d9c0ec0b.js"><link rel="prefetch" href="/assets/js/24.12e60ed2.js"><link rel="prefetch" href="/assets/js/25.da452d33.js"><link rel="prefetch" href="/assets/js/26.1179da7d.js"><link rel="prefetch" href="/assets/js/27.62f142d7.js"><link rel="prefetch" href="/assets/js/28.4351295c.js"><link rel="prefetch" href="/assets/js/29.8bb6a22b.js"><link rel="prefetch" href="/assets/js/30.94188915.js"><link rel="prefetch" href="/assets/js/31.e1ea5f16.js"><link rel="prefetch" href="/assets/js/32.0efe0b9d.js"><link rel="prefetch" href="/assets/js/33.6786ff5b.js"><link rel="prefetch" href="/assets/js/34.4db9faa1.js"><link rel="prefetch" href="/assets/js/35.3c13aa80.js"><link rel="prefetch" href="/assets/js/36.4a436d94.js"><link rel="prefetch" href="/assets/js/37.c22727fa.js"><link rel="prefetch" href="/assets/js/38.47290810.js"><link rel="prefetch" href="/assets/js/39.2ef9d394.js"><link rel="prefetch" href="/assets/js/4.29fa54b8.js"><link rel="prefetch" href="/assets/js/40.a1a50e67.js"><link rel="prefetch" href="/assets/js/41.82a44a96.js"><link rel="prefetch" href="/assets/js/42.a86ea924.js"><link rel="prefetch" href="/assets/js/43.a7626ca2.js"><link rel="prefetch" href="/assets/js/44.1229cec8.js"><link rel="prefetch" href="/assets/js/45.c5dd3e94.js"><link rel="prefetch" href="/assets/js/46.0835e964.js"><link rel="prefetch" href="/assets/js/47.485ccf84.js"><link rel="prefetch" href="/assets/js/48.14084039.js"><link rel="prefetch" href="/assets/js/49.24165fa3.js"><link rel="prefetch" href="/assets/js/5.0e72a8e9.js"><link rel="prefetch" href="/assets/js/50.b5dae0a8.js"><link rel="prefetch" href="/assets/js/51.5ea88576.js"><link rel="prefetch" href="/assets/js/52.fa6a7f86.js"><link rel="prefetch" href="/assets/js/53.7ad7b4a8.js"><link rel="prefetch" href="/assets/js/54.0c093768.js"><link rel="prefetch" href="/assets/js/55.1fbbd65d.js"><link rel="prefetch" href="/assets/js/56.843ea8ee.js"><link rel="prefetch" href="/assets/js/57.123e346c.js"><link rel="prefetch" href="/assets/js/58.d34951c6.js"><link rel="prefetch" href="/assets/js/59.b85cf23f.js"><link rel="prefetch" href="/assets/js/6.d3ecc9b3.js"><link rel="prefetch" href="/assets/js/60.e9071331.js"><link rel="prefetch" href="/assets/js/61.6ac666dd.js"><link rel="prefetch" href="/assets/js/62.2b73a516.js"><link rel="prefetch" href="/assets/js/63.2d005674.js"><link rel="prefetch" href="/assets/js/64.3aa0f64f.js"><link rel="prefetch" href="/assets/js/65.61af7324.js"><link rel="prefetch" href="/assets/js/66.a8b4c0fa.js"><link rel="prefetch" href="/assets/js/67.4874cd0c.js"><link rel="prefetch" href="/assets/js/68.eb0fe894.js"><link rel="prefetch" href="/assets/js/69.d3da1271.js"><link rel="prefetch" href="/assets/js/7.3b12d94c.js"><link rel="prefetch" href="/assets/js/70.cb5a6540.js"><link rel="prefetch" href="/assets/js/71.97062bc7.js"><link rel="prefetch" href="/assets/js/72.3ace4280.js"><link rel="prefetch" href="/assets/js/73.5964117d.js"><link rel="prefetch" href="/assets/js/74.3a6f1e44.js"><link rel="prefetch" href="/assets/js/75.56bbe243.js"><link rel="prefetch" href="/assets/js/76.bdeb56a2.js"><link rel="prefetch" href="/assets/js/77.fc672f1c.js"><link rel="prefetch" href="/assets/js/78.62390d6f.js"><link rel="prefetch" href="/assets/js/79.e8590d7e.js"><link rel="prefetch" href="/assets/js/8.b4a14e8c.js"><link rel="prefetch" href="/assets/js/80.0649d97d.js"><link rel="prefetch" href="/assets/js/81.f54b68cd.js"><link rel="prefetch" href="/assets/js/82.a4f85774.js"><link rel="prefetch" href="/assets/js/83.abd156a5.js"><link rel="prefetch" href="/assets/js/84.0ba27a18.js"><link rel="prefetch" href="/assets/js/85.b84ccd9c.js"><link rel="prefetch" href="/assets/js/86.c46352c6.js"><link rel="prefetch" href="/assets/js/87.3291a1b3.js"><link rel="prefetch" href="/assets/js/88.67e95dba.js"><link rel="prefetch" href="/assets/js/89.83038095.js"><link rel="prefetch" href="/assets/js/9.82925584.js"><link rel="prefetch" href="/assets/js/90.fa92de62.js"><link rel="prefetch" href="/assets/js/91.a0a26338.js"><link rel="prefetch" href="/assets/js/92.5675720d.js"><link rel="prefetch" href="/assets/js/93.0bd5bc0c.js"><link rel="prefetch" href="/assets/js/94.843c0392.js"><link rel="prefetch" href="/assets/js/95.03e309fc.js"><link rel="prefetch" href="/assets/js/96.4faf8dc5.js"><link rel="prefetch" href="/assets/js/97.ca35ccb2.js"><link rel="prefetch" href="/assets/js/98.14c1848c.js"><link rel="prefetch" href="/assets/js/99.1f1b02fe.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.5bae31cc.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="在路上" class="logo"> <span class="site-name can-hide">在路上</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="框架" class="dropdown-title"><span class="title">框架</span> <span class="arrow down"></span></button> <button type="button" aria-label="框架" class="mobile-dropdown-title"><span class="title">框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Spring
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/about/" class="nav-link">
+  About
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Mybatis
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/about/" class="nav-link">
+  About
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="系统" class="dropdown-title"><span class="title">系统</span> <span class="arrow down"></span></button> <button type="button" aria-label="系统" class="mobile-dropdown-title"><span class="title">系统</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/os/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/os/ubuntu/" class="nav-link">
+  Ubuntu
+</a></li><li class="dropdown-item"><!----> <a href="/os/centos/" class="nav-link">
+  CentOS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><span class="title">后端</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端" class="mobile-dropdown-title"><span class="title">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/backend/mysql/" class="nav-link">
+  MySQL
+</a></li><li class="dropdown-item"><!----> <a href="/backend/redis/" class="nav-link">
+  Redis
+</a></li><li class="dropdown-item"><!----> <a href="/backend/docker/" class="nav-link">
+  Docker
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="中间件" class="dropdown-title"><span class="title">中间件</span> <span class="arrow down"></span></button> <button type="button" aria-label="中间件" class="mobile-dropdown-title"><span class="title">中间件</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          服务器
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/Middleware/Nginx/" class="nav-link">
+  Nginx
+</a></li></ul></li><li class="dropdown-item"><h4>
+          消息队列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/RabbitMQ/" class="nav-link">
+  RabbitMQ
+</a></li><li class="dropdown-subitem"><a href="/RocketMQ/" class="nav-link">
+  RocketMQ
+</a></li></ul></li><li class="dropdown-item"><h4>
+          搜索引擎
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/ElasticSearch/" class="nav-link">
+  ElasticSearch
+</a></li><li class="dropdown-subitem"><a href="/slor/" class="nav-link">
+  Solr
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="OCR" class="dropdown-title"><span class="title">OCR</span> <span class="arrow down"></span></button> <button type="button" aria-label="OCR" class="mobile-dropdown-title"><span class="title">OCR</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          训练
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/OCR/train/" class="nav-link">
+  模型训练
+</a></li></ul></li><li class="dropdown-item"><h4>
+          部署
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/OCR/deploy/hubserving/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  HubServing方式部署
+</a></li><li class="dropdown-subitem"><a href="/OCR/deploy/paddleserving/" class="nav-link">
+  PaddleServing方式部署
+</a></li></ul></li><li class="dropdown-item"><h4>
+          环境安装
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/ElasticSearch/" class="nav-link">
+  安装Cuda和Cudnn
+</a></li><li class="dropdown-subitem"><a href="/slor/" class="nav-link">
+  Solr
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发工具" class="dropdown-title"><span class="title">开发工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="开发工具" class="mobile-dropdown-title"><span class="title">开发工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tools/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/tools/github/" class="nav-link">
+  Github
+</a></li><li class="dropdown-item"><!----> <a href="/tools/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/tools/bookmark-scripts/" class="nav-link">
+  Bookmark scripts
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow down"></span></button> <button type="button" aria-label="更多" class="mobile-dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/more/navigation.html" class="nav-link">
+  导航 🎉
+</a></li><li class="dropdown-item"><!----> <a href="https://shanyuhai123.github.io/vuepress-plugin-auto-sidebar/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VuePress 侧边栏插件
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://vuepress.vuejs.org/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VuePress 官网
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="框架" class="dropdown-title"><span class="title">框架</span> <span class="arrow down"></span></button> <button type="button" aria-label="框架" class="mobile-dropdown-title"><span class="title">框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Spring
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/about/" class="nav-link">
+  About
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Mybatis
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/about/" class="nav-link">
+  About
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="系统" class="dropdown-title"><span class="title">系统</span> <span class="arrow down"></span></button> <button type="button" aria-label="系统" class="mobile-dropdown-title"><span class="title">系统</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/os/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/os/ubuntu/" class="nav-link">
+  Ubuntu
+</a></li><li class="dropdown-item"><!----> <a href="/os/centos/" class="nav-link">
+  CentOS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><span class="title">后端</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端" class="mobile-dropdown-title"><span class="title">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/backend/mysql/" class="nav-link">
+  MySQL
+</a></li><li class="dropdown-item"><!----> <a href="/backend/redis/" class="nav-link">
+  Redis
+</a></li><li class="dropdown-item"><!----> <a href="/backend/docker/" class="nav-link">
+  Docker
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="中间件" class="dropdown-title"><span class="title">中间件</span> <span class="arrow down"></span></button> <button type="button" aria-label="中间件" class="mobile-dropdown-title"><span class="title">中间件</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          服务器
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/Middleware/Nginx/" class="nav-link">
+  Nginx
+</a></li></ul></li><li class="dropdown-item"><h4>
+          消息队列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/RabbitMQ/" class="nav-link">
+  RabbitMQ
+</a></li><li class="dropdown-subitem"><a href="/RocketMQ/" class="nav-link">
+  RocketMQ
+</a></li></ul></li><li class="dropdown-item"><h4>
+          搜索引擎
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/ElasticSearch/" class="nav-link">
+  ElasticSearch
+</a></li><li class="dropdown-subitem"><a href="/slor/" class="nav-link">
+  Solr
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="OCR" class="dropdown-title"><span class="title">OCR</span> <span class="arrow down"></span></button> <button type="button" aria-label="OCR" class="mobile-dropdown-title"><span class="title">OCR</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          训练
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/OCR/train/" class="nav-link">
+  模型训练
+</a></li></ul></li><li class="dropdown-item"><h4>
+          部署
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/OCR/deploy/hubserving/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  HubServing方式部署
+</a></li><li class="dropdown-subitem"><a href="/OCR/deploy/paddleserving/" class="nav-link">
+  PaddleServing方式部署
+</a></li></ul></li><li class="dropdown-item"><h4>
+          环境安装
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/ElasticSearch/" class="nav-link">
+  安装Cuda和Cudnn
+</a></li><li class="dropdown-subitem"><a href="/slor/" class="nav-link">
+  Solr
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发工具" class="dropdown-title"><span class="title">开发工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="开发工具" class="mobile-dropdown-title"><span class="title">开发工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tools/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/tools/github/" class="nav-link">
+  Github
+</a></li><li class="dropdown-item"><!----> <a href="/tools/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/tools/bookmark-scripts/" class="nav-link">
+  Bookmark scripts
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow down"></span></button> <button type="button" aria-label="更多" class="mobile-dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/more/navigation.html" class="nav-link">
+  导航 🎉
+</a></li><li class="dropdown-item"><!----> <a href="https://shanyuhai123.github.io/vuepress-plugin-auto-sidebar/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VuePress 侧边栏插件
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://vuepress.vuejs.org/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VuePress 官网
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Hubserving</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/OCR/deploy/hubserving/" aria-current="page" class="active sidebar-link">在docker上部署PaddleOCR服务</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/OCR/deploy/hubserving/#具体步骤-ocr-system-检测-识别串联" class="sidebar-link">具体步骤（ocr_system 检测+识别串联）</a></li><li class="sidebar-sub-header"><a href="/OCR/deploy/hubserving/#启动服务" class="sidebar-link">启动服务</a></li><li class="sidebar-sub-header"><a href="/OCR/deploy/hubserving/#发送预测请求" class="sidebar-link">发送预测请求</a></li><li class="sidebar-sub-header"><a href="/OCR/deploy/hubserving/#自定义修改服务模块" class="sidebar-link">自定义修改服务模块</a></li><li class="sidebar-sub-header"><a href="/OCR/deploy/hubserving/#_1、发送get请求" class="sidebar-link">1、发送GET请求</a></li><li class="sidebar-sub-header"><a href="/OCR/deploy/hubserving/#_2、发送post请求" class="sidebar-link">2、发送POST请求</a></li><li class="sidebar-sub-header"><a href="/OCR/deploy/hubserving/#_3、发送json格式请求" class="sidebar-link">3、发送json格式请求：</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="在docker上部署paddleocr服务"><a href="#在docker上部署paddleocr服务" class="header-anchor">#</a> 在docker上部署PaddleOCR服务</h1> <p><a href="https://blog.csdn.net/apple_50678962/article/details/120731730" target="_blank" rel="noopener noreferrer">参考<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><strong>拉取预安装 PaddlePaddle 的镜像：</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">docker</span> pull registry.baidubce.com/paddlepaddle/paddle:2.3.2
+</code></pre></div><p><strong>运行docker容器：</strong></p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>docker run <span class="token operator">--</span>name ppocr <span class="token operator">-</span>v <span class="token operator">/</span>opt<span class="token operator">/</span>paddle<span class="token operator">:</span><span class="token operator">/</span>opt<span class="token operator">/</span>paddle <span class="token operator">--</span>network<span class="token operator">=</span>host <span class="token operator">-</span>it registry<span class="token punctuation">.</span>baidubce<span class="token punctuation">.</span>com<span class="token operator">/</span>paddlepaddle<span class="token operator">/</span>paddle<span class="token operator">:</span><span class="token number">2.3</span><span class="token number">.2</span> <span class="token operator">/</span>bin<span class="token operator">/</span>bash
+# 或自己导出导入镜像
+docker commit <span class="token punctuation">[</span>容器id<span class="token punctuation">]</span> ppocr<span class="token operator">:</span><span class="token number">1.0</span>
+docker save <span class="token operator">-</span>o ppocr_1<span class="token punctuation">.</span><span class="token number">0</span><span class="token punctuation">.</span>tar ppocr<span class="token operator">:</span><span class="token number">1.0</span>
+docker load <span class="token operator">--</span>input ppocr_1<span class="token punctuation">.</span><span class="token number">0</span><span class="token punctuation">.</span>tar
+docker run <span class="token operator">--</span>name ppocr <span class="token operator">-</span>v <span class="token operator">/</span>opt<span class="token operator">/</span>paddle<span class="token operator">:</span><span class="token operator">/</span>opt<span class="token operator">/</span>paddle <span class="token operator">--</span>network<span class="token operator">=</span>host <span class="token operator">-</span>itd ppocr<span class="token operator">:</span><span class="token number">1.0</span> <span class="token operator">/</span>bin<span class="token operator">/</span>bash
+</code></pre></div><ul><li>基于PaddleHub Serving的部署：代码路径为&quot;<code>PaddleOCR/deploy/hubservingg</code>&quot; 已集成到PaddleOCR中（<a href="https://github.com/PaddlePaddle/PaddleOCR/tree/develop/deploy/hubserving" target="_blank" rel="noopener noreferrer">code<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>）</li></ul> <blockquote><p>当前用户在训练出一个可用的模型后，可以选择如下四种部署应用方式：</p> <p>服务器端高性能部署：将模型部署在服务器上，利用服务器的高性能帮助用户处理推理业务
+模型服务化部署：将模型以线上服务的形式部署在服务器或云端，用户通过客户端请求发送需要推理的输入内容，服务器或者云通过相应报文将推理结果返回给用户（paddle serving）
+移动端部署：将模型部署在移动端上，例如手机/物联网的嵌入式端
+Web端部署：将模型部署在网页上，用户通过网页完成推理业务</p></blockquote> <p>PaddlehubServing作为paddlepaddle开源的在线服务框架</p> <p>服务部署下包括 检测、识别、检测+识别串联 三种服务包，根据需求选择相应的服务包进行安装和启动</p> <div class="language- extra-class"><pre class="language-text"><code>deploy/hubserving/
+└─  ocr_det     检测模块服务包
+└─  ocr_rec     识别模块服务包
+└─  ocr_system  检测+识别串联服务包   &lt;==== 我们直接这个，包括先检测然后识别
+</code></pre></div><p>每个服务包下包含3个文件。以检测+识别串联 目录为例，目录如下：</p> <div class="language- extra-class"><pre class="language-text"><code>deploy/hubserving/ocr_system/
+└─  __init__.py    空文件，必选
+└─  config.json    配置文件，可选，使用配置启动服务时作为参数传入
+└─module.py      主模块，必选，包含服务的完整逻辑
+└─params.py      参数文件，必选，包含模型路径、前后处理参数等参数
+</code></pre></div><h2 id="具体步骤-ocr-system-检测-识别串联"><a href="#具体步骤-ocr-system-检测-识别串联" class="header-anchor">#</a> 具体步骤（ocr_system 检测+识别串联）</h2> <h3 id="_1、准备环境"><a href="#_1、准备环境" class="header-anchor">#</a> 1、准备环境</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 安装paddlehub </span>
+pip <span class="token function">install</span> paddlehub <span class="token parameter variable">--upgrade</span> <span class="token parameter variable">-i</span> https://pypi.tuna.tsinghua.edu.cn/simple
+</code></pre></div><h3 id="_2、从git-clone-下载下来整个paddleocr项目"><a href="#_2、从git-clone-下载下来整个paddleocr项目" class="header-anchor">#</a> 2、从git clone/下载下来整个PaddleOCR项目</h3> <ul><li>也可在本地下载压缩包后上传服务器</li> <li>进入需要保存的工作目录拉取项目即可</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> clone https://gitee.com/paddlepaddle/PaddleOCR
+</code></pre></div><ul><li>安装 PaddleOCR 的 python 依赖</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token builtin class-name">cd</span> PaddleOCR
+pip3 <span class="token function">install</span> <span class="token parameter variable">-r</span> requirements.txt
+</code></pre></div><h3 id="_3-下载推理模型"><a href="#_3-下载推理模型" class="header-anchor">#</a> 3.下载推理模型</h3> <p>下载/使用自己的推理模型并放到正确路径：</p> <blockquote><p>若不手动下载则会自动下载并使用默认配置中的模型</p></blockquote> <p>1、在PaddleOCR（也就是刚刚解压的目录下面）目录里<code>mkdir inference</code>创建 inference 目录</p> <p>2、从PaddleOCR提供的模型库下载以下三个模型压缩包</p> <div class="language- extra-class"><pre class="language-text"><code>检测模型：ch_ppocr_server_v2.0_det_infer.tar
+识别模型：ch_ppocr_server_v2.0_rec_infer.tar
+方向分类器：ch_ppocr_mobile_v2.0_cls_infer
+
+# 在inference目录下载并解压 OCR 文本检测模型
+wget https://paddleocr.bj.bcebos.com/PP-OCRv3/chinese/ch_PP-OCRv3_det_infer.tar -O ch_PP-OCRv3_det_infer.tar &amp;&amp; tar -xf ch_PP-OCRv3_det_infer.tar
+# 下载并解压 OCR 文本识别模型
+wget https://paddleocr.bj.bcebos.com/PP-OCRv3/chinese/ch_PP-OCRv3_rec_infer.tar -O ch_PP-OCRv3_rec_infer.tar &amp;&amp; tar -xf ch_PP-OCRv3_rec_infer.tar
+# 下载并解压 OCR 文本方向分类模型
+wget https://paddleocr.bj.bcebos.com/dygraph_v2.0/ch/ch_ppocr_mobile_v2.0_cls_infer.tar -O ch_ppocr_mobile_v2.0_cls_infer.tar &amp;&amp; tar -xf ch_ppocr_mobile_v2.0_cls_infer.tar
+</code></pre></div><p>3、也可以把压缩包上传到<code>Paddle/inference</code>目录里，解压</p> <p>4、检查一下解压出来的目录中，是否包含以下内容</p> <div class="language- extra-class"><pre class="language-text"><code>./inference/ch_PP-OCRv3_det_infer/
+└─  inference.pdiparams
+└─  inference.pdiparams.info
+└─  inference.pdmodel  
+
+./inference/ch_PP-OCRv3_rec_infer/
+└─ ._inference.pdiparams
+└─ inference.pdiparams
+└─ ._inference.pdiparams.info
+└─ inference.pdiparams.info
+└─ ._inference.pdmodel
+└─ inference.pdmodel
+
+./inference/ch_ppocr_mobile_v2.0_cls_infer/
+└─  inference.pdiparams
+└─  inference.pdiparams.info
+└─  inference.pdmodel  
+</code></pre></div><h3 id="_4、修改参数文件params-py中的模型路径"><a href="#_4、修改参数文件params-py中的模型路径" class="header-anchor">#</a> 4、修改参数文件<code>params.py</code>中的模型路径</h3> <p>因为我们这里是安装部署<code>ocr_sysyem</code>，所以就去改<code>ocr_system</code>的就ok。若要更换自己训练的模型也是如此操作。
+<code>ocr_system</code>参数文件路径：<code>PaddleOCR/</code></p> <p>修改以下部分：</p> <p><img src="https://minboo-blog-img.oss-cn-guangzhou.aliyuncs.com/img/image-20230416211649233.png" alt="image-20230416211649233"></p> <p><img src="https://minboo-blog-img.oss-cn-guangzhou.aliyuncs.com/img/image-20230416211723900.png" alt="image-20230416211723900"></p> <h3 id="_5、安装服务模块"><a href="#_5、安装服务模块" class="header-anchor">#</a> 5、安装服务模块</h3> <p>PaddleOCR提供3种服务模块，根据需要安装所需模块。（这里我们是安装的ocr_system）</p> <p>在 PaddleOCR 这个目录下运行</p> <div class="language- extra-class"><pre class="language-text"><code>安装检测服务模块：
+hub install deploy/hubserving/ocr_det/
+
+或，安装识别服务模块：
+hub install deploy/hubserving/ocr_rec/
+
+或，安装检测+识别串联服务模块：
+hub install deploy/hubserving/ocr_system/  &lt;=== 我们选择这个
+</code></pre></div><p>这样算成功</p> <p><img src="https://minboo-blog-img.oss-cn-guangzhou.aliyuncs.com/img/image-20230416214932886.png" alt="image-20230416214932886"></p> <h2 id="启动服务"><a href="#启动服务" class="header-anchor">#</a> 启动服务</h2> <h3 id="配置文件启动-支持cpu、gpu"><a href="#配置文件启动-支持cpu、gpu" class="header-anchor">#</a> 配置文件启动（支持CPU、GPU）</h3> <p><strong>启动命令：</strong> <code>hub serving start -c config.json</code></p> <p><strong>或</strong>(推荐)</p> <p><code>hub serving start -m ocr_system</code></p> <p><strong>启动成功</strong></p> <p><img src="https://minboo-blog-img.oss-cn-guangzhou.aliyuncs.com/img/image-20230416215457884.png" alt="image-20230416215457884"></p> <p><strong>停止</strong></p> <p><code>hub serving stop -p 8866</code></p> <p>其中，<code>config.json</code>格式如下：</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">{</span>
+    <span class="token string">&quot;modules_info&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+        <span class="token string">&quot;ocr_system&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+            <span class="token string">&quot;init_args&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+                <span class="token string">&quot;version&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;1.0.0&quot;</span>,
+                <span class="token string">&quot;use_gpu&quot;</span><span class="token builtin class-name">:</span> true, <span class="token comment">#是否使用gpu，如果是cpu机器则设置成false，use_gpu不可与use_multiprocess同时为true</span>
+                <span class="token string">&quot;enable_mkldnn&quot;</span><span class="token builtin class-name">:</span> <span class="token boolean">true</span>
+            <span class="token punctuation">}</span>,
+            <span class="token string">&quot;predict_args&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>,
+    <span class="token string">&quot;port&quot;</span><span class="token builtin class-name">:</span> <span class="token number">8866</span>, <span class="token comment"># 服务端口</span>
+    <span class="token string">&quot;use_multiprocess&quot;</span><span class="token builtin class-name">:</span> false, <span class="token comment"># 是否使用多进程，默认为单进程，多核cpu可改为true</span>
+    <span class="token string">&quot;workers&quot;</span><span class="token builtin class-name">:</span> <span class="token number">2</span> <span class="token comment"># 在并发方式下指定的并发任务数，默认为2*cpu_count-1，其中cpu_count为CPU核数</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li><p><code>init_args</code>中的可配参数与<code>module.py</code>中的<code>_initialize</code>函数接口一致。其中，当<code>use_gpu</code>为<code>true</code>时，表示使用GPU启动服务</p></li> <li><p><code>predict_args</code>中的可配参数与<code>module.py</code>中的<code>predict</code>函数接口一致。</p></li></ul> <p><strong>注意:</strong></p> <ul><li>使用配置文件启动服务时，其他参数会被忽略。</li> <li>如果使用GPU预测(即，<code>use_gpu</code>置为<code>true</code>)，则需要在启动服务之前，设置<code>CUDA_VISIBLE_DEVICES</code>环境变量，如：<code>export CUDA_VISIBLE_DEVICES=0</code>，否则不用设置。</li> <li><code>use_gpu</code>不可与<code>use_multiprocess</code>同时为<code>true</code>。</li> <li><strong><code>use_gpu</code>与<code>enable_mkldnn</code>同时为<code>true</code>时，将忽略<code>enable_mkldnn</code>，而使用GPU</strong>。</li></ul> <h2 id="发送预测请求"><a href="#发送预测请求" class="header-anchor">#</a> 发送预测请求</h2> <p>配置好服务端，可使用以下命令发送预测请求，获取预测结果:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>python tools/test_hubserving.py <span class="token parameter variable">--server_url</span> <span class="token punctuation">[</span>serverurl<span class="token punctuation">]</span> <span class="token parameter variable">--image_dir</span> <span class="token punctuation">[</span>image_path<span class="token punctuation">]</span>需要给脚本传递2个参数：
+</code></pre></div><p><code>server_url</code>：服务地址，格式为
+<code>http://[ip_address]:[port]/predict/[module_name]</code>
+例如，如果使用配置文件启动检测、识别、检测+识别2阶段服务，那么发送请求的url将分别是：
+<code>http://127.0.0.1:8866/predict/ocr_det</code> <code>http://127.0.0.1:8867/predict/ocr_rec</code> <code>http://127.0.0.1:8868/predict/ocr_system</code> <code>image_path</code>：测试图像路径，可以是单张图片路径，也可以是图像集合目录路径
+这里我挂起服务之后用对本机请求测试了一下示例：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>python tools/test_hubserving.py <span class="token parameter variable">--server_url</span> http://127.0.0.1:8866/predict/ocr_system <span class="token parameter variable">--image_dir</span> ./aaa.jpg
+</code></pre></div><p>找张有文字的图片传到服务器上，路径写在image_path参数位置，测试结果如下
+<img src="C:%5CUsers%5C11973%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20221005171950353.png" alt="image-20221005171950353"></p> <p>Postman测试：</p> <p>在postman中输入接口url<code>ip:8866/predict/ocr_system</code>，post请求，参数为json对象如下图</p> <p><img src="C:%5CUsers%5C11973%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20221005172523299.png" alt="image-20221005172523299"></p> <p>返回结果：</p> <p><img src="C:%5CUsers%5C11973%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20221005172630879.png" alt="image-20221005172630879"></p> <table><thead><tr><th>字段名称</th> <th>数据类型</th> <th>含义</th></tr></thead> <tbody><tr><td>text</td> <td>str</td> <td>文本内容</td></tr> <tr><td>confidence</td> <td>float</td> <td>文本识别置信度</td></tr> <tr><td>text_region</td> <td>list</td> <td>文本位置坐标</td></tr></tbody></table> <h2 id="自定义修改服务模块"><a href="#自定义修改服务模块" class="header-anchor">#</a> 自定义修改服务模块</h2> <p>如果需要修改服务逻辑，你一般需要操作以下步骤（以修改<code>ocr_system</code>为例）：</p> <ul><li>1、 停止服务
+<code>hub serving stop --port/-p XXXX</code></li> <li>2、 到相应的<code>module.py</code>和<code>params.py</code>等文件中根据实际需求修改代码。
+例如，如果需要替换部署服务所用模型，则需要到<code>params.py</code>中修改模型路径参数<code>det_model_dir</code>和<code>rec_model_dir</code>，如果需要关闭文本方向分类器，则将参数<code>use_angle_cls</code>置为<code>False</code>，当然，同时可能还需要修改其他相关参数，请根据实际情况修改调试。 <strong>强烈建议修改后先直接运行<code>module.py</code>调试，能正确运行预测后再启动服务测试。</strong> <strong>注意</strong> PPOCR-v3识别模型使用的图片输入shape为<code>3,48,320</code>,因此需要修改<code>params.py</code>中的<code>cfg.rec_image_shape = &quot;3, 48, 320&quot;</code>，如果不使用PPOCR-v3识别模型，则无需修改该参数。</li> <li>3、 卸载旧服务包
+<code>hub uninstall ocr_system</code></li> <li>4、 安装修改后的新服务包
+<code>hub install deploy/hubserving/ocr_system/</code></li> <li>5、重新启动服务
+<code>hub serving start -m ocr_system</code></li></ul> <h1 id="训练模型脚本"><a href="#训练模型脚本" class="header-anchor">#</a> 训练模型脚本</h1> <p>训练模型有以下几点需要准备：</p> <p>1、准备数据集，可官网下载或自己用官方PaddleLable标注工具制作</p> <p>2、下载预训练模型pretrain models</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token builtin class-name">cd</span> PaddleOCR/
+<span class="token comment"># 下载英文PP-OCRv3的预训练模型</span>
+<span class="token function">wget</span> <span class="token parameter variable">-P</span> ./pretrain_models/ https://paddleocr.bj.bcebos.com/PP-OCRv3/english/en_PP-OCRv3_rec_train.tar
+<span class="token comment"># 解压模型参数</span>
+<span class="token builtin class-name">cd</span> pretrain_models
+<span class="token function">tar</span> <span class="token parameter variable">-xf</span> en_PP-OCRv3_rec_train.tar <span class="token operator">&amp;&amp;</span> <span class="token function">rm</span> <span class="token parameter variable">-rf</span> en_PP-OCRv3_rec_train.tar
+</code></pre></div><p>3、修改预训练模型对应的yml配置文件</p> <p><strong>如果安装的是cpu版本，将配置文件中的 <code>use_gpu</code> 字段修改为false</strong></p> <p>4、执行命令训练</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># GPU训练 支持单卡，多卡训练</span>
+<span class="token comment"># 训练icdar15英文数据 训练日志会自动保存为 &quot;{save_model_dir}&quot; 下的train.log</span>
+
+<span class="token comment">#单卡训练（训练周期长，不建议）</span>
+python tools/train.py <span class="token parameter variable">-c</span> configs/rec/PP-OCRv3/en_PP-OCRv3_rec.yml <span class="token parameter variable">-o</span> <span class="token assign-left variable">Global.pretrained_model</span><span class="token operator">=</span>./pretrain_models/en_PP-OCRv3_rec_train/best_accuracy
+
+<span class="token comment">#多卡训练，通过--gpus参数指定卡号</span>
+python <span class="token parameter variable">-m</span> paddle.distributed.launch <span class="token parameter variable">--gpus</span> <span class="token string">'0,1,2,3'</span>  tools/train.py <span class="token parameter variable">-c</span> configs/rec/PP-OCRv3/en_PP-OCRv3_rec.yml <span class="token parameter variable">-o</span> <span class="token assign-left variable">Global.pretrained_model</span><span class="token operator">=</span>./pretrain_models/en_PP-OCRv3_rec_train/best_accuracy
+</code></pre></div><h1 id="模型导出与预测"><a href="#模型导出与预测" class="header-anchor">#</a> 模型导出与预测</h1> <p>inference 模型（<code>paddle.jit.save</code>保存的模型） 一般是模型训练，把模型结构和模型参数保存在文件中的固化模型，多用于预测部署场景。 训练过程中保存的模型是checkpoints模型，保存的只有模型的参数，多用于恢复训练等。 与checkpoints模型相比，inference 模型会额外保存模型的结构信息，在预测部署、加速推理上性能优越，灵活方便，适合于实际系统集成。</p> <p>识别模型转inference模型与检测的方式相同，如下：</p> <div class="language- extra-class"><pre class="language-text"><code># -c 后面设置训练算法的yml配置文件
+# -o 配置可选参数
+# Global.pretrained_model 参数设置待转换的训练模型地址，不用添加文件后缀 .pdmodel，.pdopt或.pdparams。
+# Global.save_inference_dir参数设置转换的模型将保存的地址。
+
+python3 tools/export_model.py -c configs/rec/PP-OCRv3/ch_PP-OCRv3_rec.yml -o Global.pretrained_model=./pretrain_models/ch_PP-OCRv3_rec_train/best_accuracy  Global.save_inference_dir=./inference/ch_PP-OCRv3_rec/
+</code></pre></div><p>**注意：**如果是在自己的数据集上训练的模型，并且调整了中文字符的字典文件，请注意修改配置文件中的<code>character_dict_path</code>为自定义字典文件。</p> <p>转换成功后，在目录下有三个文件：</p> <div class="language- extra-class"><pre class="language-text"><code>inference/en_PP-OCRv3_rec/
+    ├── inference.pdiparams         # 识别inference模型的参数文件
+    ├── inference.pdiparams.info    # 识别inference模型的参数信息，可忽略
+    └── inference.pdmodel           # 识别inference模型的program文件
+</code></pre></div><ul><li><p>自定义模型推理</p> <p>如果训练时修改了文本的字典，在使用inference模型预测时，需要通过<code>--rec_char_dict_path</code>指定使用的字典路径，更多关于推理超参数的配置与解释，请参考：<a href="https://gitee.com/paddlepaddle/PaddleOCR/blob/release/2.6/doc/doc_ch/inference_args.md" target="_blank" rel="noopener noreferrer">模型推理超参数解释教程<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>。</p> <div class="language- extra-class"><pre class="language-text"><code>python3 tools/infer/predict_rec.py --image_dir=&quot;./doc/imgs_words_en/word_336.png&quot; --rec_model_dir=&quot;./your inference model&quot; --rec_image_shape=&quot;3, 48, 320&quot; --rec_char_dict_path=&quot;your text dict path&quot;
+</code></pre></div></li></ul> <h1 id="从一个服务器登录到另一个服务器"><a href="#从一个服务器登录到另一个服务器" class="header-anchor">#</a> 从一个服务器登录到另一个服务器</h1> <p>例：</p> <div class="language- extra-class"><pre class="language-text"><code>ssh root@192.168.0.12
+</code></pre></div><h1 id="从一个服务器传输文件到另一个服务器"><a href="#从一个服务器传输文件到另一个服务器" class="header-anchor">#</a> 从一个服务器传输文件到另一个服务器</h1> <p>首先两台服务器必须是可以ping通
+1、复制文件
+格式：
+scp 目录/文件名.文件格式 目标服务器用户名@ip地址：目标服务器目录
+例：</p> <div class="language- extra-class"><pre class="language-text"><code>scp /backup/test/md3/export.sh iainst11@10.22.137.11:/ssx/dev/md
+</code></pre></div><p>2、复制目录（包括目录下的文件）</p> <div class="language- extra-class"><pre class="language-text"><code>scp -r /backup/test/md3 iainst11@10.22.137.11:/ssx/dev/md
+
+scp -P port filename root@ip:/xxx/xxx
+</code></pre></div><h1 id="curl命令"><a href="#curl命令" class="header-anchor">#</a> curl命令</h1> <h2 id="_1、发送get请求"><a href="#_1、发送get请求" class="header-anchor">#</a> 1、发送GET请求</h2> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">curl</span> URL
+<span class="token function">curl</span> URL?a<span class="token operator">=</span><span class="token number">1</span><span class="token operator">&amp;</span><span class="token assign-left variable">b</span><span class="token operator">=</span>nihao
+</code></pre></div><h2 id="_2、发送post请求"><a href="#_2、发送post请求" class="header-anchor">#</a> 2、发送POST请求</h2> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">curl</span> <span class="token parameter variable">-X</span> POST <span class="token parameter variable">-d</span> <span class="token string">'a=1&amp;b=nihao'</span> URL
+</code></pre></div><h2 id="_3、发送json格式请求"><a href="#_3、发送json格式请求" class="header-anchor">#</a> 3、发送json格式请求：</h2> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">curl</span> <span class="token parameter variable">-H</span> <span class="token string">&quot;Content-Type: application/json&quot;</span> <span class="token parameter variable">-X</span> POST <span class="token parameter variable">-d</span> <span class="token string">'{&quot;abc&quot;:123,&quot;bcd&quot;:&quot;nihao&quot;}'</span> URL
+<span class="token function">curl</span> <span class="token parameter variable">-H</span> <span class="token string">&quot;Content-Type: application/json&quot;</span> <span class="token parameter variable">-X</span> POST <span class="token parameter variable">-d</span> @image.json http://127.0.0.1:8866/predict/ocr_system
+</code></pre></div><p>其中，<strong>-H</strong>代表header头，<strong>-X</strong>是指定什么类型请求(POST/GET/HEAD/DELETE/PUT/PATCH)，<strong>-d</strong>代表传输什么数据。这几个是最常用的。</p> <p>查看所有curl命令： man curl或者curl -h
+请求头：H,A,e
+响应头：I,i,D
+cookie：b,c,j
+传输：F(POST),G(GET),T(PUT),X
+输出：o,O,w
+断点续传：r
+调试：v,--trace,--trace-ascii,--trace-time</p> <h1 id="pdserving模型转换"><a href="#pdserving模型转换" class="header-anchor">#</a> pdserving模型转换</h1> <div class="language-bash extra-class"><pre class="language-bash"><code>python <span class="token parameter variable">-m</span> paddle_serving_client.convert <span class="token parameter variable">--dirname</span> /opt/paddle/PaddleOCR/inference/my_det/ <span class="token punctuation">\</span>
+                                         <span class="token parameter variable">--model_filename</span> inference.pdmodel          <span class="token punctuation">\</span>
+                                         <span class="token parameter variable">--params_filename</span> inference.pdiparams       <span class="token punctuation">\</span>
+                                         <span class="token parameter variable">--serving_server</span> ./my_det_serving/ <span class="token punctuation">\</span>
+                                         <span class="token parameter variable">--serving_client</span> ./my_det_client/
+</code></pre></div><p>启动服务可运行如下命令：</p> <div class="language- extra-class"><pre class="language-text"><code># 启动服务，运行日志保存在log.txt
+python3 web_service.py &amp;&gt;log.txt &amp;
+</code></pre></div><div class="language-vim extra-class"><pre class="language-vim"><code># 启动服务，运行日志保存在log<span class="token operator">.</span>txt
+nohup python3 <span class="token operator">-</span><span class="token keyword">u</span> web_service<span class="token operator">.</span><span class="token keyword">py</span> <span class="token operator">&gt;</span> log<span class="token operator">.</span>log <span class="token number">2</span><span class="token operator">&gt;</span>&amp;<span class="token number">1</span> &amp;
+</code></pre></div><p>docker run --privileged=true --gpus all -it --name ppocr  -v /opt/ppocr/service:/opt/ppocr/service -p 8866:8866 -d ppocr:1.1 /bin/bash</p> <p>docker: Error response from daemon: could not select device driver &quot;&quot; with capabilities: [[gpu]].</p> <h1 id="使用gpu报错"><a href="#使用gpu报错" class="header-anchor">#</a> 使用GPU报错</h1> <div class="language- extra-class"><pre class="language-text"><code>Traceback (most recent call last):
+  File &quot;/root/.paddlehub/modules/ocr_system/module.py&quot;, line 55, in _initialize
+    _places = os.environ[&quot;CUDA_VISIBLE_DEVICES&quot;]
+  File &quot;/usr/lib/python3.7/os.py&quot;, line 681, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'CUDA_VISIBLE_DEVICES'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File &quot;/usr/local/bin/hub&quot;, line 8, in &lt;module&gt;
+    sys.exit(execute())
+  File &quot;/usr/local/lib/python3.7/dist-packages/paddlehub/commands/utils.py&quot;, line 78, in execute
+    status = 0 if com['_entry']().execute(sys.argv[idx:]) else 1
+  File &quot;/usr/local/lib/python3.7/dist-packages/paddlehub/commands/serving.py&quot;, line 352, in execute
+    self.start_serving()
+  File &quot;/usr/local/lib/python3.7/dist-packages/paddlehub/commands/serving.py&quot;, line 245, in start_serving
+    self.start_single_app_with_args()
+  File &quot;/usr/local/lib/python3.7/dist-packages/paddlehub/commands/serving.py&quot;, line 221, in start_single_app_with_args
+    self.preinstall_modules()
+  File &quot;/usr/local/lib/python3.7/dist-packages/paddlehub/commands/serving.py&quot;, line 152, in preinstall_modules
+    m = hub.Module(**init_args)
+  File &quot;/usr/local/lib/python3.7/dist-packages/paddlehub/module/module.py&quot;, line 396, in __new__
+    **kwargs)
+  File &quot;/usr/local/lib/python3.7/dist-packages/paddlehub/module/module.py&quot;, line 504, in init_with_name
+    user_module._initialize(**kwargs)
+  File &quot;/usr/local/lib/python3.7/dist-packages/paddlehub/compat/paddle_utils.py&quot;, line 221, in runner
+    return func(*args, **kwargs)
+  File &quot;/root/.paddlehub/modules/ocr_system/module.py&quot;, line 62, in _initialize
+    &quot;Environment Variable CUDA_VISIBLE_DEVICES is not set correctly. If you wanna use gpu, please set CUDA_VISIBLE_DEVICES via export CUDA_VISIBLE_DEVICES=cuda_device_id.&quot;
+RuntimeError: Environment Variable CUDA_VISIBLE_DEVICES is not set correctly. If you wanna use gpu, please set CUDA_VISIBLE_DEVICES via export CUDA_VISIBLE_DEVICES=cuda_device_id.
+
+</code></pre></div><p>提示要设置“CUDA_VISIBLE_DEVICES”
+不知道怎么弄，查找“CUDA_VISIBLE_DEVICES”，找到文章</p> <p>选择要用的GPU: CUDA_VISIBLE_DEVICES</p> <p>设置</p> <div class="language- extra-class"><pre class="language-text"><code>linux:
+在~/.bashrc 的最后加上export CUDA_VISIBLE_DEVICES=1，然后source ~/.bashrc
+windows:
+打开我的电脑环境变量设置的地方，直接添加就行了。
+</code></pre></div><p>修改linux系统时区</p> <div class="language- extra-class"><pre class="language-text"><code>cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>为什公你不口家
+[
+    [
+        {
+            &quot;err&quot;: &quot;公&quot;
+        },
+        {
+            &quot;fix&quot;: &quot;么&quot;
+        },
+        {
+            &quot;startIdx&quot;: &quot;2&quot;
+        },
+        {
+            &quot;endIdx&quot;: &quot;3&quot;
+        }
+    ],
+    [
+        {
+            &quot;err&quot;: &quot;口&quot;
+        },
+        {
+            &quot;fix&quot;: &quot;回&quot;
+        },
+        {
+            &quot;startIdx&quot;: &quot;5&quot;
+        },
+        {
+            &quot;endIdx&quot;: &quot;6&quot;
+        }
+    ]
+]
+</code></pre></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/minboo/docs/edit/master/docs/OCR/deploy/hubserving/README.md" target="_blank" rel="noopener noreferrer">编辑文档！</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">4/23/2023, 3:39:59 PM</span></div></footer> <!----> </main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.9f94fa3e.js" defer></script><script src="/assets/js/2.8154945c.js" defer></script><script src="/assets/js/18.d5c9d2d1.js" defer></script><script src="/assets/js/3.4234061e.js" defer></script>
+  </body>
+</html>

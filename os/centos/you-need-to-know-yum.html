@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>CentOS 必知 Yum | 在路上</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/logo.png">
+    <mata name="author" content="在路上"></mata>
+    <mata name="Keyword" content="我的博客"></mata>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon-152x152.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <meta name="description" content="description描述">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/assets/css/0.styles.5bae31cc.css" as="style"><link rel="preload" href="/assets/js/app.9f94fa3e.js" as="script"><link rel="preload" href="/assets/js/2.8154945c.js" as="script"><link rel="preload" href="/assets/js/58.d34951c6.js" as="script"><link rel="preload" href="/assets/js/3.4234061e.js" as="script"><link rel="prefetch" href="/assets/js/10.b0ef5cc7.js"><link rel="prefetch" href="/assets/js/100.c94e731e.js"><link rel="prefetch" href="/assets/js/101.48c30368.js"><link rel="prefetch" href="/assets/js/102.46c7e4c5.js"><link rel="prefetch" href="/assets/js/103.c3a5deff.js"><link rel="prefetch" href="/assets/js/104.0a230598.js"><link rel="prefetch" href="/assets/js/105.5bb8ca11.js"><link rel="prefetch" href="/assets/js/106.452ae601.js"><link rel="prefetch" href="/assets/js/107.25f200d5.js"><link rel="prefetch" href="/assets/js/108.17d74b6e.js"><link rel="prefetch" href="/assets/js/109.1609e827.js"><link rel="prefetch" href="/assets/js/11.97d54b7d.js"><link rel="prefetch" href="/assets/js/110.8ce06d9e.js"><link rel="prefetch" href="/assets/js/111.b852821d.js"><link rel="prefetch" href="/assets/js/112.5652e068.js"><link rel="prefetch" href="/assets/js/113.accd65c3.js"><link rel="prefetch" href="/assets/js/12.f4be0313.js"><link rel="prefetch" href="/assets/js/13.b65e9a3d.js"><link rel="prefetch" href="/assets/js/14.c144247d.js"><link rel="prefetch" href="/assets/js/15.22d5a186.js"><link rel="prefetch" href="/assets/js/16.c39f8058.js"><link rel="prefetch" href="/assets/js/17.ac8b7a7e.js"><link rel="prefetch" href="/assets/js/18.d5c9d2d1.js"><link rel="prefetch" href="/assets/js/19.f7cb55d0.js"><link rel="prefetch" href="/assets/js/20.1cc30f6c.js"><link rel="prefetch" href="/assets/js/21.52403b8d.js"><link rel="prefetch" href="/assets/js/22.00378f70.js"><link rel="prefetch" href="/assets/js/23.d9c0ec0b.js"><link rel="prefetch" href="/assets/js/24.12e60ed2.js"><link rel="prefetch" href="/assets/js/25.da452d33.js"><link rel="prefetch" href="/assets/js/26.1179da7d.js"><link rel="prefetch" href="/assets/js/27.62f142d7.js"><link rel="prefetch" href="/assets/js/28.4351295c.js"><link rel="prefetch" href="/assets/js/29.8bb6a22b.js"><link rel="prefetch" href="/assets/js/30.94188915.js"><link rel="prefetch" href="/assets/js/31.e1ea5f16.js"><link rel="prefetch" href="/assets/js/32.0efe0b9d.js"><link rel="prefetch" href="/assets/js/33.6786ff5b.js"><link rel="prefetch" href="/assets/js/34.4db9faa1.js"><link rel="prefetch" href="/assets/js/35.3c13aa80.js"><link rel="prefetch" href="/assets/js/36.4a436d94.js"><link rel="prefetch" href="/assets/js/37.c22727fa.js"><link rel="prefetch" href="/assets/js/38.47290810.js"><link rel="prefetch" href="/assets/js/39.2ef9d394.js"><link rel="prefetch" href="/assets/js/4.29fa54b8.js"><link rel="prefetch" href="/assets/js/40.a1a50e67.js"><link rel="prefetch" href="/assets/js/41.82a44a96.js"><link rel="prefetch" href="/assets/js/42.a86ea924.js"><link rel="prefetch" href="/assets/js/43.a7626ca2.js"><link rel="prefetch" href="/assets/js/44.1229cec8.js"><link rel="prefetch" href="/assets/js/45.c5dd3e94.js"><link rel="prefetch" href="/assets/js/46.0835e964.js"><link rel="prefetch" href="/assets/js/47.485ccf84.js"><link rel="prefetch" href="/assets/js/48.14084039.js"><link rel="prefetch" href="/assets/js/49.24165fa3.js"><link rel="prefetch" href="/assets/js/5.0e72a8e9.js"><link rel="prefetch" href="/assets/js/50.b5dae0a8.js"><link rel="prefetch" href="/assets/js/51.5ea88576.js"><link rel="prefetch" href="/assets/js/52.fa6a7f86.js"><link rel="prefetch" href="/assets/js/53.7ad7b4a8.js"><link rel="prefetch" href="/assets/js/54.0c093768.js"><link rel="prefetch" href="/assets/js/55.1fbbd65d.js"><link rel="prefetch" href="/assets/js/56.843ea8ee.js"><link rel="prefetch" href="/assets/js/57.123e346c.js"><link rel="prefetch" href="/assets/js/59.b85cf23f.js"><link rel="prefetch" href="/assets/js/6.d3ecc9b3.js"><link rel="prefetch" href="/assets/js/60.e9071331.js"><link rel="prefetch" href="/assets/js/61.6ac666dd.js"><link rel="prefetch" href="/assets/js/62.2b73a516.js"><link rel="prefetch" href="/assets/js/63.2d005674.js"><link rel="prefetch" href="/assets/js/64.3aa0f64f.js"><link rel="prefetch" href="/assets/js/65.61af7324.js"><link rel="prefetch" href="/assets/js/66.a8b4c0fa.js"><link rel="prefetch" href="/assets/js/67.4874cd0c.js"><link rel="prefetch" href="/assets/js/68.eb0fe894.js"><link rel="prefetch" href="/assets/js/69.d3da1271.js"><link rel="prefetch" href="/assets/js/7.3b12d94c.js"><link rel="prefetch" href="/assets/js/70.cb5a6540.js"><link rel="prefetch" href="/assets/js/71.97062bc7.js"><link rel="prefetch" href="/assets/js/72.3ace4280.js"><link rel="prefetch" href="/assets/js/73.5964117d.js"><link rel="prefetch" href="/assets/js/74.3a6f1e44.js"><link rel="prefetch" href="/assets/js/75.56bbe243.js"><link rel="prefetch" href="/assets/js/76.bdeb56a2.js"><link rel="prefetch" href="/assets/js/77.fc672f1c.js"><link rel="prefetch" href="/assets/js/78.62390d6f.js"><link rel="prefetch" href="/assets/js/79.e8590d7e.js"><link rel="prefetch" href="/assets/js/8.b4a14e8c.js"><link rel="prefetch" href="/assets/js/80.0649d97d.js"><link rel="prefetch" href="/assets/js/81.f54b68cd.js"><link rel="prefetch" href="/assets/js/82.a4f85774.js"><link rel="prefetch" href="/assets/js/83.abd156a5.js"><link rel="prefetch" href="/assets/js/84.0ba27a18.js"><link rel="prefetch" href="/assets/js/85.b84ccd9c.js"><link rel="prefetch" href="/assets/js/86.c46352c6.js"><link rel="prefetch" href="/assets/js/87.3291a1b3.js"><link rel="prefetch" href="/assets/js/88.67e95dba.js"><link rel="prefetch" href="/assets/js/89.83038095.js"><link rel="prefetch" href="/assets/js/9.82925584.js"><link rel="prefetch" href="/assets/js/90.fa92de62.js"><link rel="prefetch" href="/assets/js/91.a0a26338.js"><link rel="prefetch" href="/assets/js/92.5675720d.js"><link rel="prefetch" href="/assets/js/93.0bd5bc0c.js"><link rel="prefetch" href="/assets/js/94.843c0392.js"><link rel="prefetch" href="/assets/js/95.03e309fc.js"><link rel="prefetch" href="/assets/js/96.4faf8dc5.js"><link rel="prefetch" href="/assets/js/97.ca35ccb2.js"><link rel="prefetch" href="/assets/js/98.14c1848c.js"><link rel="prefetch" href="/assets/js/99.1f1b02fe.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.5bae31cc.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="在路上" class="logo"> <span class="site-name can-hide">在路上</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="框架" class="dropdown-title"><span class="title">框架</span> <span class="arrow down"></span></button> <button type="button" aria-label="框架" class="mobile-dropdown-title"><span class="title">框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Spring
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/about/" class="nav-link">
+  About
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Mybatis
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/about/" class="nav-link">
+  About
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="系统" class="dropdown-title"><span class="title">系统</span> <span class="arrow down"></span></button> <button type="button" aria-label="系统" class="mobile-dropdown-title"><span class="title">系统</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/os/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/os/ubuntu/" class="nav-link">
+  Ubuntu
+</a></li><li class="dropdown-item"><!----> <a href="/os/centos/" class="nav-link router-link-active">
+  CentOS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><span class="title">后端</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端" class="mobile-dropdown-title"><span class="title">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/backend/mysql/" class="nav-link">
+  MySQL
+</a></li><li class="dropdown-item"><!----> <a href="/backend/redis/" class="nav-link">
+  Redis
+</a></li><li class="dropdown-item"><!----> <a href="/backend/docker/" class="nav-link">
+  Docker
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="中间件" class="dropdown-title"><span class="title">中间件</span> <span class="arrow down"></span></button> <button type="button" aria-label="中间件" class="mobile-dropdown-title"><span class="title">中间件</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          服务器
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/Middleware/Nginx/" class="nav-link">
+  Nginx
+</a></li></ul></li><li class="dropdown-item"><h4>
+          消息队列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/RabbitMQ/" class="nav-link">
+  RabbitMQ
+</a></li><li class="dropdown-subitem"><a href="/RocketMQ/" class="nav-link">
+  RocketMQ
+</a></li></ul></li><li class="dropdown-item"><h4>
+          搜索引擎
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/ElasticSearch/" class="nav-link">
+  ElasticSearch
+</a></li><li class="dropdown-subitem"><a href="/slor/" class="nav-link">
+  Solr
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="OCR" class="dropdown-title"><span class="title">OCR</span> <span class="arrow down"></span></button> <button type="button" aria-label="OCR" class="mobile-dropdown-title"><span class="title">OCR</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          训练
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/OCR/train/" class="nav-link">
+  模型训练
+</a></li></ul></li><li class="dropdown-item"><h4>
+          部署
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/OCR/deploy/hubserving/" class="nav-link">
+  HubServing方式部署
+</a></li><li class="dropdown-subitem"><a href="/OCR/deploy/paddleserving/" class="nav-link">
+  PaddleServing方式部署
+</a></li></ul></li><li class="dropdown-item"><h4>
+          环境安装
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/ElasticSearch/" class="nav-link">
+  安装Cuda和Cudnn
+</a></li><li class="dropdown-subitem"><a href="/slor/" class="nav-link">
+  Solr
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发工具" class="dropdown-title"><span class="title">开发工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="开发工具" class="mobile-dropdown-title"><span class="title">开发工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tools/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/tools/github/" class="nav-link">
+  Github
+</a></li><li class="dropdown-item"><!----> <a href="/tools/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/tools/bookmark-scripts/" class="nav-link">
+  Bookmark scripts
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow down"></span></button> <button type="button" aria-label="更多" class="mobile-dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/more/navigation.html" class="nav-link">
+  导航 🎉
+</a></li><li class="dropdown-item"><!----> <a href="https://shanyuhai123.github.io/vuepress-plugin-auto-sidebar/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VuePress 侧边栏插件
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://vuepress.vuejs.org/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VuePress 官网
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="框架" class="dropdown-title"><span class="title">框架</span> <span class="arrow down"></span></button> <button type="button" aria-label="框架" class="mobile-dropdown-title"><span class="title">框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Spring
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/about/" class="nav-link">
+  About
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Mybatis
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/about/" class="nav-link">
+  About
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="系统" class="dropdown-title"><span class="title">系统</span> <span class="arrow down"></span></button> <button type="button" aria-label="系统" class="mobile-dropdown-title"><span class="title">系统</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/os/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/os/ubuntu/" class="nav-link">
+  Ubuntu
+</a></li><li class="dropdown-item"><!----> <a href="/os/centos/" class="nav-link router-link-active">
+  CentOS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><span class="title">后端</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端" class="mobile-dropdown-title"><span class="title">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/backend/mysql/" class="nav-link">
+  MySQL
+</a></li><li class="dropdown-item"><!----> <a href="/backend/redis/" class="nav-link">
+  Redis
+</a></li><li class="dropdown-item"><!----> <a href="/backend/docker/" class="nav-link">
+  Docker
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="中间件" class="dropdown-title"><span class="title">中间件</span> <span class="arrow down"></span></button> <button type="button" aria-label="中间件" class="mobile-dropdown-title"><span class="title">中间件</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          服务器
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/Middleware/Nginx/" class="nav-link">
+  Nginx
+</a></li></ul></li><li class="dropdown-item"><h4>
+          消息队列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/RabbitMQ/" class="nav-link">
+  RabbitMQ
+</a></li><li class="dropdown-subitem"><a href="/RocketMQ/" class="nav-link">
+  RocketMQ
+</a></li></ul></li><li class="dropdown-item"><h4>
+          搜索引擎
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/ElasticSearch/" class="nav-link">
+  ElasticSearch
+</a></li><li class="dropdown-subitem"><a href="/slor/" class="nav-link">
+  Solr
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="OCR" class="dropdown-title"><span class="title">OCR</span> <span class="arrow down"></span></button> <button type="button" aria-label="OCR" class="mobile-dropdown-title"><span class="title">OCR</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          训练
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/OCR/train/" class="nav-link">
+  模型训练
+</a></li></ul></li><li class="dropdown-item"><h4>
+          部署
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/OCR/deploy/hubserving/" class="nav-link">
+  HubServing方式部署
+</a></li><li class="dropdown-subitem"><a href="/OCR/deploy/paddleserving/" class="nav-link">
+  PaddleServing方式部署
+</a></li></ul></li><li class="dropdown-item"><h4>
+          环境安装
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/ElasticSearch/" class="nav-link">
+  安装Cuda和Cudnn
+</a></li><li class="dropdown-subitem"><a href="/slor/" class="nav-link">
+  Solr
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发工具" class="dropdown-title"><span class="title">开发工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="开发工具" class="mobile-dropdown-title"><span class="title">开发工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tools/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/tools/github/" class="nav-link">
+  Github
+</a></li><li class="dropdown-item"><!----> <a href="/tools/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/tools/bookmark-scripts/" class="nav-link">
+  Bookmark scripts
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow down"></span></button> <button type="button" aria-label="更多" class="mobile-dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/more/navigation.html" class="nav-link">
+  导航 🎉
+</a></li><li class="dropdown-item"><!----> <a href="https://shanyuhai123.github.io/vuepress-plugin-auto-sidebar/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VuePress 侧边栏插件
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://vuepress.vuejs.org/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VuePress 官网
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Centos</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/os/centos/" aria-current="page" class="sidebar-link">快速上手 CentOS</a></li><li><a href="/os/centos/you-need-to-know-yum.html" aria-current="page" class="active sidebar-link">CentOS 必知 Yum</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/os/centos/you-need-to-know-yum.html#软件包来源" class="sidebar-link">软件包来源</a></li><li class="sidebar-sub-header"><a href="/os/centos/you-need-to-know-yum.html#yum-工作机制" class="sidebar-link">yum 工作机制</a></li><li class="sidebar-sub-header"><a href="/os/centos/you-need-to-know-yum.html#指令" class="sidebar-link">指令</a></li><li class="sidebar-sub-header"><a href="/os/centos/you-need-to-know-yum.html#指令参数" class="sidebar-link">指令参数</a></li><li class="sidebar-sub-header"><a href="/os/centos/you-need-to-know-yum.html#注意事项" class="sidebar-link">注意事项</a></li></ul></li><li><a href="/os/centos/install-the-latest-version-of-nginx.html" class="sidebar-link">CentOS 下安装最新版本的 Nginx</a></li><li><a href="/os/centos/modify-the-network-named-eth.html" class="sidebar-link">CentOS 修改网卡名为 eth</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="centos-必知-yum"><a href="#centos-必知-yum" class="header-anchor">#</a> CentOS 必知 Yum</h1> <p>YUM 全称（Yellowdog Updater, Modified），基于 <code>Yellow Dog Updater</code> 修改而来，是一个在 Fedora 和 RedHat 以及 CentOS 中的 Shell 前端软件包管理器。基于 RPM 包管理，能够从指定的服务器自动下载RPM包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软件包。</p> <blockquote><p>RPM 是为了简化安装的复杂度，而 Yum 软件仓库视为了解决软件包之间的依赖关系。</p></blockquote> <h2 id="软件包来源"><a href="#软件包来源" class="header-anchor">#</a> 软件包来源</h2> <p>可供Yum下载的软件包包括 Fedora, Centos 和 RedHat 本身的软件包，其中 Fedora 的软件包是由Linux社区维护的，并且基本是自由软件。所有的包都有一个独立的 GPG 签名。</p> <h2 id="yum-工作机制"><a href="#yum-工作机制" class="header-anchor">#</a> yum 工作机制</h2> <ul><li>服务器端：在服务器上面存放了所有的 RPM 软件包，然后以相关的功能去分析每个 RPM 文件的依赖性关系，将这些数据记录成文件存放在服务器的某特定目录内。</li> <li>客户端：如果需要安装某个软件时，先下载服务器上面记录的依赖性关系文件(可通过 WWW 或 FTP 方式)，通过对服务器端下载的纪录数据进行分析，然后取得所有相关的软件，一次全部下载下来进行安装。</li></ul> <h2 id="指令"><a href="#指令" class="header-anchor">#</a> 指令</h2> <h3 id="_1-安装"><a href="#_1-安装" class="header-anchor">#</a> 1. 安装</h3> <div class="language-bash extra-class"><pre class="language-bash"><code>yum <span class="token function">install</span> xxx
+</code></pre></div><h3 id="_2-删除"><a href="#_2-删除" class="header-anchor">#</a> 2. 删除</h3> <div class="language-bash extra-class"><pre class="language-bash"><code>yum remove xxx
+<span class="token comment"># 或</span>
+yum erase xxx
+</code></pre></div><h3 id="_3-升级"><a href="#_3-升级" class="header-anchor">#</a> 3. 升级</h3> <div class="language-bash extra-class"><pre class="language-bash"><code>yum upgrade xxx
+<span class="token comment"># 或</span>
+yum update xxx
+</code></pre></div><h3 id="_4-查询"><a href="#_4-查询" class="header-anchor">#</a> 4. 查询</h3> <div class="language-bash extra-class"><pre class="language-bash"><code>yum info xxx
+</code></pre></div><h3 id="_5-搜索"><a href="#_5-搜索" class="header-anchor">#</a> 5. 搜索</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 包含 xxx</span>
+yum search xxx
+</code></pre></div><h3 id="_6-依赖关系"><a href="#_6-依赖关系" class="header-anchor">#</a> 6. 依赖关系</h3> <div class="language-bash extra-class"><pre class="language-bash"><code>yum deplist xxx
+</code></pre></div><h3 id="_7-可更新"><a href="#_7-可更新" class="header-anchor">#</a> 7. 可更新</h3> <div class="language-bash extra-class"><pre class="language-bash"><code>yum check-update
+</code></pre></div><h3 id="_8-可安装和可更新"><a href="#_8-可安装和可更新" class="header-anchor">#</a> 8. 可安装和可更新</h3> <div class="language-bash extra-class"><pre class="language-bash"><code>yum list
+</code></pre></div><h3 id="_9-已安装"><a href="#_9-已安装" class="header-anchor">#</a> 9. 已安装</h3> <div class="language-bash extra-class"><pre class="language-bash"><code>yum list installed
+</code></pre></div><h4 id="_10-已安装且不在资源库"><a href="#_10-已安装且不在资源库" class="header-anchor">#</a> 10. 已安装且不在资源库</h4> <div class="language-bash extra-class"><pre class="language-bash"><code>yum list extras
+</code></pre></div><h3 id="_11-清除全部"><a href="#_11-清除全部" class="header-anchor">#</a> 11. 清除全部</h3> <div class="language-bash extra-class"><pre class="language-bash"><code>yum clean all
+</code></pre></div><h3 id="_12-清除临时包文件"><a href="#_12-清除临时包文件" class="header-anchor">#</a> 12. 清除临时包文件</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># /var/cache/yum 下文件</span>
+yum clean packages
+</code></pre></div><h3 id="_13-清除-rpm-头文件"><a href="#_13-清除-rpm-头文件" class="header-anchor">#</a> 13. 清除 rpm 头文件</h3> <div class="language-bash extra-class"><pre class="language-bash"><code>yum clean headers
+</code></pre></div><h3 id="_14-清除旧的-rpm-头文件"><a href="#_14-清除旧的-rpm-头文件" class="header-anchor">#</a> 14. 清除旧的 rpm 头文件</h3> <div class="language-bash extra-class"><pre class="language-bash"><code>yum clean oldheaders
+</code></pre></div><h2 id="指令参数"><a href="#指令参数" class="header-anchor">#</a> 指令参数</h2> <ul><li><code>-e</code>：静默执行</li> <li><code>-t</code>：忽略错误</li> <li><code>-R</code>：设置等待命令执行结束的最大时间（分钟）</li> <li><code>-y</code>：自动应答，执行时不需要交互确认</li> <li><code>--skip-broken</code>：忽略依赖问题</li> <li><code>--nogpgcheck</code>：忽略 GPG 校验过程</li></ul> <h2 id="注意事项"><a href="#注意事项" class="header-anchor">#</a> 注意事项</h2> <h3 id="_1-卸载基础包"><a href="#_1-卸载基础包" class="header-anchor">#</a> 1. 卸载基础包</h3> <p>yum 卸载基础包时，会把上层的依赖包也卸载掉。从 yum 的设计理念出发，这样的操作是合理的，可以减少系统中多余的软件。</p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/minboo/docs/edit/master/docs/os/centos/you-need-to-know-yum.md" target="_blank" rel="noopener noreferrer">编辑文档！</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">9/11/2022, 11:48:55 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/os/centos/" class="prev router-link-active">
+        快速上手 CentOS
+      </a></span> <span class="next"><a href="/os/centos/install-the-latest-version-of-nginx.html">
+        CentOS 下安装最新版本的 Nginx
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.9f94fa3e.js" defer></script><script src="/assets/js/2.8154945c.js" defer></script><script src="/assets/js/58.d34951c6.js" defer></script><script src="/assets/js/3.4234061e.js" defer></script>
+  </body>
+</html>

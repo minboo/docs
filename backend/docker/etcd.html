@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>使用 Docker 搭建 ETCD | 在路上</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/logo.png">
+    <mata name="author" content="在路上"></mata>
+    <mata name="Keyword" content="我的博客"></mata>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon-152x152.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <meta name="description" content="description描述">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/assets/css/0.styles.5bae31cc.css" as="style"><link rel="preload" href="/assets/js/app.9f94fa3e.js" as="script"><link rel="preload" href="/assets/js/2.8154945c.js" as="script"><link rel="preload" href="/assets/js/27.62f142d7.js" as="script"><link rel="preload" href="/assets/js/3.4234061e.js" as="script"><link rel="prefetch" href="/assets/js/10.b0ef5cc7.js"><link rel="prefetch" href="/assets/js/100.c94e731e.js"><link rel="prefetch" href="/assets/js/101.48c30368.js"><link rel="prefetch" href="/assets/js/102.46c7e4c5.js"><link rel="prefetch" href="/assets/js/103.c3a5deff.js"><link rel="prefetch" href="/assets/js/104.0a230598.js"><link rel="prefetch" href="/assets/js/105.5bb8ca11.js"><link rel="prefetch" href="/assets/js/106.452ae601.js"><link rel="prefetch" href="/assets/js/107.25f200d5.js"><link rel="prefetch" href="/assets/js/108.17d74b6e.js"><link rel="prefetch" href="/assets/js/109.1609e827.js"><link rel="prefetch" href="/assets/js/11.97d54b7d.js"><link rel="prefetch" href="/assets/js/110.8ce06d9e.js"><link rel="prefetch" href="/assets/js/111.b852821d.js"><link rel="prefetch" href="/assets/js/112.5652e068.js"><link rel="prefetch" href="/assets/js/113.accd65c3.js"><link rel="prefetch" href="/assets/js/12.f4be0313.js"><link rel="prefetch" href="/assets/js/13.b65e9a3d.js"><link rel="prefetch" href="/assets/js/14.c144247d.js"><link rel="prefetch" href="/assets/js/15.22d5a186.js"><link rel="prefetch" href="/assets/js/16.c39f8058.js"><link rel="prefetch" href="/assets/js/17.ac8b7a7e.js"><link rel="prefetch" href="/assets/js/18.d5c9d2d1.js"><link rel="prefetch" href="/assets/js/19.f7cb55d0.js"><link rel="prefetch" href="/assets/js/20.1cc30f6c.js"><link rel="prefetch" href="/assets/js/21.52403b8d.js"><link rel="prefetch" href="/assets/js/22.00378f70.js"><link rel="prefetch" href="/assets/js/23.d9c0ec0b.js"><link rel="prefetch" href="/assets/js/24.12e60ed2.js"><link rel="prefetch" href="/assets/js/25.da452d33.js"><link rel="prefetch" href="/assets/js/26.1179da7d.js"><link rel="prefetch" href="/assets/js/28.4351295c.js"><link rel="prefetch" href="/assets/js/29.8bb6a22b.js"><link rel="prefetch" href="/assets/js/30.94188915.js"><link rel="prefetch" href="/assets/js/31.e1ea5f16.js"><link rel="prefetch" href="/assets/js/32.0efe0b9d.js"><link rel="prefetch" href="/assets/js/33.6786ff5b.js"><link rel="prefetch" href="/assets/js/34.4db9faa1.js"><link rel="prefetch" href="/assets/js/35.3c13aa80.js"><link rel="prefetch" href="/assets/js/36.4a436d94.js"><link rel="prefetch" href="/assets/js/37.c22727fa.js"><link rel="prefetch" href="/assets/js/38.47290810.js"><link rel="prefetch" href="/assets/js/39.2ef9d394.js"><link rel="prefetch" href="/assets/js/4.29fa54b8.js"><link rel="prefetch" href="/assets/js/40.a1a50e67.js"><link rel="prefetch" href="/assets/js/41.82a44a96.js"><link rel="prefetch" href="/assets/js/42.a86ea924.js"><link rel="prefetch" href="/assets/js/43.a7626ca2.js"><link rel="prefetch" href="/assets/js/44.1229cec8.js"><link rel="prefetch" href="/assets/js/45.c5dd3e94.js"><link rel="prefetch" href="/assets/js/46.0835e964.js"><link rel="prefetch" href="/assets/js/47.485ccf84.js"><link rel="prefetch" href="/assets/js/48.14084039.js"><link rel="prefetch" href="/assets/js/49.24165fa3.js"><link rel="prefetch" href="/assets/js/5.0e72a8e9.js"><link rel="prefetch" href="/assets/js/50.b5dae0a8.js"><link rel="prefetch" href="/assets/js/51.5ea88576.js"><link rel="prefetch" href="/assets/js/52.fa6a7f86.js"><link rel="prefetch" href="/assets/js/53.7ad7b4a8.js"><link rel="prefetch" href="/assets/js/54.0c093768.js"><link rel="prefetch" href="/assets/js/55.1fbbd65d.js"><link rel="prefetch" href="/assets/js/56.843ea8ee.js"><link rel="prefetch" href="/assets/js/57.123e346c.js"><link rel="prefetch" href="/assets/js/58.d34951c6.js"><link rel="prefetch" href="/assets/js/59.b85cf23f.js"><link rel="prefetch" href="/assets/js/6.d3ecc9b3.js"><link rel="prefetch" href="/assets/js/60.e9071331.js"><link rel="prefetch" href="/assets/js/61.6ac666dd.js"><link rel="prefetch" href="/assets/js/62.2b73a516.js"><link rel="prefetch" href="/assets/js/63.2d005674.js"><link rel="prefetch" href="/assets/js/64.3aa0f64f.js"><link rel="prefetch" href="/assets/js/65.61af7324.js"><link rel="prefetch" href="/assets/js/66.a8b4c0fa.js"><link rel="prefetch" href="/assets/js/67.4874cd0c.js"><link rel="prefetch" href="/assets/js/68.eb0fe894.js"><link rel="prefetch" href="/assets/js/69.d3da1271.js"><link rel="prefetch" href="/assets/js/7.3b12d94c.js"><link rel="prefetch" href="/assets/js/70.cb5a6540.js"><link rel="prefetch" href="/assets/js/71.97062bc7.js"><link rel="prefetch" href="/assets/js/72.3ace4280.js"><link rel="prefetch" href="/assets/js/73.5964117d.js"><link rel="prefetch" href="/assets/js/74.3a6f1e44.js"><link rel="prefetch" href="/assets/js/75.56bbe243.js"><link rel="prefetch" href="/assets/js/76.bdeb56a2.js"><link rel="prefetch" href="/assets/js/77.fc672f1c.js"><link rel="prefetch" href="/assets/js/78.62390d6f.js"><link rel="prefetch" href="/assets/js/79.e8590d7e.js"><link rel="prefetch" href="/assets/js/8.b4a14e8c.js"><link rel="prefetch" href="/assets/js/80.0649d97d.js"><link rel="prefetch" href="/assets/js/81.f54b68cd.js"><link rel="prefetch" href="/assets/js/82.a4f85774.js"><link rel="prefetch" href="/assets/js/83.abd156a5.js"><link rel="prefetch" href="/assets/js/84.0ba27a18.js"><link rel="prefetch" href="/assets/js/85.b84ccd9c.js"><link rel="prefetch" href="/assets/js/86.c46352c6.js"><link rel="prefetch" href="/assets/js/87.3291a1b3.js"><link rel="prefetch" href="/assets/js/88.67e95dba.js"><link rel="prefetch" href="/assets/js/89.83038095.js"><link rel="prefetch" href="/assets/js/9.82925584.js"><link rel="prefetch" href="/assets/js/90.fa92de62.js"><link rel="prefetch" href="/assets/js/91.a0a26338.js"><link rel="prefetch" href="/assets/js/92.5675720d.js"><link rel="prefetch" href="/assets/js/93.0bd5bc0c.js"><link rel="prefetch" href="/assets/js/94.843c0392.js"><link rel="prefetch" href="/assets/js/95.03e309fc.js"><link rel="prefetch" href="/assets/js/96.4faf8dc5.js"><link rel="prefetch" href="/assets/js/97.ca35ccb2.js"><link rel="prefetch" href="/assets/js/98.14c1848c.js"><link rel="prefetch" href="/assets/js/99.1f1b02fe.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.5bae31cc.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="在路上" class="logo"> <span class="site-name can-hide">在路上</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="框架" class="dropdown-title"><span class="title">框架</span> <span class="arrow down"></span></button> <button type="button" aria-label="框架" class="mobile-dropdown-title"><span class="title">框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Spring
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/about/" class="nav-link">
+  About
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Mybatis
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/about/" class="nav-link">
+  About
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="系统" class="dropdown-title"><span class="title">系统</span> <span class="arrow down"></span></button> <button type="button" aria-label="系统" class="mobile-dropdown-title"><span class="title">系统</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/os/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/os/ubuntu/" class="nav-link">
+  Ubuntu
+</a></li><li class="dropdown-item"><!----> <a href="/os/centos/" class="nav-link">
+  CentOS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><span class="title">后端</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端" class="mobile-dropdown-title"><span class="title">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/backend/mysql/" class="nav-link">
+  MySQL
+</a></li><li class="dropdown-item"><!----> <a href="/backend/redis/" class="nav-link">
+  Redis
+</a></li><li class="dropdown-item"><!----> <a href="/backend/docker/" class="nav-link router-link-active">
+  Docker
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="中间件" class="dropdown-title"><span class="title">中间件</span> <span class="arrow down"></span></button> <button type="button" aria-label="中间件" class="mobile-dropdown-title"><span class="title">中间件</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          服务器
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/Middleware/Nginx/" class="nav-link">
+  Nginx
+</a></li></ul></li><li class="dropdown-item"><h4>
+          消息队列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/RabbitMQ/" class="nav-link">
+  RabbitMQ
+</a></li><li class="dropdown-subitem"><a href="/RocketMQ/" class="nav-link">
+  RocketMQ
+</a></li></ul></li><li class="dropdown-item"><h4>
+          搜索引擎
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/ElasticSearch/" class="nav-link">
+  ElasticSearch
+</a></li><li class="dropdown-subitem"><a href="/slor/" class="nav-link">
+  Solr
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="OCR" class="dropdown-title"><span class="title">OCR</span> <span class="arrow down"></span></button> <button type="button" aria-label="OCR" class="mobile-dropdown-title"><span class="title">OCR</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          训练
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/OCR/train/" class="nav-link">
+  模型训练
+</a></li></ul></li><li class="dropdown-item"><h4>
+          部署
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/OCR/deploy/hubserving/" class="nav-link">
+  HubServing方式部署
+</a></li><li class="dropdown-subitem"><a href="/OCR/deploy/paddleserving/" class="nav-link">
+  PaddleServing方式部署
+</a></li></ul></li><li class="dropdown-item"><h4>
+          环境安装
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/ElasticSearch/" class="nav-link">
+  安装Cuda和Cudnn
+</a></li><li class="dropdown-subitem"><a href="/slor/" class="nav-link">
+  Solr
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发工具" class="dropdown-title"><span class="title">开发工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="开发工具" class="mobile-dropdown-title"><span class="title">开发工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tools/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/tools/github/" class="nav-link">
+  Github
+</a></li><li class="dropdown-item"><!----> <a href="/tools/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/tools/bookmark-scripts/" class="nav-link">
+  Bookmark scripts
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow down"></span></button> <button type="button" aria-label="更多" class="mobile-dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/more/navigation.html" class="nav-link">
+  导航 🎉
+</a></li><li class="dropdown-item"><!----> <a href="https://shanyuhai123.github.io/vuepress-plugin-auto-sidebar/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VuePress 侧边栏插件
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://vuepress.vuejs.org/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VuePress 官网
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="框架" class="dropdown-title"><span class="title">框架</span> <span class="arrow down"></span></button> <button type="button" aria-label="框架" class="mobile-dropdown-title"><span class="title">框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Spring
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/about/" class="nav-link">
+  About
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Mybatis
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/about/" class="nav-link">
+  About
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="系统" class="dropdown-title"><span class="title">系统</span> <span class="arrow down"></span></button> <button type="button" aria-label="系统" class="mobile-dropdown-title"><span class="title">系统</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/os/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/os/ubuntu/" class="nav-link">
+  Ubuntu
+</a></li><li class="dropdown-item"><!----> <a href="/os/centos/" class="nav-link">
+  CentOS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><span class="title">后端</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端" class="mobile-dropdown-title"><span class="title">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/backend/mysql/" class="nav-link">
+  MySQL
+</a></li><li class="dropdown-item"><!----> <a href="/backend/redis/" class="nav-link">
+  Redis
+</a></li><li class="dropdown-item"><!----> <a href="/backend/docker/" class="nav-link router-link-active">
+  Docker
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="中间件" class="dropdown-title"><span class="title">中间件</span> <span class="arrow down"></span></button> <button type="button" aria-label="中间件" class="mobile-dropdown-title"><span class="title">中间件</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          服务器
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/Middleware/Nginx/" class="nav-link">
+  Nginx
+</a></li></ul></li><li class="dropdown-item"><h4>
+          消息队列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/RabbitMQ/" class="nav-link">
+  RabbitMQ
+</a></li><li class="dropdown-subitem"><a href="/RocketMQ/" class="nav-link">
+  RocketMQ
+</a></li></ul></li><li class="dropdown-item"><h4>
+          搜索引擎
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/ElasticSearch/" class="nav-link">
+  ElasticSearch
+</a></li><li class="dropdown-subitem"><a href="/slor/" class="nav-link">
+  Solr
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="OCR" class="dropdown-title"><span class="title">OCR</span> <span class="arrow down"></span></button> <button type="button" aria-label="OCR" class="mobile-dropdown-title"><span class="title">OCR</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          训练
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/OCR/train/" class="nav-link">
+  模型训练
+</a></li></ul></li><li class="dropdown-item"><h4>
+          部署
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/OCR/deploy/hubserving/" class="nav-link">
+  HubServing方式部署
+</a></li><li class="dropdown-subitem"><a href="/OCR/deploy/paddleserving/" class="nav-link">
+  PaddleServing方式部署
+</a></li></ul></li><li class="dropdown-item"><h4>
+          环境安装
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/ElasticSearch/" class="nav-link">
+  安装Cuda和Cudnn
+</a></li><li class="dropdown-subitem"><a href="/slor/" class="nav-link">
+  Solr
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发工具" class="dropdown-title"><span class="title">开发工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="开发工具" class="mobile-dropdown-title"><span class="title">开发工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tools/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/tools/github/" class="nav-link">
+  Github
+</a></li><li class="dropdown-item"><!----> <a href="/tools/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/tools/bookmark-scripts/" class="nav-link">
+  Bookmark scripts
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow down"></span></button> <button type="button" aria-label="更多" class="mobile-dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/more/navigation.html" class="nav-link">
+  导航 🎉
+</a></li><li class="dropdown-item"><!----> <a href="https://shanyuhai123.github.io/vuepress-plugin-auto-sidebar/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VuePress 侧边栏插件
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://vuepress.vuejs.org/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VuePress 官网
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Docker</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/backend/docker/" aria-current="page" class="sidebar-link">人生苦短，我用 Docker</a></li><li><a href="/backend/docker/dockerfile.html" class="sidebar-link">Dockerfile 详解</a></li><li><a href="/backend/docker/image.html" class="sidebar-link">了解 Docker 镜像</a></li><li><a href="/backend/docker/container.html" class="sidebar-link">了解 Docker 容器</a></li><li><a href="/backend/docker/volumes.html" class="sidebar-link">了解 Docker 数据卷</a></li><li><a href="/backend/docker/docker-compose.html" class="sidebar-link">Docker Compose 管理多个服务</a></li><li><a href="/backend/docker/etcd.html" aria-current="page" class="active sidebar-link">使用 Docker 搭建 ETCD</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/backend/docker/etcd.html#etcd-基础概念" class="sidebar-link">ETCD 基础概念</a></li><li class="sidebar-sub-header"><a href="/backend/docker/etcd.html#部署-etcd" class="sidebar-link">部署 ETCD</a></li><li class="sidebar-sub-header"><a href="/backend/docker/etcd.html#数据" class="sidebar-link">数据</a></li><li class="sidebar-sub-header"><a href="/backend/docker/etcd.html#处理问题" class="sidebar-link">处理问题</a></li></ul></li><li><a href="/backend/docker/private-registry.html" class="sidebar-link">使用 Harbor 构建私有镜像仓库</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="使用-docker-搭建-etcd"><a href="#使用-docker-搭建-etcd" class="header-anchor">#</a> 使用 Docker 搭建 ETCD</h1> <h2 id="etcd-基础概念"><a href="#etcd-基础概念" class="header-anchor">#</a> ETCD 基础概念</h2> <ul><li>Raft：etcd 所采用的保证分布式系统强一致性的算法</li> <li>Node：一个 Raft 状态实例机</li> <li>Member：一个 etcd 实例。它管理着一个 Node，并且可以为客户端请求提供服务</li> <li>Cluster：由多个 Member 构成可以协同工作的 etcd 集群</li> <li>Peer：对同一个 etcd 集群中的另外一个 Member 的称呼</li> <li>Client：向 etcd 集群发送 HTTP 请求的客户端</li> <li>WAL：预写式日志，etcd 用于持久化存储的日志格式</li> <li>snapshot：etcd 防止 WAL 文件过多而设置的快照，存储 etcd 数据状态</li> <li>Proxy：etcd 的一种模式，为 etcd 集群提供反向代理服务</li> <li>Leader：Raft 算法中通过竞选而产生的处理所有数据的节点</li> <li>Follower：竞选失败的节点作为 Raft 中的从属节点，为算法提供强一致性保证</li> <li>Candidate：当 Follower 超过一定时间接收不到 Leader 的心跳时转变为 Candidate 开始竞选</li> <li>Term：某个节点成为 Leader 到下一次竞选时间，称为一个 Term</li> <li>Index：数据项编号。Raft 中通过 Term 和 Index 来定位数据</li></ul> <h2 id="部署-etcd"><a href="#部署-etcd" class="header-anchor">#</a> 部署 ETCD</h2> <p>在部署时，不确定其他成员 IP 是常见的，可以使用<a href="https://etcd.io/docs/v3.4.0/dev-internal/discovery_protocol/" target="_blank" rel="noopener noreferrer">动态发现<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>的方式解决。</p> <h3 id="准备"><a href="#准备" class="header-anchor">#</a> 准备</h3> <p>拉取镜像：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">docker</span> pull bitnami/etcd:3.4.14
+</code></pre></div><p>确认 ETCD 节点数量，例如三个：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">curl</span> https://discovery.etcd.io/new?size<span class="token operator">=</span><span class="token number">3</span>
+<span class="token comment"># https://discovery.etcd.io/fbcc7b00dbd102b74d8daa1781fbb941</span>
+</code></pre></div><p>环境变量：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token assign-left variable">REGISTRY</span><span class="token operator">=</span>bitnami/etcd
+<span class="token assign-left variable">ETCD_VERSION</span><span class="token operator">=</span><span class="token number">3.4</span>.14
+<span class="token assign-left variable">TOKEN</span><span class="token operator">=</span>etcd-token
+<span class="token assign-left variable">CLUSTER_STATE</span><span class="token operator">=</span>new
+<span class="token assign-left variable">NAME_1</span><span class="token operator">=</span>etcd-n1
+<span class="token assign-left variable">NAME_2</span><span class="token operator">=</span>etcd-n2
+<span class="token assign-left variable">NAME_3</span><span class="token operator">=</span>etcd-n3
+<span class="token assign-left variable">HOST_1</span><span class="token operator">=</span><span class="token number">10.0</span>.0.137
+<span class="token assign-left variable">HOST_2</span><span class="token operator">=</span><span class="token number">10.0</span>.0.138
+<span class="token assign-left variable">HOST_3</span><span class="token operator">=</span><span class="token number">10.0</span>.0.139
+<span class="token assign-left variable">DISCOVERY</span><span class="token operator">=</span>https://discovery.etcd.io/fbcc7b00dbd102b74d8daa1781fbb941
+</code></pre></div><h3 id="基于-ip-部署"><a href="#基于-ip-部署" class="header-anchor">#</a> 基于 IP 部署</h3> <p><code>node1</code>：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">docker</span> stop etcd <span class="token operator">&amp;&amp;</span> <span class="token function">docker</span> <span class="token function">rm</span> etcd
+<span class="token assign-left variable">THIS_NAME</span><span class="token operator">=</span><span class="token variable">${NAME_1}</span>
+<span class="token assign-left variable">THIS_IP</span><span class="token operator">=</span><span class="token variable">${HOST_1}</span>
+<span class="token function">docker</span> run <span class="token parameter variable">--name</span> etcd <span class="token parameter variable">-d</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-p</span> <span class="token number">2379</span>:2379 <span class="token punctuation">\</span>
+  <span class="token parameter variable">-p</span> <span class="token number">2380</span>:2380 <span class="token punctuation">\</span>
+  <span class="token parameter variable">--env</span> <span class="token assign-left variable">ALLOW_NONE_AUTHENTICATION</span><span class="token operator">=</span>yes <span class="token punctuation">\</span>
+  <span class="token parameter variable">--env</span> <span class="token assign-left variable">ETCD_LISTEN_CLIENT_URLS</span><span class="token operator">=</span>http://0.0.0.0:2379 <span class="token punctuation">\</span>
+  <span class="token parameter variable">--env</span> <span class="token assign-left variable">ETCD_ADVERTISE_CLIENT_URLS</span><span class="token operator">=</span>http://<span class="token variable">${THIS_IP}</span>:2379 <span class="token punctuation">\</span>
+  <span class="token variable">${REGISTRY}</span><span class="token builtin class-name">:</span><span class="token variable">${ETCD_VERSION}</span> <span class="token punctuation">\</span>
+   etcd <span class="token punctuation">\</span>
+    <span class="token parameter variable">--name</span> <span class="token variable">${THIS_NAME}</span> <span class="token punctuation">\</span>
+    --initial-advertise-peer-urls http://<span class="token variable">${THIS_IP}</span>:2380 --listen-peer-urls http://0.0.0.0:2380 <span class="token punctuation">\</span>
+   <span class="token parameter variable">--discovery</span> <span class="token variable">${DISCOVERY}</span> <span class="token punctuation">\</span>
+   --initial-cluster-state <span class="token variable">${CLUSTER_STATE}</span> --initial-cluster-token <span class="token variable">${TOKEN}</span>
+</code></pre></div><p><code>node2</code>：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">docker</span> stop etcd <span class="token operator">&amp;&amp;</span> <span class="token function">docker</span> <span class="token function">rm</span> etcd
+<span class="token assign-left variable">THIS_NAME</span><span class="token operator">=</span><span class="token variable">${NAME_2}</span>
+<span class="token assign-left variable">THIS_IP</span><span class="token operator">=</span><span class="token variable">${HOST_2}</span>
+<span class="token function">docker</span> run <span class="token parameter variable">--name</span> etcd <span class="token parameter variable">-d</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-p</span> <span class="token number">2379</span>:2379 <span class="token punctuation">\</span>
+  <span class="token parameter variable">-p</span> <span class="token number">2380</span>:2380 <span class="token punctuation">\</span>
+  <span class="token parameter variable">--env</span> <span class="token assign-left variable">ALLOW_NONE_AUTHENTICATION</span><span class="token operator">=</span>yes <span class="token punctuation">\</span>
+  <span class="token parameter variable">--env</span> <span class="token assign-left variable">ETCD_LISTEN_CLIENT_URLS</span><span class="token operator">=</span>http://0.0.0.0:2379 <span class="token punctuation">\</span>
+  <span class="token parameter variable">--env</span> <span class="token assign-left variable">ETCD_ADVERTISE_CLIENT_URLS</span><span class="token operator">=</span>http://<span class="token variable">${THIS_IP}</span>:2379 <span class="token punctuation">\</span>
+  <span class="token variable">${REGISTRY}</span><span class="token builtin class-name">:</span><span class="token variable">${ETCD_VERSION}</span> <span class="token punctuation">\</span>
+   etcd <span class="token punctuation">\</span>
+    <span class="token parameter variable">--name</span> <span class="token variable">${THIS_NAME}</span> <span class="token punctuation">\</span>
+    --initial-advertise-peer-urls http://<span class="token variable">${THIS_IP}</span>:2380 --listen-peer-urls http://0.0.0.0:2380 <span class="token punctuation">\</span>
+   <span class="token parameter variable">--discovery</span> <span class="token variable">${DISCOVERY}</span> <span class="token punctuation">\</span>
+   --initial-cluster-state <span class="token variable">${CLUSTER_STATE}</span> --initial-cluster-token <span class="token variable">${TOKEN}</span>
+</code></pre></div><p><code>node3</code>：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">docker</span> stop etcd <span class="token operator">&amp;&amp;</span> <span class="token function">docker</span> <span class="token function">rm</span> etcd
+<span class="token assign-left variable">THIS_NAME</span><span class="token operator">=</span><span class="token variable">${NAME_3}</span>
+<span class="token assign-left variable">THIS_IP</span><span class="token operator">=</span><span class="token variable">${HOST_3}</span>
+<span class="token function">docker</span> run <span class="token parameter variable">--name</span> etcd <span class="token parameter variable">-d</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-p</span> <span class="token number">2379</span>:2379 <span class="token punctuation">\</span>
+  <span class="token parameter variable">-p</span> <span class="token number">2380</span>:2380 <span class="token punctuation">\</span>
+  <span class="token parameter variable">--env</span> <span class="token assign-left variable">ALLOW_NONE_AUTHENTICATION</span><span class="token operator">=</span>yes <span class="token punctuation">\</span>
+  <span class="token parameter variable">--env</span> <span class="token assign-left variable">ETCD_LISTEN_CLIENT_URLS</span><span class="token operator">=</span>http://0.0.0.0:2379 <span class="token punctuation">\</span>
+  <span class="token parameter variable">--env</span> <span class="token assign-left variable">ETCD_ADVERTISE_CLIENT_URLS</span><span class="token operator">=</span>http://<span class="token variable">${THIS_IP}</span>:2379 <span class="token punctuation">\</span>
+  <span class="token variable">${REGISTRY}</span><span class="token builtin class-name">:</span><span class="token variable">${ETCD_VERSION}</span> <span class="token punctuation">\</span>
+   etcd <span class="token punctuation">\</span>
+    <span class="token parameter variable">--name</span> <span class="token variable">${THIS_NAME}</span> <span class="token punctuation">\</span>
+    --initial-advertise-peer-urls http://<span class="token variable">${THIS_IP}</span>:2380 --listen-peer-urls http://0.0.0.0:2380 <span class="token punctuation">\</span>
+   <span class="token parameter variable">--discovery</span> <span class="token variable">${DISCOVERY}</span> <span class="token punctuation">\</span>
+   --initial-cluster-state <span class="token variable">${CLUSTER_STATE}</span> --initial-cluster-token <span class="token variable">${TOKEN}</span>
+</code></pre></div><h3 id="基于-dns-部署"><a href="#基于-dns-部署" class="header-anchor">#</a> 基于 DNS 部署</h3> <p>编辑 DNS 服务器的 <code>/etc/dnsmasq.conf</code>：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># etcd 动态发现</span>
+srv-host<span class="token operator">=</span>_etcd-server._tcp.example.com,etcd1.example.com,2380,0,100
+srv-host<span class="token operator">=</span>_etcd-server._tcp.example.com,etcd2.example.com,2380,0,100
+srv-host<span class="token operator">=</span>_etcd-server._tcp.example.com,etcd3.example.com,2380,0,100
+</code></pre></div><p>再在 <code>/etc/dnsmasq.hosts</code> 增加解析：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token number">10.0</span>.0.137 etcd1.example.com
+<span class="token number">10.0</span>.0.138 etcd2.example.com
+<span class="token number">10.0</span>.0.139 etcd3.example.com
+</code></pre></div><p>在每台服务器上指定 DNS 后验证解析：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">dig</span> +noall +answer SRV _etcd-server._tcp.example.com
+</code></pre></div><p>此处仅以 <code>node1</code> 示例，注 etcd 新版本<a href="https://github.com/etcd-io/etcd/issues/11321" target="_blank" rel="noopener noreferrer">需要 HTTPS<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>，所以切换为旧版：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">docker</span> stop etcd <span class="token operator">&amp;&amp;</span> <span class="token function">docker</span> <span class="token function">rm</span> etcd
+<span class="token assign-left variable">ETCD_VERSION</span><span class="token operator">=</span><span class="token number">3.3</span>.15
+<span class="token assign-left variable">THIS_NAME</span><span class="token operator">=</span><span class="token variable">${NAME_1}</span>
+<span class="token assign-left variable">THIS_URLS</span><span class="token operator">=</span>etcd1.example.com
+<span class="token function">docker</span> run <span class="token parameter variable">--name</span> etcd <span class="token parameter variable">-d</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-p</span> <span class="token number">2379</span>:2379 <span class="token punctuation">\</span>
+  <span class="token parameter variable">-p</span> <span class="token number">2380</span>:2380 <span class="token punctuation">\</span>
+  <span class="token parameter variable">--env</span> <span class="token assign-left variable">ALLOW_NONE_AUTHENTICATION</span><span class="token operator">=</span>yes <span class="token punctuation">\</span>
+  <span class="token parameter variable">--env</span> <span class="token assign-left variable">ETCD_DISCOVERY_SRV</span><span class="token operator">=</span>example.com <span class="token punctuation">\</span>
+  <span class="token parameter variable">--env</span> <span class="token assign-left variable">ETCD_LISTEN_CLIENT_URLS</span><span class="token operator">=</span>http://0.0.0.0:2379 <span class="token punctuation">\</span>
+  <span class="token parameter variable">--env</span> <span class="token assign-left variable">ETCD_ADVERTISE_CLIENT_URLS</span><span class="token operator">=</span>http://<span class="token variable">${THIS_URLS}</span>:2379 <span class="token punctuation">\</span>
+  <span class="token variable">${REGISTRY}</span><span class="token builtin class-name">:</span><span class="token variable">${ETCD_VERSION}</span> <span class="token punctuation">\</span>
+   etcd <span class="token punctuation">\</span>
+    <span class="token parameter variable">--name</span> <span class="token variable">${THIS_NAME}</span> <span class="token punctuation">\</span>
+    --initial-advertise-peer-urls http://<span class="token variable">${THIS_URLS}</span>:2380 --listen-peer-urls http://0.0.0.0:2380 <span class="token punctuation">\</span>
+   --initial-cluster-state <span class="token variable">${CLUSTER_STATE}</span> --initial-cluster-token <span class="token variable">${TOKEN}</span>
+</code></pre></div><h3 id="校验结果"><a href="#校验结果" class="header-anchor">#</a> 校验结果</h3> <p>查看集群成员：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> etcd etcdctl member list
+
+<span class="token comment"># 得到</span>
+c45dc290bba2bf1, started, etcd-n1, http://10.0.0.137:2380, http://10.0.0.137:2379, <span class="token boolean">false</span>
+26788b649bce5709, started, etcd-n2, http://10.0.0.138:2380, http://10.0.0.138:2379, <span class="token boolean">false</span>
+510527ca792cc2da, started, etcd-n3, http://10.0.0.139:2380, http://10.0.0.139:2379, <span class="token boolean">false</span>
+</code></pre></div><p>查看健康状态：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> etcd etcdctl --write-out<span class="token operator">=</span>table <span class="token parameter variable">--endpoints</span><span class="token operator">=</span><span class="token string">&quot;http://10.0.0.137:2379,http://10.0.0.138:2379,http://10.0.0.139:2379&quot;</span> endpoint  health
+
+<span class="token comment"># 得到</span>
+http://10.0.0.138:2379 is healthy: successfully committed proposal: took <span class="token operator">=</span> <span class="token number">11</span>.12227ms
+http://10.0.0.139:2379 is healthy: successfully committed proposal: took <span class="token operator">=</span> <span class="token number">11</span>.674569ms
+http://10.0.0.137:2379 is healthy: successfully committed proposal: took <span class="token operator">=</span> <span class="token number">11</span>.993285ms
+
+
+<span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> etcd etcdctl --write-out<span class="token operator">=</span>table <span class="token parameter variable">--endpoints</span><span class="token operator">=</span><span class="token string">&quot;http://etcd1.example.com:2379,http://etcd2.example.com:2379,http://etcd3.example.com:2379&quot;</span> endpoint  health
+
+<span class="token comment"># 得到</span>
++--------------------------+--------+------------+-------+
+<span class="token operator">|</span>         ENDPOINT         <span class="token operator">|</span> HEALTH <span class="token operator">|</span>    TOOK    <span class="token operator">|</span> ERROR <span class="token operator">|</span>
++--------------------------+--------+------------+-------+
+<span class="token operator">|</span> http://etcd1.example.com:2379 <span class="token operator">|</span>   <span class="token boolean">true</span> <span class="token operator">|</span> <span class="token number">8</span>.615217ms <span class="token operator">|</span>       <span class="token operator">|</span>
+<span class="token operator">|</span> http://etcd3.example.com:2379 <span class="token operator">|</span>   <span class="token boolean">true</span> <span class="token operator">|</span>  <span class="token number">8</span>.97122ms <span class="token operator">|</span>       <span class="token operator">|</span>
+<span class="token operator">|</span> http://etcd2.example.com:2379 <span class="token operator">|</span>   <span class="token boolean">true</span> <span class="token operator">|</span> <span class="token number">9</span>.323943ms <span class="token operator">|</span>       <span class="token operator">|</span>
++--------------------------+--------+------------+-------+
+</code></pre></div><h2 id="数据"><a href="#数据" class="header-anchor">#</a> 数据</h2> <h3 id="crud"><a href="#crud" class="header-anchor">#</a> CRUD</h3> <p><code>node1</code> 设置：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> etcd etcdctl put /testdir/testkey <span class="token string">&quot;Hello world&quot;</span>
+</code></pre></div><p><code>node3</code> 读取：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> etcd etcdctl get /testdir/testkey
+
+<span class="token comment"># 得到</span>
+/testdir/testkey
+Hello world
+</code></pre></div><h3 id="watch"><a href="#watch" class="header-anchor">#</a> WATCH</h3> <p><code>node2</code> 监听：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> etcd etcdctl <span class="token function">watch</span> hi 
+</code></pre></div><p><code>node3</code> 设置：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> etcd etcdctl put hi shanyuhai
+</code></pre></div><p><code>node2</code> 会得到响应：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>PUT
+hi
+shanyuhai
+</code></pre></div><h2 id="处理问题"><a href="#处理问题" class="header-anchor">#</a> 处理问题</h2> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">docker</span> logs etcd
+</code></pre></div><table><thead><tr><th>日志</th> <th>说明</th></tr></thead> <tbody><tr><td><code>health check for peer xxx could not connect: dial tcp IP:2380: getsockopt: connection refused</code></td> <td>无法建立与这个 IP 的 2380 端口进行连接。检查 etcd 容器是否在那个 IP 的主机上运行。</td></tr> <tr><td><code>xxx is starting a new election at term x</code></td> <td>etcd 集群已经失去了法定人数，正在尝试建立新的领导者。当大多数运行 etcd 的节点出现故障或无法访问时，可能会发生这种情况。</td></tr> <tr><td><code>connection error: desc = &quot;transport: Error while dialing dial tcp 0.0.0.0:2379: i/o timeout&quot;; Reconnecting to {0.0.0.0:2379 0 &lt;nil&gt;}</code></td> <td>主机防火墙阻止了网络通信。</td></tr> <tr><td><code>rafthttp: request cluster ID mismatch</code></td> <td>运行着 etcd 实例并记录<code>rafthttp: request cluster ID mismatch</code>的节点正在尝试加入另一个由其他成员构成的集群。应该从集群中删除这个节点，然后重新添加。</td></tr> <tr><td><code>rafthttp: failed to find member</code></td> <td>集群状态 (<code>/var/lib/etcd</code>) 包含错误信息，无法加入集群。应该从集群中删除这个节点，并删除状态目录，然后重新添加。</td></tr></tbody></table></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/minboo/docs/edit/master/docs/backend/docker/etcd.md" target="_blank" rel="noopener noreferrer">编辑文档！</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">9/11/2022, 11:48:55 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/backend/docker/docker-compose.html" class="prev">
+        Docker Compose 管理多个服务
+      </a></span> <span class="next"><a href="/backend/docker/private-registry.html">
+        使用 Harbor 构建私有镜像仓库
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.9f94fa3e.js" defer></script><script src="/assets/js/2.8154945c.js" defer></script><script src="/assets/js/27.62f142d7.js" defer></script><script src="/assets/js/3.4234061e.js" defer></script>
+  </body>
+</html>

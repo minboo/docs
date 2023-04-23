@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Dockerfile 详解 | 在路上</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/logo.png">
+    <mata name="author" content="在路上"></mata>
+    <mata name="Keyword" content="我的博客"></mata>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon-152x152.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <meta name="description" content="description描述">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/assets/css/0.styles.5bae31cc.css" as="style"><link rel="preload" href="/assets/js/app.9f94fa3e.js" as="script"><link rel="preload" href="/assets/js/2.8154945c.js" as="script"><link rel="preload" href="/assets/js/26.1179da7d.js" as="script"><link rel="preload" href="/assets/js/3.4234061e.js" as="script"><link rel="prefetch" href="/assets/js/10.b0ef5cc7.js"><link rel="prefetch" href="/assets/js/100.c94e731e.js"><link rel="prefetch" href="/assets/js/101.48c30368.js"><link rel="prefetch" href="/assets/js/102.46c7e4c5.js"><link rel="prefetch" href="/assets/js/103.c3a5deff.js"><link rel="prefetch" href="/assets/js/104.0a230598.js"><link rel="prefetch" href="/assets/js/105.5bb8ca11.js"><link rel="prefetch" href="/assets/js/106.452ae601.js"><link rel="prefetch" href="/assets/js/107.25f200d5.js"><link rel="prefetch" href="/assets/js/108.17d74b6e.js"><link rel="prefetch" href="/assets/js/109.1609e827.js"><link rel="prefetch" href="/assets/js/11.97d54b7d.js"><link rel="prefetch" href="/assets/js/110.8ce06d9e.js"><link rel="prefetch" href="/assets/js/111.b852821d.js"><link rel="prefetch" href="/assets/js/112.5652e068.js"><link rel="prefetch" href="/assets/js/113.accd65c3.js"><link rel="prefetch" href="/assets/js/12.f4be0313.js"><link rel="prefetch" href="/assets/js/13.b65e9a3d.js"><link rel="prefetch" href="/assets/js/14.c144247d.js"><link rel="prefetch" href="/assets/js/15.22d5a186.js"><link rel="prefetch" href="/assets/js/16.c39f8058.js"><link rel="prefetch" href="/assets/js/17.ac8b7a7e.js"><link rel="prefetch" href="/assets/js/18.d5c9d2d1.js"><link rel="prefetch" href="/assets/js/19.f7cb55d0.js"><link rel="prefetch" href="/assets/js/20.1cc30f6c.js"><link rel="prefetch" href="/assets/js/21.52403b8d.js"><link rel="prefetch" href="/assets/js/22.00378f70.js"><link rel="prefetch" href="/assets/js/23.d9c0ec0b.js"><link rel="prefetch" href="/assets/js/24.12e60ed2.js"><link rel="prefetch" href="/assets/js/25.da452d33.js"><link rel="prefetch" href="/assets/js/27.62f142d7.js"><link rel="prefetch" href="/assets/js/28.4351295c.js"><link rel="prefetch" href="/assets/js/29.8bb6a22b.js"><link rel="prefetch" href="/assets/js/30.94188915.js"><link rel="prefetch" href="/assets/js/31.e1ea5f16.js"><link rel="prefetch" href="/assets/js/32.0efe0b9d.js"><link rel="prefetch" href="/assets/js/33.6786ff5b.js"><link rel="prefetch" href="/assets/js/34.4db9faa1.js"><link rel="prefetch" href="/assets/js/35.3c13aa80.js"><link rel="prefetch" href="/assets/js/36.4a436d94.js"><link rel="prefetch" href="/assets/js/37.c22727fa.js"><link rel="prefetch" href="/assets/js/38.47290810.js"><link rel="prefetch" href="/assets/js/39.2ef9d394.js"><link rel="prefetch" href="/assets/js/4.29fa54b8.js"><link rel="prefetch" href="/assets/js/40.a1a50e67.js"><link rel="prefetch" href="/assets/js/41.82a44a96.js"><link rel="prefetch" href="/assets/js/42.a86ea924.js"><link rel="prefetch" href="/assets/js/43.a7626ca2.js"><link rel="prefetch" href="/assets/js/44.1229cec8.js"><link rel="prefetch" href="/assets/js/45.c5dd3e94.js"><link rel="prefetch" href="/assets/js/46.0835e964.js"><link rel="prefetch" href="/assets/js/47.485ccf84.js"><link rel="prefetch" href="/assets/js/48.14084039.js"><link rel="prefetch" href="/assets/js/49.24165fa3.js"><link rel="prefetch" href="/assets/js/5.0e72a8e9.js"><link rel="prefetch" href="/assets/js/50.b5dae0a8.js"><link rel="prefetch" href="/assets/js/51.5ea88576.js"><link rel="prefetch" href="/assets/js/52.fa6a7f86.js"><link rel="prefetch" href="/assets/js/53.7ad7b4a8.js"><link rel="prefetch" href="/assets/js/54.0c093768.js"><link rel="prefetch" href="/assets/js/55.1fbbd65d.js"><link rel="prefetch" href="/assets/js/56.843ea8ee.js"><link rel="prefetch" href="/assets/js/57.123e346c.js"><link rel="prefetch" href="/assets/js/58.d34951c6.js"><link rel="prefetch" href="/assets/js/59.b85cf23f.js"><link rel="prefetch" href="/assets/js/6.d3ecc9b3.js"><link rel="prefetch" href="/assets/js/60.e9071331.js"><link rel="prefetch" href="/assets/js/61.6ac666dd.js"><link rel="prefetch" href="/assets/js/62.2b73a516.js"><link rel="prefetch" href="/assets/js/63.2d005674.js"><link rel="prefetch" href="/assets/js/64.3aa0f64f.js"><link rel="prefetch" href="/assets/js/65.61af7324.js"><link rel="prefetch" href="/assets/js/66.a8b4c0fa.js"><link rel="prefetch" href="/assets/js/67.4874cd0c.js"><link rel="prefetch" href="/assets/js/68.eb0fe894.js"><link rel="prefetch" href="/assets/js/69.d3da1271.js"><link rel="prefetch" href="/assets/js/7.3b12d94c.js"><link rel="prefetch" href="/assets/js/70.cb5a6540.js"><link rel="prefetch" href="/assets/js/71.97062bc7.js"><link rel="prefetch" href="/assets/js/72.3ace4280.js"><link rel="prefetch" href="/assets/js/73.5964117d.js"><link rel="prefetch" href="/assets/js/74.3a6f1e44.js"><link rel="prefetch" href="/assets/js/75.56bbe243.js"><link rel="prefetch" href="/assets/js/76.bdeb56a2.js"><link rel="prefetch" href="/assets/js/77.fc672f1c.js"><link rel="prefetch" href="/assets/js/78.62390d6f.js"><link rel="prefetch" href="/assets/js/79.e8590d7e.js"><link rel="prefetch" href="/assets/js/8.b4a14e8c.js"><link rel="prefetch" href="/assets/js/80.0649d97d.js"><link rel="prefetch" href="/assets/js/81.f54b68cd.js"><link rel="prefetch" href="/assets/js/82.a4f85774.js"><link rel="prefetch" href="/assets/js/83.abd156a5.js"><link rel="prefetch" href="/assets/js/84.0ba27a18.js"><link rel="prefetch" href="/assets/js/85.b84ccd9c.js"><link rel="prefetch" href="/assets/js/86.c46352c6.js"><link rel="prefetch" href="/assets/js/87.3291a1b3.js"><link rel="prefetch" href="/assets/js/88.67e95dba.js"><link rel="prefetch" href="/assets/js/89.83038095.js"><link rel="prefetch" href="/assets/js/9.82925584.js"><link rel="prefetch" href="/assets/js/90.fa92de62.js"><link rel="prefetch" href="/assets/js/91.a0a26338.js"><link rel="prefetch" href="/assets/js/92.5675720d.js"><link rel="prefetch" href="/assets/js/93.0bd5bc0c.js"><link rel="prefetch" href="/assets/js/94.843c0392.js"><link rel="prefetch" href="/assets/js/95.03e309fc.js"><link rel="prefetch" href="/assets/js/96.4faf8dc5.js"><link rel="prefetch" href="/assets/js/97.ca35ccb2.js"><link rel="prefetch" href="/assets/js/98.14c1848c.js"><link rel="prefetch" href="/assets/js/99.1f1b02fe.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.5bae31cc.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="在路上" class="logo"> <span class="site-name can-hide">在路上</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="框架" class="dropdown-title"><span class="title">框架</span> <span class="arrow down"></span></button> <button type="button" aria-label="框架" class="mobile-dropdown-title"><span class="title">框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Spring
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/about/" class="nav-link">
+  About
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Mybatis
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/about/" class="nav-link">
+  About
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="系统" class="dropdown-title"><span class="title">系统</span> <span class="arrow down"></span></button> <button type="button" aria-label="系统" class="mobile-dropdown-title"><span class="title">系统</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/os/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/os/ubuntu/" class="nav-link">
+  Ubuntu
+</a></li><li class="dropdown-item"><!----> <a href="/os/centos/" class="nav-link">
+  CentOS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><span class="title">后端</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端" class="mobile-dropdown-title"><span class="title">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/backend/mysql/" class="nav-link">
+  MySQL
+</a></li><li class="dropdown-item"><!----> <a href="/backend/redis/" class="nav-link">
+  Redis
+</a></li><li class="dropdown-item"><!----> <a href="/backend/docker/" class="nav-link router-link-active">
+  Docker
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="中间件" class="dropdown-title"><span class="title">中间件</span> <span class="arrow down"></span></button> <button type="button" aria-label="中间件" class="mobile-dropdown-title"><span class="title">中间件</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          服务器
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/Middleware/Nginx/" class="nav-link">
+  Nginx
+</a></li></ul></li><li class="dropdown-item"><h4>
+          消息队列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/RabbitMQ/" class="nav-link">
+  RabbitMQ
+</a></li><li class="dropdown-subitem"><a href="/RocketMQ/" class="nav-link">
+  RocketMQ
+</a></li></ul></li><li class="dropdown-item"><h4>
+          搜索引擎
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/ElasticSearch/" class="nav-link">
+  ElasticSearch
+</a></li><li class="dropdown-subitem"><a href="/slor/" class="nav-link">
+  Solr
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="OCR" class="dropdown-title"><span class="title">OCR</span> <span class="arrow down"></span></button> <button type="button" aria-label="OCR" class="mobile-dropdown-title"><span class="title">OCR</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          训练
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/OCR/train/" class="nav-link">
+  模型训练
+</a></li></ul></li><li class="dropdown-item"><h4>
+          部署
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/OCR/deploy/hubserving/" class="nav-link">
+  HubServing方式部署
+</a></li><li class="dropdown-subitem"><a href="/OCR/deploy/paddleserving/" class="nav-link">
+  PaddleServing方式部署
+</a></li></ul></li><li class="dropdown-item"><h4>
+          环境安装
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/ElasticSearch/" class="nav-link">
+  安装Cuda和Cudnn
+</a></li><li class="dropdown-subitem"><a href="/slor/" class="nav-link">
+  Solr
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发工具" class="dropdown-title"><span class="title">开发工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="开发工具" class="mobile-dropdown-title"><span class="title">开发工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tools/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/tools/github/" class="nav-link">
+  Github
+</a></li><li class="dropdown-item"><!----> <a href="/tools/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/tools/bookmark-scripts/" class="nav-link">
+  Bookmark scripts
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow down"></span></button> <button type="button" aria-label="更多" class="mobile-dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/more/navigation.html" class="nav-link">
+  导航 🎉
+</a></li><li class="dropdown-item"><!----> <a href="https://shanyuhai123.github.io/vuepress-plugin-auto-sidebar/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VuePress 侧边栏插件
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://vuepress.vuejs.org/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VuePress 官网
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="框架" class="dropdown-title"><span class="title">框架</span> <span class="arrow down"></span></button> <button type="button" aria-label="框架" class="mobile-dropdown-title"><span class="title">框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Spring
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/about/" class="nav-link">
+  About
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Mybatis
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/about/" class="nav-link">
+  About
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="系统" class="dropdown-title"><span class="title">系统</span> <span class="arrow down"></span></button> <button type="button" aria-label="系统" class="mobile-dropdown-title"><span class="title">系统</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/os/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/os/ubuntu/" class="nav-link">
+  Ubuntu
+</a></li><li class="dropdown-item"><!----> <a href="/os/centos/" class="nav-link">
+  CentOS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><span class="title">后端</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端" class="mobile-dropdown-title"><span class="title">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/backend/mysql/" class="nav-link">
+  MySQL
+</a></li><li class="dropdown-item"><!----> <a href="/backend/redis/" class="nav-link">
+  Redis
+</a></li><li class="dropdown-item"><!----> <a href="/backend/docker/" class="nav-link router-link-active">
+  Docker
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="中间件" class="dropdown-title"><span class="title">中间件</span> <span class="arrow down"></span></button> <button type="button" aria-label="中间件" class="mobile-dropdown-title"><span class="title">中间件</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          服务器
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/Middleware/Nginx/" class="nav-link">
+  Nginx
+</a></li></ul></li><li class="dropdown-item"><h4>
+          消息队列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/RabbitMQ/" class="nav-link">
+  RabbitMQ
+</a></li><li class="dropdown-subitem"><a href="/RocketMQ/" class="nav-link">
+  RocketMQ
+</a></li></ul></li><li class="dropdown-item"><h4>
+          搜索引擎
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/ElasticSearch/" class="nav-link">
+  ElasticSearch
+</a></li><li class="dropdown-subitem"><a href="/slor/" class="nav-link">
+  Solr
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="OCR" class="dropdown-title"><span class="title">OCR</span> <span class="arrow down"></span></button> <button type="button" aria-label="OCR" class="mobile-dropdown-title"><span class="title">OCR</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          训练
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/OCR/train/" class="nav-link">
+  模型训练
+</a></li></ul></li><li class="dropdown-item"><h4>
+          部署
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/OCR/deploy/hubserving/" class="nav-link">
+  HubServing方式部署
+</a></li><li class="dropdown-subitem"><a href="/OCR/deploy/paddleserving/" class="nav-link">
+  PaddleServing方式部署
+</a></li></ul></li><li class="dropdown-item"><h4>
+          环境安装
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/ElasticSearch/" class="nav-link">
+  安装Cuda和Cudnn
+</a></li><li class="dropdown-subitem"><a href="/slor/" class="nav-link">
+  Solr
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发工具" class="dropdown-title"><span class="title">开发工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="开发工具" class="mobile-dropdown-title"><span class="title">开发工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tools/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/tools/github/" class="nav-link">
+  Github
+</a></li><li class="dropdown-item"><!----> <a href="/tools/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/tools/bookmark-scripts/" class="nav-link">
+  Bookmark scripts
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow down"></span></button> <button type="button" aria-label="更多" class="mobile-dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/more/navigation.html" class="nav-link">
+  导航 🎉
+</a></li><li class="dropdown-item"><!----> <a href="https://shanyuhai123.github.io/vuepress-plugin-auto-sidebar/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VuePress 侧边栏插件
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://vuepress.vuejs.org/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VuePress 官网
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Docker</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/backend/docker/" aria-current="page" class="sidebar-link">人生苦短，我用 Docker</a></li><li><a href="/backend/docker/dockerfile.html" aria-current="page" class="active sidebar-link">Dockerfile 详解</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/backend/docker/dockerfile.html#基本结构" class="sidebar-link">基本结构</a></li><li class="sidebar-sub-header"><a href="/backend/docker/dockerfile.html#指令说明" class="sidebar-link">指令说明</a></li><li class="sidebar-sub-header"><a href="/backend/docker/dockerfile.html#构建镜像" class="sidebar-link">构建镜像</a></li></ul></li><li><a href="/backend/docker/image.html" class="sidebar-link">了解 Docker 镜像</a></li><li><a href="/backend/docker/container.html" class="sidebar-link">了解 Docker 容器</a></li><li><a href="/backend/docker/volumes.html" class="sidebar-link">了解 Docker 数据卷</a></li><li><a href="/backend/docker/docker-compose.html" class="sidebar-link">Docker Compose 管理多个服务</a></li><li><a href="/backend/docker/etcd.html" class="sidebar-link">使用 Docker 搭建 ETCD</a></li><li><a href="/backend/docker/private-registry.html" class="sidebar-link">使用 Harbor 构建私有镜像仓库</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="dockerfile-详解"><a href="#dockerfile-详解" class="header-anchor">#</a> Dockerfile 详解</h1> <h2 id="基本结构"><a href="#基本结构" class="header-anchor">#</a> 基本结构</h2> <p><code>Dockerfile</code> 由一行行命令语句组成，并且支持以 <code>#</code> 开头的注释行。一般而言，<code>Dockerfile</code> 主体内容分为四部分：基础镜像信息、维护者信息、镜像操作指令和容器启动时执行指令。</p> <div class="language-dockerfile extra-class"><pre class="language-dockerfile"><code><span class="token comment"># 基础镜像信息</span>
+<span class="token instruction"><span class="token keyword">FROM</span> ubuntu:18.04</span>
+<span class="token comment"># 维护者信息</span>
+<span class="token instruction"><span class="token keyword">LABEL</span> maintainer docker_user &lt;username@example.com&gt;</span>
+<span class="token comment"># 镜像操作指令</span>
+<span class="token instruction"><span class="token keyword">COPY</span> . /app</span>
+<span class="token instruction"><span class="token keyword">RUN</span> make /app</span>
+<span class="token comment"># 容器启动时执行指令</span>
+<span class="token instruction"><span class="token keyword">CMD</span> python /app/app.py</span>
+</code></pre></div><h2 id="指令说明"><a href="#指令说明" class="header-anchor">#</a> 指令说明</h2> <h3 id="_1-arg"><a href="#_1-arg" class="header-anchor">#</a> 1. ARG</h3> <div class="language-dockerfile extra-class"><pre class="language-dockerfile"><code><span class="token instruction"><span class="token keyword">ARG</span> &lt;name&gt;[=&lt;default value&gt;]</span>
+</code></pre></div><p>定义创建镜像过程中使用的变量。</p> <h3 id="_2-from"><a href="#_2-from" class="header-anchor">#</a> 2. FROM</h3> <div class="language-dockerfile extra-class"><pre class="language-dockerfile"><code><span class="token instruction"><span class="token keyword">FROM</span> [--platform=&lt;platform&gt;] &lt;image&gt; [AS &lt;name&gt;]</span>
+<span class="token comment"># or</span>
+<span class="token instruction"><span class="token keyword">FROM</span> [--platform=&lt;platform&gt;] &lt;image&gt;[:&lt;tag&gt;] [AS &lt;name&gt;]</span>
+<span class="token comment"># or</span>
+<span class="token instruction"><span class="token keyword">FROM</span> [--platform=&lt;platform&gt;] &lt;image&gt;[@&lt;digest&gt;] [AS &lt;name&gt;]</span>
+</code></pre></div><p>指定所创建镜像的基础镜像。</p> <h3 id="_3-label"><a href="#_3-label" class="header-anchor">#</a> 3. LABEL</h3> <div class="language-dockerfile extra-class"><pre class="language-dockerfile"><code><span class="token instruction"><span class="token keyword">LABEL</span> &lt;key&gt;=&lt;value&gt; &lt;key&gt;=&lt;value&gt; &lt;key&gt;=&lt;value&gt; ...</span>
+</code></pre></div><p><code>LABEL</code> 指令可以为生成的镜像添加元数据标签信息。这些信息可以用来辅助过滤出特定镜像。</p> <h3 id="_4-expose"><a href="#_4-expose" class="header-anchor">#</a> 4. EXPOSE</h3> <div class="language-dockerfile extra-class"><pre class="language-dockerfile"><code><span class="token instruction"><span class="token keyword">EXPOSE</span> &lt;port&gt; [&lt;port&gt;/&lt;protocol&gt;...]</span>
+</code></pre></div><p>声明镜像内服务监听的端口，但并不会自动完成端口映射。</p> <h3 id="_5-env"><a href="#_5-env" class="header-anchor">#</a> 5. ENV</h3> <div class="language-dockerfile extra-class"><pre class="language-dockerfile"><code><span class="token instruction"><span class="token keyword">ENV</span> &lt;key&gt; &lt;value&gt;</span>
+<span class="token instruction"><span class="token keyword">ENV</span> &lt;key&gt;=&lt;value&gt; ...</span>
+</code></pre></div><p>指定环境变量，在镜像生成过程中会被后续 <code>RUN</code> 指令使用，在镜像启动的容器中也会存在。</p> <h3 id="_6-entrypoint"><a href="#_6-entrypoint" class="header-anchor">#</a> 6. ENTRYPOINT</h3> <div class="language-dockerfile extra-class"><pre class="language-dockerfile"><code><span class="token instruction"><span class="token keyword">ENTRYPOINT</span> [<span class="token string">&quot;executable&quot;</span>, <span class="token string">&quot;param1&quot;</span>, <span class="token string">&quot;param2&quot;</span>]</span>
+<span class="token comment"># or</span>
+<span class="token instruction"><span class="token keyword">ENTRYPOINT</span> command param1 param2</span>
+</code></pre></div><p>指定镜像的默认入口命令，该入口命令会在启动容器时作为根命令执行，所有传入值作为该命令的参数。</p> <h3 id="_7-volume"><a href="#_7-volume" class="header-anchor">#</a> 7. VOLUME</h3> <div class="language-dockerfile extra-class"><pre class="language-dockerfile"><code><span class="token instruction"><span class="token keyword">VOLUME</span> [<span class="token string">&quot;/data&quot;</span>]</span>
+</code></pre></div><p>创建一个数据卷挂载点。</p> <h3 id="_8-user"><a href="#_8-user" class="header-anchor">#</a> 8. USER</h3> <div class="language-dockerfile extra-class"><pre class="language-dockerfile"><code><span class="token instruction"><span class="token keyword">USER</span> &lt;user&gt;[:&lt;group&gt;]</span>
+<span class="token comment"># or</span>
+<span class="token instruction"><span class="token keyword">USER</span> &lt;UID&gt;[:&lt;GID&gt;]</span>
+</code></pre></div><p>指定运行容器时的用户名或 <code>UID</code>，后续的 <code>RUN</code> 等指令也会使用指定的用户身份。</p> <h3 id="_9-workdir"><a href="#_9-workdir" class="header-anchor">#</a> 9. WORKDIR</h3> <div class="language-dockerfile extra-class"><pre class="language-dockerfile"><code><span class="token instruction"><span class="token keyword">WORKDIR</span> /path/to/workdir</span>
+</code></pre></div><p>为后续的 <code>RUN</code>、<code>CMD</code>、<code>ENTRYPOINT</code> 指令配置工作目录。
+可以使用多个 <code>WORKDIR</code> 指令，后续命令如果参数是相对路径，则会基于之前命令指定的路径。</p> <div class="language-dockerfile extra-class"><pre class="language-dockerfile"><code><span class="token instruction"><span class="token keyword">WORKDIR</span> /a</span>
+<span class="token instruction"><span class="token keyword">WORKDIR</span> b</span>
+<span class="token instruction"><span class="token keyword">WORKDIR</span> c</span>
+<span class="token comment"># /a/b/c</span>
+<span class="token instruction"><span class="token keyword">RUN</span> pwd</span>
+</code></pre></div><h3 id="_10-onbuild"><a href="#_10-onbuild" class="header-anchor">#</a> 10. ONBUILD</h3> <div class="language-dockerfile extra-class"><pre class="language-dockerfile"><code><span class="token instruction"><span class="token keyword">ONBUILD</span> &lt;INSTRUCTION&gt;</span>
+</code></pre></div><p>指定当基于所生成镜像创建子镜像时，自动执行的操作指令。</p> <h3 id="_11-stopsignal"><a href="#_11-stopsignal" class="header-anchor">#</a> 11. STOPSIGNAL</h3> <div class="language-dockerfile extra-class"><pre class="language-dockerfile"><code><span class="token instruction"><span class="token keyword">STOPSIGNAL</span> signal</span>
+</code></pre></div><p>指定所创建镜像启动的容器接收退出的信号值。</p> <h3 id="_12-healthcheck"><a href="#_12-healthcheck" class="header-anchor">#</a> 12. HEALTHCHECK</h3> <div class="language-dockerfile extra-class"><pre class="language-dockerfile"><code><span class="token instruction"><span class="token keyword">HEALTHCHECK</span> [OPTIONS] CMD command</span>
+<span class="token comment"># or</span>
+<span class="token instruction"><span class="token keyword">HEALTHCHECK</span> <span class="token keyword">NONE</span></span>
+</code></pre></div><p>配置所启动容器如何进行健康检查。</p> <h3 id="_13-shell"><a href="#_13-shell" class="header-anchor">#</a> 13. SHELL</h3> <div class="language-dockerfile extra-class"><pre class="language-dockerfile"><code><span class="token instruction"><span class="token keyword">SHELL</span> [<span class="token string">&quot;executable&quot;</span>, <span class="token string">&quot;parameters&quot;</span>]</span>
+</code></pre></div><p>指定其他命令使用 <code>shell</code> 时的默认 <code>shell</code> 类型。</p> <h3 id="_14-run-操作"><a href="#_14-run-操作" class="header-anchor">#</a> 14. RUN（操作）</h3> <div class="language-dockerfile extra-class"><pre class="language-dockerfile"><code><span class="token instruction"><span class="token keyword">RUN</span> &lt;command&gt;</span>
+<span class="token comment"># or</span>
+<span class="token instruction"><span class="token keyword">RUN</span> [<span class="token string">&quot;executable&quot;</span>, <span class="token string">&quot;param1&quot;</span>, <span class="token string">&quot;param2&quot;</span>]</span>
+</code></pre></div><p>运行指定命令。</p> <h3 id="_15-cmd-操作"><a href="#_15-cmd-操作" class="header-anchor">#</a> 15. CMD（操作）</h3> <div class="language-dockerfile extra-class"><pre class="language-dockerfile"><code><span class="token instruction"><span class="token keyword">CMD</span> [<span class="token string">&quot;executable&quot;</span>,<span class="token string">&quot;param1&quot;</span>,<span class="token string">&quot;param2&quot;</span>]</span>
+<span class="token comment"># or</span>
+<span class="token instruction"><span class="token keyword">CMD</span> [<span class="token string">&quot;param1&quot;</span>,<span class="token string">&quot;param2&quot;</span>]</span>
+<span class="token comment"># or</span>
+<span class="token instruction"><span class="token keyword">CMD</span> command param1 param2</span>
+</code></pre></div><p>指定启动容器时默认执行的命令。</p> <h3 id="_16-add-操作"><a href="#_16-add-操作" class="header-anchor">#</a> 16. ADD（操作）</h3> <div class="language-dockerfile extra-class"><pre class="language-dockerfile"><code><span class="token instruction"><span class="token keyword">ADD</span> [--chown=&lt;user&gt;:&lt;group&gt;] &lt;src&gt;... &lt;dest&gt;</span>
+<span class="token comment"># or</span>
+<span class="token instruction"><span class="token keyword">ADD</span> [--chown=&lt;user&gt;:&lt;group&gt;] [<span class="token string">&quot;&lt;src&gt;&quot;</span>,... <span class="token string">&quot;&lt;dest&gt;&quot;</span>]</span>
+</code></pre></div><p>添加内容到镜像。</p> <h3 id="_17-copy-操作"><a href="#_17-copy-操作" class="header-anchor">#</a> 17. COPY（操作）</h3> <div class="language-dockerfile extra-class"><pre class="language-dockerfile"><code><span class="token instruction"><span class="token keyword">COPY</span> [--chown=&lt;user&gt;:&lt;group&gt;] &lt;src&gt;... &lt;dest&gt;</span>
+<span class="token comment"># or</span>
+<span class="token instruction"><span class="token keyword">COPY</span> [--chown=&lt;user&gt;:&lt;group&gt;] [<span class="token string">&quot;&lt;src&gt;&quot;</span>,... <span class="token string">&quot;&lt;dest&gt;&quot;</span>]</span>
+</code></pre></div><p>复制内容到镜像。
+<code>COPY</code> 与 <code>ADD</code> 指令功能类似，当使用本地目录为源目录时，推荐使用 <code>COPY</code>。</p> <h2 id="构建镜像"><a href="#构建镜像" class="header-anchor">#</a> 构建镜像</h2> <p>编写完 <code>Dockerfile</code> 之后，可以通过 <code>docker build [OPTIONS] PATH | URL | -</code> 来构建镜像。</p> <h3 id="_1-资源"><a href="#_1-资源" class="header-anchor">#</a> 1. 资源</h3> <p>创建一个 <code>html</code> 页面。</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>zh-cms<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>utf-8<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>renderer<span class="token punctuation">&quot;</span></span>  <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>webkit<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>X-UA-Compatible<span class="token punctuation">&quot;</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>IE=edge,chrome=1<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>viewport<span class="token punctuation">&quot;</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>width=device-width,initial-scale=1.0<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>icon<span class="token punctuation">&quot;</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>&lt;%= BASE_URL %&gt;favicon.ico<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>Docker Test<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>noscript</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span><span class="token punctuation">&gt;</span></span>We're sorry but t-beam doesn't work properly without JavaScript enabled. Please enable it to continue.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strong</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>noscript</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>app<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        Hi, Docker Here!
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token comment">&lt;!-- built files will be auto injected --&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h3 id="_2-dockerfile"><a href="#_2-dockerfile" class="header-anchor">#</a> 2. Dockerfile</h3> <div class="language-dockerfile extra-class"><pre class="language-dockerfile"><code><span class="token instruction"><span class="token keyword">FROM</span> nginx</span>
+<span class="token instruction"><span class="token keyword">COPY</span> ./index.html /usr/share/nginx/html</span>
+</code></pre></div><h3 id="_3-build"><a href="#_3-build" class="header-anchor">#</a> 3. build</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">docker</span> build <span class="token parameter variable">-t</span> nginx-dockerfile-image <span class="token builtin class-name">.</span>
+</code></pre></div><h3 id="_4-run"><a href="#_4-run" class="header-anchor">#</a> 4. run</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token parameter variable">-P</span> <span class="token parameter variable">--name</span> nginx-dockerfile-c nginx-dockerfile-image
+</code></pre></div><h3 id="_5-验证"><a href="#_5-验证" class="header-anchor">#</a> 5. 验证</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">docker</span> <span class="token function">ps</span>
+
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                     NAMES
+225af017d59c        nginx-test          <span class="token string">&quot;/docker-entrypoint.…&quot;</span>   <span class="token number">2</span> seconds ago       Up <span class="token number">2</span> seconds        <span class="token number">0.0</span>.0.0:32769-<span class="token operator">&gt;</span><span class="token number">80</span>/tcp     nginx-dockerfile-c
+
+<span class="token comment"># 打开对应的 IP 的端口 32769 进行验证</span>
+</code></pre></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/minboo/docs/edit/master/docs/backend/docker/dockerfile.md" target="_blank" rel="noopener noreferrer">编辑文档！</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">9/11/2022, 11:48:55 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/backend/docker/" class="prev router-link-active">
+        人生苦短，我用 Docker
+      </a></span> <span class="next"><a href="/backend/docker/image.html">
+        了解 Docker 镜像
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.9f94fa3e.js" defer></script><script src="/assets/js/2.8154945c.js" defer></script><script src="/assets/js/26.1179da7d.js" defer></script><script src="/assets/js/3.4234061e.js" defer></script>
+  </body>
+</html>
